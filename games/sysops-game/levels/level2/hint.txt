@@ -1,0 +1,3 @@
+pgrep returns PIDs that match the pattern.
+pidof returns PIDs of processes with exactly that name.
+Try both and compare the output.

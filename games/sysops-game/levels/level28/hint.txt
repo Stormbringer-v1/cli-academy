@@ -1,0 +1,4 @@
+vmstat: r > cores*4 = CPU queue, si/so = swap in/out
+iostat: %util near 100% = I/O saturation
+mpstat: %idle = CPU idle %, %iowait = I/O wait
+High %iowait = processes blocked on I/O

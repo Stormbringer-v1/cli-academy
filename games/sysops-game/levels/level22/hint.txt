@@ -1,0 +1,5 @@
+lsof -i = all network connections
+lsof -iTCP = TCP connections only
+lsof -iUDP = UDP connections only
+lsof -i:9999 = connections on port 9999
+-iP -n = show raw ports, no port names

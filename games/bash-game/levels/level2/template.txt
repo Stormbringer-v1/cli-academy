@@ -1,0 +1,4 @@
+Level 2 - Quoting
+
+Create solution.sh that prints exactly:
+Snap Security

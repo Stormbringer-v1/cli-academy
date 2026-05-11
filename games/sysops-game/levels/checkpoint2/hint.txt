@@ -1,0 +1,3 @@
+State codes: R=running, S=sleeping, Z=zombie, T=stopped, D=disk sleep
+VmRSS = actual physical memory used
+PPid = Parent PID (who started this process)

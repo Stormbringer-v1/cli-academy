@@ -1,0 +1,6 @@
+1. virsh pool-define + virsh pool-start
+2. virsh vol-create-as with --format qcow2
+3. virsh net-define + virsh net-start
+4. virsh define (with XML that references the volume + network)
+5. virsh attach-interface
+6. Document what you did in answer.txt

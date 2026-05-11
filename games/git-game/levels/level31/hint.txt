@@ -1,0 +1,1 @@
+Create .git/hooks/pre-commit with the check script. Make it executable. The hook runs before each commit.

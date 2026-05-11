@@ -1,0 +1,2 @@
+ssh -D 1080 -p 2232 player@127.0.0.1
+curl --socks5 localhost:1080 http://example.com

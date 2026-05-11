@@ -1,0 +1,1 @@
+Use read and an if/elif/else block with numeric comparisons.

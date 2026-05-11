@@ -1,0 +1,8 @@
+Level 9: Amend a commit message
+
+The last commit you made has a typo: "Initial commti" (instead of "Initial commit").
+
+Your task:
+  Fix the typo in the most recent commit message: git commit --amend -m "Initial commit"
+
+Exit the shell when you are done.

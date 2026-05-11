@@ -1,0 +1,1 @@
+Attach, enter copy mode, select COPYME, and copy it. Validation checks the tmux buffer contents.

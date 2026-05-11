@@ -1,0 +1,4 @@
+Level 33 - String Manipulation
+
+Given path /opt/app/config.yaml, create solution.sh that uses parameter expansion
+to print exactly: config

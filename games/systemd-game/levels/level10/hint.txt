@@ -1,0 +1,3 @@
+journalctl --user -u SERVICE = logs for that unit
+journalctl --user -u SERVICE -n 5 = last 5 lines
+journalctl --user -u SERVICE -f = follow (like tail -f)

@@ -1,0 +1,9 @@
+== Level 17: Environment and EnvironmentFile ==
+
+Set environment variables for your service.
+
+Task:
+  1. Create /tmp/my-app.env with: APP_NAME=test APP_MODE=production
+  2. Create a service that uses EnvironmentFile=/tmp/my-app.env
+  3. The service should read and log those variables
+  4. Write the unit file content to answer.txt

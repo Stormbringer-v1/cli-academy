@@ -1,0 +1,17 @@
+== Final Boss: Misconfigured Domain ==
+
+A domain was set up incorrectly. Your job is to diagnose and fix it!
+
+The domain 'final_vm' has these problems:
+- Memory is too low (should be 1024MiB, currently 256MiB)
+- Connected to wrong network (vsh24_bad_net instead of vsh24_good_net)
+- No snapshots (should have one called 'clean_install')
+- Autostart is disabled (should be enabled)
+
+Tasks:
+  1. Edit the domain: virsh edit final_vm
+     - Change memory from 256 to 1024
+     - Change interface network from bad to good
+  2. Create snapshot: virsh snapshot-create-as final_vm clean_install
+  3. Enable autostart: virsh autostart final_vm
+  4. Write what you fixed to answer.txt

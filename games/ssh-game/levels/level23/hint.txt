@@ -1,0 +1,9 @@
+Host bastion
+    HostName 127.0.0.1
+    Port 2230
+    User player
+
+Host app1
+    HostName 127.0.0.1
+    Port 2231
+    ProxyJump bastion

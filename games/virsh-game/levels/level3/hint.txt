@@ -1,0 +1,2 @@
+If virsh shutdown doesn't work within a few seconds, use virsh destroy.
+The domain should show as 'shut off' when done.

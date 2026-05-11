@@ -1,0 +1,13 @@
+== Level 26: nftables Scripting ==
+
+nftables rules can be written to a file and loaded all at once.
+
+Task:
+  1. Write these rules to rules.nft:
+     #!/usr/sbin/nft -f
+     flush ruleset
+     add table ip filter
+     add chain ip filter input { type filter hook input priority 0; }
+     add rule ip filter input tcp dport 22 accept
+  2. Load them: nft -f rules.nft
+  3. Write the load command to answer.txt

@@ -1,0 +1,9 @@
+BOSS 03 - Advanced Bash
+
+Create solution.sh that combines:
+- at least one function
+- one indexed array
+- an EXIT trap
+- background jobs with wait
+
+Print exactly: boss3 complete

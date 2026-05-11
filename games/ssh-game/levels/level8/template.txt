@@ -1,0 +1,12 @@
+== Level 8: SCP File Copy ==
+
+Securely copy files between machines with SCP.
+
+Task:
+  1. Create a test file: echo "Hello from client" > test.txt
+  2. Copy it to the server:
+     scp -P 2226 test.txt player@127.0.0.1:/home/player/
+  3. Password: cliacademy
+  4. Verify it was copied:
+     ssh -p 2226 player@127.0.0.1 "cat /home/player/test.txt"
+  5. Write the file content to answer.txt

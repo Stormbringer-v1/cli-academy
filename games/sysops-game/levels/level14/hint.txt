@@ -1,0 +1,4 @@
+cat /proc/PID/cmdline | tr '\0' '\n'
+This replaces null separators with newlines for readability.
+First line = command name/path.
+Environment: cat /proc/PID/environ | tr '\0' '\n'

@@ -1,0 +1,1 @@
+Use git submodule add URL path to add a submodule. Use git submodule --status to check submodule status.

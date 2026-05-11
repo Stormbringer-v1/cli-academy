@@ -1,0 +1,4 @@
+Level 8 - While Loops
+
+A file lines.txt has 3 lines.
+Create solution.sh that counts the lines using a while loop and prints the count.

@@ -1,0 +1,3 @@
+virsh snapshot-create-as DOMAIN SNAPNAME
+Creates a snapshot with the given name.
+Verify with: virsh snapshot-list DOMAIN

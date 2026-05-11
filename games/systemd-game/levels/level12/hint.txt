@@ -1,0 +1,4 @@
+journalctl --user --since "1 hour ago"
+journalctl --user --since "2024-01-01" --until "2024-01-02"
+journalctl --user --since today
+journalctl --user --since "-1 day" 

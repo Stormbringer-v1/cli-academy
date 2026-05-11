@@ -1,0 +1,2 @@
+ssh -p 2237 player@127.0.0.1 "sudo useradd -m restricted"
+ssh -p 2237 restricted@127.0.0.1 "whoami" 

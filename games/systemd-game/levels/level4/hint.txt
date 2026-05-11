@@ -1,0 +1,3 @@
+systemctl --user is-active SERVICE = active/inactive/deactivating
+systemctl --user is-enabled SERVICE = enabled/disabled/masked
+These commands return exit codes: 0 = active/enabled, non-zero = not

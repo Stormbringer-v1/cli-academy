@@ -1,0 +1,8 @@
+== Level 18: systemctl list-timers ==
+
+Timers are units that trigger other units at scheduled times.
+
+Task:
+  1. List all active timers: systemctl --user list-timers
+  2. Find the next time any timer will fire
+  3. Write the next activation time to answer.txt

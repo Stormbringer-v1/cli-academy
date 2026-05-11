@@ -1,0 +1,1 @@
+Use git bisect start, mark commits good/bad based on presence of BAD. Write bad commit hash to file, then cherry-pick a known-good commit and tag it.

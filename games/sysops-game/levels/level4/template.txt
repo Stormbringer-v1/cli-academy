@@ -1,0 +1,10 @@
+== Level 4: kill (SIGTERM) ==
+
+kill sends a signal to a process. Default is SIGTERM (15), asking it to terminate gracefully.
+
+Task:
+  1. Find the PID of 'nasty_rogue'
+  2. Kill it with default signal (SIGTERM):
+     kill <PID>
+  3. Verify it's gone with: kill -0 <PID> (returns error if dead)
+  4. Write "killed:<PID>" to answer.txt

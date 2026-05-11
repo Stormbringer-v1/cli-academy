@@ -1,0 +1,1 @@
+Use git stash pop to apply stashed changes and remove the stash from the list. git stash apply would keep the stash.

@@ -1,0 +1,4 @@
+Level 36 - Debugging
+
+Create solution.sh that enables debugging (set -x), sets PS4, uses a DEBUG trap,
+and prints: debug complete

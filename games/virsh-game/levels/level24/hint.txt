@@ -1,0 +1,4 @@
+1. virsh edit final_vm → change <memory> and <source network>
+2. virsh snapshot-create-as final_vm clean_install
+3. virsh autostart final_vm
+4. Verify with: virsh dominfo final_vm && virsh snapshot-list final_vm

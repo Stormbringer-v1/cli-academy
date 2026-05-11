@@ -1,0 +1,9 @@
+Level 2 - docker ps -a
+
+        You are inside an isolated working directory for this level.
+        Use Docker resources that start with `cliacademy_`.
+
+        One container is stopped and one is running.
+Use `docker ps -a` to identify the stopped container, then write its name to `answer.txt`.
+
+        Type `exit` when you are done.

@@ -1,0 +1,13 @@
+Level 32 - FINAL BOSS
+
+        You are inside an isolated working directory for this level.
+        Use Docker resources that start with `cliacademy_`.
+
+        A broken `compose.yaml` and `Dockerfile` are provided. Fix them so this four-service stack works:
+- `web` exposed on `8095:80`
+- `api` built from the local Dockerfile
+- `db` using postgres:15-alpine
+- `cache` using redis:7-alpine
+Then bring the full stack up in detached mode.
+
+        Type `exit` when you are done.

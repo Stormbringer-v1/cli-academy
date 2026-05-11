@@ -1,0 +1,8 @@
+Welcome to SnapSecurity Academy - Git Game!
+
+Level 0: Initialize your journey.
+
+Goal: Create a new Git repository in the current directory.
+Command: git init
+
+Exit the shell (type 'exit' or Ctrl+D) when you are done.

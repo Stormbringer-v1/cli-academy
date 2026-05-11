@@ -1,0 +1,2 @@
+systemctl --user list-unit-files = all installed unit files
+Each line shows: UNIT FILE NAME and STATE (enabled/disabled/masked/static)

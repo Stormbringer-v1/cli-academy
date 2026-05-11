@@ -1,0 +1,3 @@
+Level 25 - Associative Arrays
+
+Create solution.sh that defines an associative array with key prod=8080 and prints 8080.

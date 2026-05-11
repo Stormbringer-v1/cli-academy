@@ -1,0 +1,3 @@
+systemctl --user restart SERVICE = stop + start
+systemctl --user reload SERVICE = reload config in-place (if supported)
+systemctl --user status SERVICE = check state and PID

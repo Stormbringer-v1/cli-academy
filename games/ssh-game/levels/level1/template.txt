@@ -1,0 +1,10 @@
+== Level 1: Non-Standard SSH Port ==
+
+SSH servers often run on non-standard ports for security.
+
+Task:
+  1. Connect to the SSH server on port 2221
+  2. Username: player
+  3. Password: cliacademy
+  4. Use the -p flag to specify the port
+  5. Write the command you used to answer.txt

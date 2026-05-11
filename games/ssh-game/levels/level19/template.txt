@@ -1,0 +1,14 @@
+== Level 19: SSH Certificate Authorities ==
+
+Use SSH certificates instead of passwords/keys.
+
+Task:
+  1. Create a CA key on your local machine:
+     ssh-keygen -t ed25519 -f ~/.ssh/ca_key -N ""
+  2. Sign a user key:
+     ssh-keygen -s ~/.ssh/ca_key -I "user@client" -n player ~/.ssh/id_ed25519.pub
+  3. Copy the signed certificate to server:
+     ssh-copy-id -p 2243 -i ~/.ssh/id_ed25519.pub player@127.0.0.1
+  4. On server, configure trusted user CA:
+     ssh -p 2243 player@127.0.0.1 "sudo mkdir -p /etc/ssh/sshd_config.d"
+  5. Write 'certified' to answer.txt

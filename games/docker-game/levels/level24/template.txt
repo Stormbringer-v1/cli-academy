@@ -1,0 +1,10 @@
+Level 24 - docker compose up
+
+        You are inside an isolated working directory for this level.
+        Use Docker resources that start with `cliacademy_`.
+
+        A `compose.yaml` file is provided for a single web service.
+Bring it up in detached mode using Docker Compose.
+`COMPOSE_PROJECT_NAME` is already exported so resources stay prefixed.
+
+        Type `exit` when you are done.

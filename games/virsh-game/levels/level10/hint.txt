@@ -1,0 +1,2 @@
+virsh pool-list --all shows all pools (active and inactive).
+Without --all, only active pools are shown.

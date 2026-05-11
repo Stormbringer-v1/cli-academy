@@ -1,0 +1,1 @@
+Use `tmuxa resize-pane -t resize:main.0 -R 10`.

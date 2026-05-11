@@ -1,0 +1,11 @@
+Level 35: FINAL BOSS - Real-World Git Challenge
+
+You've inherited a messy repository. Fix everything.
+
+Your task:
+  1. Recover the accidentally deleted 'feature' branch from reflog
+  2. Rebase main onto feature to make history linear
+  3. Create an annotated tag 'v2.0' with message "Production release"
+  4. Use git bisect to verify the initial commit is "good"
+
+Type 'exit' when done.

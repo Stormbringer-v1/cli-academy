@@ -1,0 +1,10 @@
+== Level 20: lsof Basics ==
+
+lsof lists open files — includes regular files, pipes, sockets.
+
+Task:
+  1. Find what files 'log_writer' has open:
+     lsof -p <PID>
+  2. Find open files in /tmp:
+     lsof +D /tmp
+  3. Write the count of open files for log_writer to answer.txt

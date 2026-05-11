@@ -1,0 +1,23 @@
+== Final Boss: Complete SSH Infrastructure ==
+
+Put everything together in this comprehensive challenge.
+
+Setup Required:
+  - bastion host (port 2247)
+  - web backend (port 2248) 
+  - database backend (port 2249)
+  - CA for signing keys
+
+Task:
+  1. Create CA and sign user keys for all team members
+  2. Configure bastion with:
+     - Certificate-based auth only
+     - Non-standard port
+     - AllowGroups developers
+  3. Set up jump host configuration
+  4. On web backend, configure:
+     - SSH access only from bastion
+     - Forced command for specific user
+  5. Create SSH config that connects web->db via bastion
+  6. Verify full chain works
+  7. Write 'infrastructure_complete' to answer.txt

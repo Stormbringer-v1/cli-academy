@@ -1,0 +1,1 @@
+Use `tmuxa set-hook -g after-new-window 'rename-window hooked'` then `tmuxa new-window`.

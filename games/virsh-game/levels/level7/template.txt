@@ -1,0 +1,8 @@
+== Level 7: virsh dumpxml ==
+
+'virsh dumpxml' exports a domain's full XML configuration.
+
+Task:
+  1. Export the XML: virsh dumpxml vsh7_vm
+  2. Save it to a file: virsh dumpxml vsh7_vm > vsh7_vm_backup.xml
+  3. Write "virsh dumpxml" to answer.txt

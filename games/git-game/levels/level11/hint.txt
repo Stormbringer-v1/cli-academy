@@ -1,0 +1,1 @@
+Use git checkout develop to switch branches. You can also use git branch to see which branch you're currently on.

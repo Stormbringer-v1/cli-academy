@@ -1,0 +1,2 @@
+Run: virsh dominfo vsh5_vm
+Look for the "UUID:" line in the output.

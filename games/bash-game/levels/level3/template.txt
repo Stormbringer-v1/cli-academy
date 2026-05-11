@@ -1,0 +1,4 @@
+Level 3 - Exit Codes
+
+Create solution.sh that runs a failing command and prints its exit code.
+Expected output: 1

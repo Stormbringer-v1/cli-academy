@@ -1,0 +1,10 @@
+== Level 32: Resource Leak Diagnosis ==
+
+A process is leaking file descriptors. Watch the count grow.
+
+Task:
+  1. Find the 'leaky_process' PID
+  2. Count its open FDs: ls /proc/<PID>/fd | wc -l
+  3. Wait 3 seconds: sleep 3
+  4. Count again: ls /proc/<PID>/fd | wc -l
+  5. Write "BEFORE:<count> AFTER:<count> LEAKED:<diff>" to answer.txt

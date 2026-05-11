@@ -1,0 +1,4 @@
+Level 22 - Command Substitution
+
+three-files/ contains exactly 3 files.
+Create solution.sh that uses command substitution to print file count.

@@ -1,0 +1,9 @@
+Level 30: Git Worktree
+
+Create a worktree to work on two branches simultaneously.
+
+Your task:
+  Create a worktree for the feature branch: git worktree add ../feature-work feature
+  In the worktree, add "worktree" to the file and commit
+
+Type 'exit' when done.

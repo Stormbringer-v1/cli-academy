@@ -1,0 +1,10 @@
+Level 15: Stash Changes
+
+You have uncommitted changes on the 'feature' branch. Switch branches without losing work.
+
+Your task:
+  Stash your changes: git stash
+
+Then verify with: git stash list
+
+Type 'exit' when done.

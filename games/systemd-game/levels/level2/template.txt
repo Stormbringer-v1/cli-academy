@@ -1,0 +1,10 @@
+== Level 2: systemctl restart vs reload ==
+
+restart = stop + start (full restart)
+reload = reload configuration without restarting the process
+
+Task:
+  1. Check the current PID of test-service: systemctl --user status test-service
+  2. Restart it: systemctl --user restart test-service
+  3. Check the new PID (should be different)
+  4. Write the new PID to answer.txt

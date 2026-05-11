@@ -1,0 +1,1 @@
+declare -A ports; ports[prod]=8080; echo ${ports[prod]}

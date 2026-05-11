@@ -1,0 +1,9 @@
+== Level 8: virsh edit ==
+
+'virsh edit' opens the domain XML in your editor for modification.
+
+Task:
+  1. Change vCPU count from 1 to 2 using virsh edit vsh8_vm
+  2. Find the <vcpu>1</vcpu> line and change it to <vcpu>2</vcpu>
+  3. Save and exit the editor
+  4. Write "virsh edit vsh8_vm" to answer.txt

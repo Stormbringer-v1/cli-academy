@@ -1,0 +1,14 @@
+== Level 6: Signal Variety ==
+
+Linux has many signals beyond TERM and KILL:
+- SIGHUP (1): Hangup — reload config
+- SIGSTOP (19): Stop process
+- SIGCONT (18): Continue stopped process
+- SIGUSR1 (10): User-defined
+
+Task:
+  1. Find the PID of 'stopped_task'
+  2. Send SIGCONT to continue it:
+     kill -18 <PID>
+  3. Verify it's running: ps -o stat= -p <PID>
+  4. Write the signal you sent and PID to answer.txt

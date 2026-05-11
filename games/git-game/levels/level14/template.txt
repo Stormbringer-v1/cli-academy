@@ -1,0 +1,35 @@
+WELCOME TO LEVEL 14 — RESOLVE A MERGE CONFLICT
+==============================================
+
+🏆  Mission  
+A merge conflict has occurred. Resolve it by keeping the correct content.
+
+───────────────────────────────────────
+📝  Step-by-step
+
+1. First, check the current status:
+   git status
+
+2. You should see a file with a conflict. Open it:
+   cat greeting.txt
+
+3. The conflict markers look like this:
+   <<<<<<< HEAD
+   content from main
+   =======
+   content from feature
+   >>>>>>> feature
+
+4. Edit the file to keep the correct version. Remove the markers and keep:
+   "Hello Universe"
+
+5. Stage the resolved file:
+   git add greeting.txt
+
+6. Complete the merge with a commit:
+   git commit -m "Resolved merge conflict"
+
+───────────────────────────────────────
+<<TASK>>
+Resolve the merge conflict in greeting.txt. Keep "Hello Universe" as the final content and commit the resolution.
+<<END>>

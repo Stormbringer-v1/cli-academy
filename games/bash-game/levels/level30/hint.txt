@@ -1,0 +1,1 @@
+Use while getopts "n:e:" opt; do ...; done

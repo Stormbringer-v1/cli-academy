@@ -1,0 +1,9 @@
+== Level 2: pgrep and pidof ==
+
+pgrep and pidof find PIDs by process name — no grep needed.
+
+Task:
+  1. Use pgrep to find the 'background_task' process:
+     pgrep background_task
+  2. Write the PID to answer.txt
+  3. Also try: pidof (what's the difference?)

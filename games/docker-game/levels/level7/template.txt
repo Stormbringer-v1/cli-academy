@@ -1,0 +1,9 @@
+Level 7 - docker logs
+
+        You are inside an isolated working directory for this level.
+        Use Docker resources that start with `cliacademy_`.
+
+        A finished container named `cliacademy_l7_logs` emitted a log line.
+Use `docker logs` to find the phrase and write it exactly to `answer.txt`.
+
+        Type `exit` when you are done.

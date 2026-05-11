@@ -1,0 +1,4 @@
+iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+-m state loads the state match
+ESTABLISHED = reply to an existing outbound connection
+RELATED = new connection related to an existing one

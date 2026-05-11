@@ -1,0 +1,9 @@
+== Level 21: lsof +D (recursive directory search) ==
+
+lsof +D recursively finds all processes using files in a directory.
+
+Task:
+  1. Find all processes using /tmp:
+     sudo lsof +D /tmp
+  2. Count the unique PIDs
+  3. Write the count to answer.txt

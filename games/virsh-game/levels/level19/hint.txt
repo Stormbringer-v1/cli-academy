@@ -1,0 +1,2 @@
+virsh snapshot-list DOMAIN shows all snapshots with name and creation time.
+The snapshot 'init_snap' should appear in the list.

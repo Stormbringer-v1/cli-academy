@@ -1,0 +1,8 @@
+== Level 17: virsh attach-interface ==
+
+Attach a virtual network interface to a running domain.
+
+Task:
+  1. Run: virsh attach-interface vsh17_vm network vsh17_net --model virtio
+  2. Verify with: virsh dumpxml vsh17_vm | grep interface
+  3. Write the attach-interface command to answer.txt

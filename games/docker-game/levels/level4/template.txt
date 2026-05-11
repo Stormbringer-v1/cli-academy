@@ -1,0 +1,10 @@
+Level 4 - docker run -d
+
+        You are inside an isolated working directory for this level.
+        Use Docker resources that start with `cliacademy_`.
+
+        Run an nginx container in detached mode with:
+- name: `cliacademy_l4_nginx`
+- port mapping: `8084:80`
+
+        Type `exit` when you are done.

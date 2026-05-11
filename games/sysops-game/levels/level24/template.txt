@@ -1,0 +1,9 @@
+== Level 24: ss State Filters ==
+
+ss can filter by connection state: established, time-wait, close-wait, etc.
+
+Task:
+  1. Count established connections: ss -tn state established | wc -l
+  2. Count time-wait connections: ss -tn state time-wait | wc -l
+  3. Find connections to 127.0.0.1: ss -tn sport = :22
+  4. Write "ESTABLISHED:<count> TIME_WAIT:<count>" to answer.txt

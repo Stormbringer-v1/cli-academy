@@ -1,0 +1,8 @@
+== Level 15: ExecStart, ExecStop, ExecReload ==
+
+These directives define what to run at each lifecycle stage.
+
+Task:
+  1. Create a service with ExecStart, ExecStop, and ExecReload
+  2. Start it, check status, reload it, stop it
+  3. Write "started, reloaded, stopped" to answer.txt

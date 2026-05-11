@@ -1,0 +1,13 @@
+Level 26: Git Bisect
+
+Find the commit that introduced "BAD" into the file using bisect.
+
+Your task:
+  1. Start bisect: git bisect start
+  2. Mark current (bad): git bisect bad
+  3. Mark v1 (good): git bisect good HEAD~4
+  4. Check if "BAD" is in file.txt
+  5. Mark good or bad based on presence
+  6. After finding, write the bad commit hash to bad_commit.txt
+
+Type 'exit' when done.

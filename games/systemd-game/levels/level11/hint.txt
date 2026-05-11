@@ -1,0 +1,3 @@
+journalctl --user -f -u SERVICE = follow logs in real time
+journalctl --user -f = all user logs
+journalctl --user --since "1 hour ago" = time-filtered logs

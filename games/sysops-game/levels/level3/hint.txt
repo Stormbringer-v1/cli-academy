@@ -1,0 +1,4 @@
+ps aux columns:
+USER = who owns it, PID = process ID, %CPU = CPU usage
+%MEM = memory usage, VSZ = virtual size, RSS = resident set size
+STAT = process state, TIME = CPU time, COMMAND = command name

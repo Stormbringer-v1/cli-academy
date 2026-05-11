@@ -1,0 +1,10 @@
+== Level 5: SSH Key Types ==
+
+ed25519 is modern and recommended, but RSA is still widely used.
+
+Task:
+  1. Generate an RSA 4096 key: ssh-keygen -t rsa -b 4096
+  2. Save to ~/.ssh/id_rsa_game
+  3. Press Enter for empty passphrase
+  4. List your keys: ls -la ~/.ssh/
+  5. Write the key bit length (4096) to answer.txt

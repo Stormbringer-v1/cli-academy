@@ -1,0 +1,9 @@
+== Level 19: Write a .timer Unit ==
+
+Timers replace cron jobs with systemd.
+
+Task:
+  1. Create hourly-timer.timer that runs hourly-task.service
+  2. Create hourly-timer.service that echoes "Timer fired"
+  3. Run daemon-reload, start the timer
+  4. Write "timer created" to answer.txt

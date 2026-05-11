@@ -1,0 +1,1 @@
+Use `docker cp secret.txt cliacademy_l17_copy:/tmp/secret.txt`.

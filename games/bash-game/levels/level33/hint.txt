@@ -1,0 +1,1 @@
+Use ${var##*/} and ${name%%.*} style expansions.

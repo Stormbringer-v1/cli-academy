@@ -1,0 +1,8 @@
+== Level 2: Block Ping (DROP) ==
+
+The DROP target silently discards packets without sending any response.
+
+Task:
+  1. Block all incoming ping (ICMP) packets:
+     iptables -A INPUT -p icmp -j DROP
+  2. Write the command to answer.txt

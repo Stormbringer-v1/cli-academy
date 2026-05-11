@@ -1,0 +1,9 @@
+== Level 1: systemctl start / stop ==
+
+start and stop services manually.
+
+Task:
+  1. Check if a timer is running: systemctl --user list-timers
+  2. Stop the test.timer: systemctl --user stop test.timer
+  3. Verify it is stopped: systemctl --user list-timers | grep test.timer
+  4. Write "stopped" to answer.txt

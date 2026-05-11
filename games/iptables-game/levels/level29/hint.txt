@@ -1,0 +1,5 @@
+1. iptables -D INPUT -p tcp --dport 22 -j DROP
+2. First delete old rule: iptables -D INPUT -p tcp --dport 808 -j ACCEPT
+   Then add correct: iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+3. iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+4. iptables -P INPUT DROP

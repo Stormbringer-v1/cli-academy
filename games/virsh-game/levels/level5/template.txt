@@ -1,0 +1,7 @@
+== Level 5: virsh dominfo ==
+
+'virsh dominfo' shows detailed information about a domain.
+
+Task:
+  1. Run: virsh dominfo vsh5_vm
+  2. Write the UUID from the output to answer.txt

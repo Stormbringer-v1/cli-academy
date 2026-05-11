@@ -1,0 +1,11 @@
+== Boss 02: Router/NAT Firewall ==
+
+Build a router with SNAT, DNAT, rate-limited SSH, logging, and a custom chain!
+
+Tasks:
+  1. Enable IP forwarding: sysctl -w net.ipv4.ip_forward=1
+  2. Set up MASQUERADE for NAT
+  3. DNAT port 80 to 10.99.0.100:8080
+  4. Rate-limit SSH (port 22) to 5/min
+  5. Create a LOGGING chain that logs before DROP
+  6. Write all commands to answer.txt

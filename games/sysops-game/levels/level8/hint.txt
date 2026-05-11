@@ -1,0 +1,5 @@
+htop navigation:
+F4 = filter, F3 = search, arrows = navigate
+F9 = kill menu (choose signal)
+F10 = quit
+Inside htop: F1 = help

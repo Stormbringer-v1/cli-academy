@@ -1,0 +1,12 @@
+Level 12 - Dockerfile basics
+
+        You are inside an isolated working directory for this level.
+        Use Docker resources that start with `cliacademy_`.
+
+        Create a `Dockerfile` for the provided `app.sh` with:
+- `FROM alpine:3.19`
+- `COPY app.sh /app.sh`
+- `CMD ["sh", "/app.sh"]`
+Then build image `cliacademy_l12_basic:latest`.
+
+        Type `exit` when you are done.

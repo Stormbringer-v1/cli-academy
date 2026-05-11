@@ -1,0 +1,8 @@
+== Level 5: Insert a Rule (-I) ==
+
+The -I flag inserts a rule at a specific position (default: 1 = top).
+
+Task:
+  1. Insert an ACCEPT rule for TCP port 80 at position 1:
+     iptables -I INPUT 1 -p tcp --dport 80 -j ACCEPT
+  2. Write the command to answer.txt

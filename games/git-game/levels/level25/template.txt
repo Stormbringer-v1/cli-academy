@@ -1,0 +1,10 @@
+Level 25: Git Reflog
+
+You accidentally did a hard reset and lost a commit. Recover it!
+
+Your task:
+  1. View the reflog: git reflog
+  2. Find the commit hash before the reset
+  3. Recover it: git reset --hard <hash>
+
+Type 'exit' when done.

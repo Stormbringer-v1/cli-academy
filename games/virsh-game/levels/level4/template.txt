@@ -1,0 +1,8 @@
+== Level 4: virsh undefine ==
+
+'virsh undefine' removes a domain's definition (XML). The storage (disk) remains.
+
+Task:
+  1. Check the domain exists: virsh list --all
+  2. Undefine it: virsh undefine vsh4_vm
+  3. Write "virsh undefine vsh4_vm" to answer.txt

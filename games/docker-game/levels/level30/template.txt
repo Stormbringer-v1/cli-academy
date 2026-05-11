@@ -1,0 +1,9 @@
+Level 30 - Resource limits
+
+        You are inside an isolated working directory for this level.
+        Use Docker resources that start with `cliacademy_`.
+
+        Run container `cliacademy_l30_limits` with both a memory limit and a CPU limit.
+Suggested flags: `--memory 128m --cpus 0.5`.
+
+        Type `exit` when you are done.

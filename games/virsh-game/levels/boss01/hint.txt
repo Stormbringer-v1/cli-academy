@@ -1,0 +1,6 @@
+1. virsh define boss1_vm1.xml
+2. virsh define boss1_vm2.xml
+3. virsh start boss1_vm1
+4. virsh edit boss1_vm2 → change <memory> to 2048
+5. virsh autostart boss1_vm1 && virsh autostart boss1_vm2
+6. virsh list --all && virsh dominfo boss1_vm2 | grep Memory

@@ -1,0 +1,4 @@
+fuser PORT/tcp = show PIDs using TCP port
+fuser -k PORT/tcp = kill all processes using port
+-v = verbose (show command name)
+fuser also works on files: fuser /var/log/syslog

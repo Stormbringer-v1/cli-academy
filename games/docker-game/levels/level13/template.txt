@@ -1,0 +1,8 @@
+Level 13 - docker build
+
+You are inside an isolated working directory for this level.
+Use Docker resources that start with `cliacademy_`.
+
+A working `Dockerfile` and `message.txt` are present. Build image `cliacademy_l13_echo:latest`.
+
+Type `exit` when you are done.

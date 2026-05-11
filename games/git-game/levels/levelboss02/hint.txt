@@ -1,0 +1,3 @@
+Use git branch feature to create, git checkout feature to switch.
+After merge conflict, edit the file to keep both lines, then git add and git commit.
+Use git branch -d feature to delete the merged branch.

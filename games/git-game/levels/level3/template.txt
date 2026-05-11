@@ -1,0 +1,11 @@
+Level 3: Make your first commit
+
+A file called "hello.txt" has already been staged for you.
+It's waiting in the staging area to be permanently recorded.
+
+Your task:
+  Commit the staged changes: git commit -m "Your commit message"
+
+You can check the staging area with: git status
+
+Exit the shell when you are done.

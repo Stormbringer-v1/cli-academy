@@ -1,0 +1,8 @@
+== Level 24: nftables Maps ==
+
+Maps translate one value to another (e.g., port number to action).
+
+Task:
+  1. Create a map for quick firewall decisions:
+     nft add map ip filter port_action { type inet_service → verdict\; }
+  2. Write the command to answer.txt

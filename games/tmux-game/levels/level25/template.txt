@@ -1,0 +1,9 @@
+Level 25 - tmux scripting
+
+        This shell exports a helper function named `tmuxa`.
+        Always use `tmuxa ...` so you stay inside the game's isolated tmux server.
+
+        Write an executable script `layout.sh` that uses tmux commands to create session `dev`
+with windows `editor`, `server`, and `logs`. Run the script.
+
+        Type `exit` when you are done.

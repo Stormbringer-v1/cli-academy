@@ -1,0 +1,10 @@
+BOSS 02 - Dockerfile app
+
+        You are inside an isolated working directory for this level.
+        Use Docker resources that start with `cliacademy_`.
+
+        Files `app.py` and `requirements.txt` are provided.
+Create a Dockerfile, build image `cliacademy_boss02_pyapp:latest`, create volume `cliacademy_boss02_data`,
+run the app on `8092:8000`, and verify the service by saving the HTTP response body into `answer.txt`.
+
+        Type `exit` when you are done.

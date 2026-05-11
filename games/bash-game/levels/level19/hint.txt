@@ -1,0 +1,1 @@
+cat remove-list.txt | xargs rm -f

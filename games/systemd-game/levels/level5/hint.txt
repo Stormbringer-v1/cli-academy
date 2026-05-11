@@ -1,0 +1,3 @@
+systemctl --user list-units = all active units
+systemctl --user list-units --type=service = services only
+systemctl --user list-units --all = including inactive

@@ -1,0 +1,16 @@
+== Final Boss: Boot Failure Diagnosis ==
+
+The system has multiple problems. Diagnose and fix them all!
+
+Problems:
+1. circular-dep.service has a circular dependency (A wants B, B wants A)
+2. missing-dep.service needs a missing file in ExecStart
+3. masked-ssh.service is masked and needs to be unmasked
+4. broken-timer.timer has a wrong OnCalendar syntax
+
+Tasks:
+  1. Diagnose each problem with systemctl status and journalctl
+  2. Fix the unit files
+  3. Run daemon-reload
+  4. Fix all services
+  5. Write "all fixed" to answer.txt

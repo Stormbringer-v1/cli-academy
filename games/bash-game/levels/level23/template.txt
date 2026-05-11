@@ -1,0 +1,4 @@
+Level 23 - Arithmetic
+
+Create solution.sh that reads two integers and prints their sum.
+Validator input: 7 8

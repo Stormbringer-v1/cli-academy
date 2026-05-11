@@ -1,0 +1,8 @@
+Level 4 - If/Then/Else
+
+Create solution.sh that reads one integer and prints:
+- positive if > 0
+- negative if < 0
+- zero if == 0
+
+Validator input: 5

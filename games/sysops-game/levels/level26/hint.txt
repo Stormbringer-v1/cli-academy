@@ -1,0 +1,5 @@
+strace -p PID = attach to running process
+-e trace=syscall_group = filter to specific syscalls
+open,openat,read = file operations
+Ctrl+C to stop strace
+Output goes to stderr by default

@@ -1,0 +1,10 @@
+== Level 13: Jump Hosts ==
+
+Access internal servers through a bastion/jump host.
+
+Task:
+  1. There's a jump host on port 2233 (bastion) and target on port 2234 (internal)
+  2. Direct access to internal won't work: ssh -p 2234 player@127.0.0.1
+  3. Use ProxyJump (recommended): ssh -J player@127.0.0.1:2233 -p 2234 player@127.0.0.1
+  4. You should be able to reach the internal server via the jump host
+  5. Write 'jumped' to answer.txt

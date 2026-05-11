@@ -1,0 +1,2 @@
+Use: echo hello
+Then make sure the script exits 0.

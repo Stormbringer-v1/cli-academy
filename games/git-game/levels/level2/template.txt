@@ -1,0 +1,11 @@
+Level 2: Stage a File
+
+A Git repository has been set up for you with a file called "hello.txt".
+The file exists but hasn't been staged yet (it's "untracked").
+
+Your task:
+  Stage the file so Git will track it: git add hello.txt
+
+You can check the status with: git status
+
+Exit the shell when you are done.

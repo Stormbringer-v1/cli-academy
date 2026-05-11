@@ -1,0 +1,2 @@
+To change the last commit's message: git commit --amend -m "Correct message"
+Then exit the shell to check your progress.

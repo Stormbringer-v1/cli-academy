@@ -1,0 +1,4 @@
+1. kill = SIGTERM = 15
+2. SIGKILL = 9 (cannot be caught/blocked/ignored)
+3. SIGSTOP = 19 stops, SIGCONT = 18 continues
+4. T = stopped (suspended with SIGSTOP)

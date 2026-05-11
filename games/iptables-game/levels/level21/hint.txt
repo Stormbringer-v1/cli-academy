@@ -1,0 +1,4 @@
+nft add table ip filter
+nft add chain ip filter input { type filter hook input priority 0; }
+Tables hold chains, chains hold rules.
+priority 0 means this chain runs early in the processing.

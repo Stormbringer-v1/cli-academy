@@ -1,0 +1,10 @@
+BOSS 02 - Log Pipeline
+
+app.log contains mixed log lines.
+Create solution.sh that extracts ERROR types and writes a frequency report to report.txt
+sorted by highest count.
+
+Expected report:
+3 AUTH
+2 DB
+1 API

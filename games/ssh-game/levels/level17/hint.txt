@@ -1,0 +1,2 @@
+ssh -p 2238 player@127.0.0.1 "sudo sh -c 'echo Welcome to SSH Game > /etc/motd'"
+ssh -p 2238 player@127.0.0.1 "cat /etc/motd" 

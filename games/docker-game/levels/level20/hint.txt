@@ -1,0 +1,1 @@
+Use `docker network ls` and write the network name to answer.txt.

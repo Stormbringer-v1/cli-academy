@@ -1,0 +1,3 @@
+Environment=KEY=value (inline)
+EnvironmentFile=/path/to/file (load from file)
+EnvironmentFile=-/path (the - prefix means "optional", ignore if missing)

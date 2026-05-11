@@ -1,0 +1,12 @@
+Level 24: Git Reset Modes
+
+Practice the three reset modes.
+
+Your task:
+  1. Use --soft reset to go back 1 commit: git reset --soft HEAD~1
+     (Changes should be in staging area)
+  2. Unstage the file: git reset HEAD file2.txt
+  3. Use --mixed reset (default) to unstage everything: git reset HEAD~1
+  4. Use --hard reset to go back to first commit: git reset --hard HEAD~1
+
+Type 'exit' when done.

@@ -1,0 +1,10 @@
+Level 13: 3-way Merge
+
+Both 'main' and 'feature' have new commits. This requires a 3-way merge.
+
+Your task:
+  Merge 'feature' into 'main': git merge feature
+
+If there are conflicts, resolve them and commit.
+
+Type 'exit' when done.

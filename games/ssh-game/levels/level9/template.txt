@@ -1,0 +1,14 @@
+== Level 9: SFTP Interactive Transfer ==
+
+SFTP provides an interactive file transfer session.
+
+Task:
+  1. Connect via SFTP: sftp -P 2227 player@127.0.0.1
+  2. Password: cliacademy
+  3. At the sftp prompt, try:
+     - pwd (print working directory)
+     - ls (list files)
+     - put test.txt (upload test.txt if it exists)
+     - get /etc/hostname local_copy.txt (download a file)
+  4. Exit with: bye
+  5. Write 'sftp' to answer.txt

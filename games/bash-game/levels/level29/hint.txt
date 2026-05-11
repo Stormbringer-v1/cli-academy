@@ -1,0 +1,1 @@
+trap 'echo caught; exit 0' SIGTERM

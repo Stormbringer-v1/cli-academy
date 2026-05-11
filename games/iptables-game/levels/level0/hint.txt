@@ -1,0 +1,3 @@
+Run: iptables -L
+
+The -L flag lists all rules in all chains.

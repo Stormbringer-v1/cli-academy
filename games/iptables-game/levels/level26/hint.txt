@@ -1,0 +1,3 @@
+nft -f rules.nft reads rules from a file.
+The flush ruleset command clears existing rules before loading.
+Scripts are great for persisting and versioning firewall configs.

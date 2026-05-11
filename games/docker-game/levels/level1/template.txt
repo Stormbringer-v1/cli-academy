@@ -1,0 +1,9 @@
+Level 1 - docker ps
+
+        You are inside an isolated working directory for this level.
+        Use Docker resources that start with `cliacademy_`.
+
+        A running container named `cliacademy_l1_web` already exists.
+Use `docker ps` to find it, then write its name into `answer.txt`.
+
+        Type `exit` when you are done.

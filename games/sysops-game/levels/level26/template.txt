@@ -1,0 +1,9 @@
+== Level 26: strace -p PID (syscall tracing) ==
+
+strace traces system calls made by a process.
+
+Task:
+  1. Trace 'file_accessor' for file-related syscalls:
+     strace -p <PID> -e trace=open,openat,read 2>&1 | head -20
+  2. Find what files it's reading
+  3. Write the first filename to answer.txt

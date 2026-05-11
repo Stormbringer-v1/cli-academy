@@ -1,0 +1,3 @@
+Try 'git diff HEAD~1' to see what was added and removed in the last commit.
+Then use an editor (like 'nano' or 'vim') or 'echo' to put the correct text back into 'code.py'.
+The correct message is: Hello, SnapSecurity Academy!

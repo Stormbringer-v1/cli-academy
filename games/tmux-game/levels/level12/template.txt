@@ -1,0 +1,8 @@
+Level 12 - Navigate panes
+
+This shell exports a helper function named `tmuxa`.
+Always use `tmuxa ...` so you stay inside the game's isolated tmux server.
+
+Session `pane-nav` already has three panes. Make pane index `2` the active pane.
+
+Type `exit` when you are done.

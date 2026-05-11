@@ -1,0 +1,1 @@
+Use git bisect start, git bisect good/bad to narrow down. Check file.txt for "BAD" at each step. The bad commit will be found after several iterations.

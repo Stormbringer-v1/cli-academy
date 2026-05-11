@@ -1,0 +1,4 @@
+kill -18 PID = SIGCONT (continue)
+kill -19 PID = SIGSTOP (stop)
+kill -1 PID = SIGHUP (hangup — often reloads config)
+kill -10 PID = SIGUSR1 (custom signal)

@@ -1,0 +1,2 @@
+virsh vol-list POOL shows all volumes in a pool.
+virsh vol-info POOL VOLUME shows capacity, allocation, etc.

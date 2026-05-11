@@ -1,0 +1,8 @@
+== Level 16: virsh net-info / net-dumpxml ==
+
+Inspect virtual network configuration.
+
+Task:
+  1. Get network info: virsh net-info vsh16_net
+  2. Export XML: virsh net-dumpxml vsh16_net > net_backup.xml
+  3. Write "virsh net-dumpxml" to answer.txt

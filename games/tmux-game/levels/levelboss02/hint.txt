@@ -1,0 +1,1 @@
+Use splits, rename-window, and `tmuxa send-keys ... C-m` to populate each pane.

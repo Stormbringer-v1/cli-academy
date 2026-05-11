@@ -1,0 +1,9 @@
+Level 9 - Multiple sessions
+
+        This shell exports a helper function named `tmuxa`.
+        Always use `tmuxa ...` so you stay inside the game's isolated tmux server.
+
+        A session named `dev` already exists. Create a second session named `ops`.
+Make sure both sessions exist at the end.
+
+        Type `exit` when you are done.

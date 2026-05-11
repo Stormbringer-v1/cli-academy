@@ -1,0 +1,8 @@
+== Level 13: virsh vol-list / vol-info ==
+
+Inspect storage volumes.
+
+Task:
+  1. List volumes: virsh vol-list vsh13_pool
+  2. Get volume info: virsh vol-info vsh13_pool mydisk.qcow2
+  3. Write the vol-info command to answer.txt

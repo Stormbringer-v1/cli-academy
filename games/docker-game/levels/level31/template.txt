@@ -1,0 +1,10 @@
+Level 31 - Docker debugging
+
+        You are inside an isolated working directory for this level.
+        Use Docker resources that start with `cliacademy_`.
+
+        Two containers exist: `cliacademy_l31_web` and `cliacademy_l31_worker`.
+Use debugging commands such as `docker stats`, `docker top`, or `docker events` to inspect them,
+then write the running web container name to `answer.txt`.
+
+        Type `exit` when you are done.

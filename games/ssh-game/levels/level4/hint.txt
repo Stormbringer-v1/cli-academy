@@ -1,0 +1,5 @@
+Host game
+    HostName 127.0.0.1
+    Port 2223
+    User player
+    PasswordAuthentication no

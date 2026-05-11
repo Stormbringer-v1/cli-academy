@@ -1,0 +1,4 @@
+nproc = number of CPU cores
+ulimit -n = max open files for current shell
+/proc/sys/fs/file-max = system-wide max files
+/proc/sys/kernel/pid_max = max PID number

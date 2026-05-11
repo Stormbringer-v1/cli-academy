@@ -1,0 +1,4 @@
+Unit file structure:
+[Unit] Description, After
+[Service] Type=oneshot, ExecStart=/path/to/script
+[Install] WantedBy=default.target

@@ -1,0 +1,10 @@
+Level 21: Git Rebase --onto
+
+You have a branch 'old-feature' that was based on an old commit. Move it to main.
+
+Your task:
+  git rebase --onto main old-feature~1 feature
+
+This moves the feature commits onto main, skipping the old base.
+
+Type 'exit' when done.

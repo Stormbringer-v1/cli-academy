@@ -1,0 +1,2 @@
+virsh snapshot-revert DOMAIN SNAPNAME
+Restores the domain to the exact state when the snapshot was taken.

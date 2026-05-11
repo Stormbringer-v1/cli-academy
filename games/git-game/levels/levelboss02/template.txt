@@ -1,0 +1,18 @@
+Level BOSS 02: The Branching Master
+
+This boss fight combines branching, commits, merging, stashing, and cleanup.
+
+Your task (in order):
+  1. Create a branch called 'feature': git branch feature
+  2. Switch to the feature branch: git checkout feature
+  3. Edit file.txt to add "feature work" on a new line, commit with message "Add feature work"
+  4. Switch back to main: git checkout main
+  5. Edit file.txt to add "main work" on a new line, commit with message "Add main work"
+  6. Attempt to merge feature into main: git merge feature
+     (This should create a conflict)
+  7. Resolve the conflict - keep BOTH lines (feature work AND main work)
+  8. Stage and commit the merge: git add file.txt && git commit -m "Merge feature with conflict resolved"
+  9. Stash any remaining changes (if any): git stash
+  10. Delete the feature branch: git branch -d feature
+
+Type 'exit' when done.

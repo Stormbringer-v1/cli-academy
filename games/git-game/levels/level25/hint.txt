@@ -1,0 +1,1 @@
+Use git reflog to find the lost commit hash, then git reset --hard <hash> to recover it.

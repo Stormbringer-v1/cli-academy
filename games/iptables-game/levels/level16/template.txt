@@ -1,0 +1,8 @@
+== Level 16: DNAT — Port Forwarding ==
+
+DNAT (Destination NAT) forwards external traffic to internal hosts.
+
+Task:
+  1. Forward external TCP port 80 to internal host 10.99.0.100:8080:
+     iptables -t nat -A PREROUTING -p tcp --dport 80 -j DNAT --to-destination 10.99.0.100:8080
+  2. Write the command to answer.txt

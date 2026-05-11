@@ -1,0 +1,11 @@
+== Boss 01: Domain Management ==
+
+Prove your domain management skills!
+
+Tasks (do ALL of them):
+  1. Define domain 'boss1_vm1' from boss1_vm1.xml
+  2. Define domain 'boss1_vm2' from boss1_vm2.xml
+  3. Start boss1_vm1
+  4. Change boss1_vm2 memory to 2048MiB using virsh edit
+  5. Enable autostart for both domains
+  6. Write a summary of what you did to answer.txt

@@ -1,0 +1,8 @@
+== Level 18: Connection Tracking (conntrack) ==
+
+The -m conntrack module is the modern replacement for -m state.
+
+Task:
+  1. Allow ESTABLISHED and RELATED connections using conntrack:
+     iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+  2. Write the command to answer.txt

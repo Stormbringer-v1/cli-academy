@@ -1,0 +1,1 @@
+Use a Python base image, expose port 8000, bind volume /data, and `curl http://127.0.0.1:8092 > answer.txt`.

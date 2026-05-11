@@ -1,0 +1,3 @@
+F7 in htop = decrease nice value (lower priority)
+F8 in htop = increase nice value (higher priority)
+Use with arrows to select process first.

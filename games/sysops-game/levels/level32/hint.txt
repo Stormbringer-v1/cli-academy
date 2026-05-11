@@ -1,0 +1,5 @@
+FD leak: count increases over time
+Normal: stable FD count
+Leak: FD count grows continuously
+/proc/PID/fd/ = directory of file descriptors
+Each open file = one FD

@@ -1,0 +1,3 @@
+Level 24 - Arrays
+
+Create solution.sh that defines an indexed array with three items and prints its length.

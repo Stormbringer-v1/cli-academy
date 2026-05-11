@@ -1,0 +1,8 @@
+BOSS 01 - Shell Basics
+
+Create solution.sh that:
+1) reads an integer N
+2) prints positive/negative/zero
+3) prints a countdown from N to 1
+
+Validator input: 3

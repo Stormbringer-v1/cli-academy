@@ -1,0 +1,1 @@
+Use `docker stop cliacademy_l6_old` then `docker rm cliacademy_l6_old`.

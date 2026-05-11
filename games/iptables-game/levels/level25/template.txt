@@ -1,0 +1,8 @@
+== Level 25: nftables Counters ==
+
+Counters track how many packets and bytes match a rule.
+
+Task:
+  1. Add a rule with a counter for SSH traffic:
+     nft add rule ip filter input tcp dport 22 counter accept
+  2. Write the command to answer.txt

@@ -1,0 +1,1 @@
+Use `tmuxa send-keys -t send:main.1 'echo synced' C-m`.

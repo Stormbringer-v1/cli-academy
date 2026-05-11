@@ -1,0 +1,10 @@
+Level 6: See the differences
+
+In the last commit, a bug was accidentally introduced in 'code.py'.
+The program was supposed to print "Hello, SnapSecurity Academy!" but it currently prints something else.
+
+Your task:
+  1. Use 'git diff HEAD~1' to see what changed between the last two commits.
+  2. Fix 'code.py' so it once again prints the correct message.
+
+Exit the shell when you are done.

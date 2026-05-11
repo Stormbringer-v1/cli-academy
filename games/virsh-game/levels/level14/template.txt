@@ -1,0 +1,7 @@
+== Level 14: virsh net-list ==
+
+Virtual networks provide network connectivity to VMs.
+
+Task:
+  1. Run: virsh net-list --all
+  2. Write the command to answer.txt

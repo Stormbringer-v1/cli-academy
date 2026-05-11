@@ -1,0 +1,8 @@
+Level 19 - Send keys
+
+This shell exports a helper function named `tmuxa`.
+Always use `tmuxa ...` so you stay inside the game's isolated tmux server.
+
+Session `send` has two panes. Send `echo synced` to pane 1 so its content includes the word synced.
+
+Type `exit` when you are done.

@@ -1,0 +1,10 @@
+== Level 8: htop Basics ==
+
+htop is an interactive process viewer. Navigate with arrows, kill with F9.
+
+Task:
+  1. Launch: htop
+  2. Find 'target_process' (use F4 to filter)
+  3. Press F9 (SIGKILL) to kill it
+  4. Press F10 to quit
+  5. Write "htop_kill" to answer.txt

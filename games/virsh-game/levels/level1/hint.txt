@@ -1,0 +1,3 @@
+Run: virsh define domain.xml
+Then verify with: virsh list --all
+The domain should appear (but not be running).

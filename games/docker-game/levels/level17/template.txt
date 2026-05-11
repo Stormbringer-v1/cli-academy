@@ -1,0 +1,9 @@
+Level 17 - docker cp
+
+        You are inside an isolated working directory for this level.
+        Use Docker resources that start with `cliacademy_`.
+
+        A running container named `cliacademy_l17_copy` and a host file `secret.txt` already exist.
+Use `docker cp` to copy `secret.txt` into `/tmp/secret.txt` inside the container.
+
+        Type `exit` when you are done.

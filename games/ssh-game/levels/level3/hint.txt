@@ -1,0 +1,2 @@
+ssh-copy-id -p 2222 player@127.0.0.1
+ssh -p 2222 player@127.0.0.1 "echo connected" 

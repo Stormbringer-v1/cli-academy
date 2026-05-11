@@ -1,0 +1,4 @@
+Level 16 - awk Basics
+
+users.txt contains colon-separated values (name:id:shell).
+Create solution.sh that writes the first column to names.txt.

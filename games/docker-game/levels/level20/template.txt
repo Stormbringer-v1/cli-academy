@@ -1,0 +1,8 @@
+Level 20 - docker network ls
+
+You are inside an isolated working directory for this level.
+Use Docker resources that start with `cliacademy_`.
+
+A custom network named `cliacademy_l20_net` exists. Use `docker network ls` to identify it and write the name to `answer.txt`.
+
+Type `exit` when you are done.

@@ -1,0 +1,3 @@
+iptables-save prints current rules to stdout.
+iptables-restore reads rules from a file.
+Commonly used with systemd or in init scripts.

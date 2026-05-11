@@ -1,0 +1,1 @@
+Use `docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' cliacademy_l8_app`.

@@ -1,0 +1,4 @@
+top -b -n 1 gives a snapshot.
+Load average: top line shows "load average: 0.52, 0.48, 0.45"
+Tasks: "Tasks: 142 total"
+CPU: "%Cpu(s): 2.3 us, 0.9 sy, 0.0 ni, 96.5 id" — id = idle

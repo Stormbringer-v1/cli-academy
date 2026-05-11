@@ -1,0 +1,11 @@
+== Level 3: Passwordless SSH Setup ==
+
+Copy your public key to the server for password-free login.
+
+Task:
+  1. First generate a key if you haven't: ssh-keygen -t ed25519
+  2. Copy your public key: ssh-copy-id -p 2222 player@127.0.0.1
+  3. Use password: cliacademy
+  4. Verify you can connect without password:
+     ssh -p 2222 player@127.0.0.1 "echo connected"
+  5. Write 'verified' to answer.txt if passwordless login works

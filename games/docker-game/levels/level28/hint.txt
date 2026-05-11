@@ -1,0 +1,1 @@
+Use two stages like `FROM alpine AS build` and `FROM alpine` in the final stage.

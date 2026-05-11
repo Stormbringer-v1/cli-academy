@@ -1,0 +1,10 @@
+== Level 6: Default Policy (-P) ==
+
+The -P flag sets the default policy for a chain.
+
+Task:
+  1. Set the default INPUT chain policy to DROP:
+     iptables -P INPUT DROP
+  2. Write the command to answer.txt
+
+Warning: Setting INPUT to DROP will block all incoming traffic unless you add ACCEPT rules!

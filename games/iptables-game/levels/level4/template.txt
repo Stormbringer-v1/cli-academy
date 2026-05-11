@@ -1,0 +1,8 @@
+== Level 4: Delete a Rule (-D) ==
+
+The -D flag deletes a rule from a chain.
+
+Task:
+  1. Delete the ICMP DROP rule:
+     iptables -D INPUT -p icmp -j DROP
+  2. Write the command to answer.txt

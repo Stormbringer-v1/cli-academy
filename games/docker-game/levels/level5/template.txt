@@ -1,0 +1,9 @@
+Level 5 - docker exec
+
+        You are inside an isolated working directory for this level.
+        Use Docker resources that start with `cliacademy_`.
+
+        A container named `cliacademy_l5_exec` is already running.
+Use `docker exec` to create `/tmp/marker.txt` inside it.
+
+        Type `exit` when you are done.

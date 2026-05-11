@@ -1,0 +1,12 @@
+== Level 15: sshd_config Basics ==
+
+Configure the SSH daemon for better security.
+
+Task:
+  1. View current sshd_config: ssh -p 2236 player@127.0.0.1 "cat /etc/ssh/sshd_config"
+  2. Find these settings:
+     - PermitRootLogin (should be no)
+     - PasswordAuthentication
+     - Port
+  3. Write the current PasswordAuthentication value to answer.txt
+  4. Type 'exit' to disconnect

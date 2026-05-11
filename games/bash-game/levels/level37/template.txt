@@ -1,0 +1,10 @@
+Level 37 - FINAL BOSS
+
+Create solution.sh that:
+- uses set -euo pipefail
+- parses -e ENV and -c CONFIG with getopts
+- validates config file exists
+- sets an EXIT trap for cleanup
+- prints: deploy <env> ok
+
+Validator args: -e prod -c app.conf

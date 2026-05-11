@@ -1,0 +1,1 @@
+count=$(ls three-files | wc -l); echo "$count"

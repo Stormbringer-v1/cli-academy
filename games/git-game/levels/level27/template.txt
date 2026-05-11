@@ -1,0 +1,10 @@
+Level 27: Git Tag
+
+Tag the current commit as a release version.
+
+Your task:
+  Create an annotated tag: git tag -a v1.0 -m "First release version"
+
+List tags with: git tag --list
+
+Type 'exit' when done.

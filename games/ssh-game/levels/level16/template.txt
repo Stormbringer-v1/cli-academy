@@ -1,0 +1,10 @@
+== Level 16: Restrict SSH Access ==
+
+Control who can connect via SSH.
+
+Task:
+  1. On the server, check current users: ssh -p 2237 player@127.0.0.1 "cat /etc/passwd | grep player"
+  2. Create a restricted user: ssh -p 2237 player@127.0.0.1 "sudo useradd -m restricted"
+  3. Set password: ssh -p 2237 player@127.0.0.1 "echo 'restricted:pass123' | sudo chpasswd"
+  4. Try to login as restricted: ssh -p 2237 restricted@127.0.0.1 (should work)
+  5. Write 'restricted' to answer.txt

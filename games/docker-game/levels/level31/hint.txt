@@ -1,0 +1,1 @@
+The answer should be the nginx container name after you inspect the stack.

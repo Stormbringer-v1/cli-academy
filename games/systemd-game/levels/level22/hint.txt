@@ -1,0 +1,3 @@
+After=NETWORK = start after network is up
+Requires=MYSQL = MYSQL must be active (fail if MYSQL fails)
+Wants=MYSQL = try to start MYSQL, don worry if it fails

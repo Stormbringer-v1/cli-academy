@@ -1,0 +1,3 @@
+kill -9 PID sends SIGKILL (9).
+kill -15 PID sends SIGTERM (15).
+SIGKILL cannot be caught, blocked, or ignored — it always works.

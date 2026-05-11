@@ -1,0 +1,1 @@
+Use git merge feature to start the merge. If conflicts occur, edit the file, remove markers, stage with git add, then commit.

@@ -1,0 +1,9 @@
+Level 23: Git Revert
+
+A commit introduced a bad change. Undo it without rewriting history.
+
+Your task:
+  Find the bad commit: git log --oneline
+  Revert it: git revert HEAD
+
+Type 'exit' when done.

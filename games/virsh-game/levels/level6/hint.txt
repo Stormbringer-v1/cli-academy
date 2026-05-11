@@ -1,0 +1,3 @@
+Run: virsh console vsh6_vm
+Press Ctrl+] to disconnect from the console.
+The console is a text-based connection to the VM.

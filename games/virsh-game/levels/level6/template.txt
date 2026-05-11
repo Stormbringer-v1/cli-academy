@@ -1,0 +1,8 @@
+== Level 6: virsh console ==
+
+'virsh console' connects to a domain's serial console.
+
+Task:
+  1. Connect: virsh console vsh6_vm
+  2. Type Ctrl+] to exit the console
+  3. Write "virsh console vsh6_vm" to answer.txt

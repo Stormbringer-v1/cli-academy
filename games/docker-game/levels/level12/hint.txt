@@ -1,0 +1,1 @@
+Write the Dockerfile exactly, then run `docker build -t cliacademy_l12_basic:latest .`.

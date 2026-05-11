@@ -1,0 +1,9 @@
+== Level 5: SIGKILL vs SIGTERM ==
+
+SIGTERM (15) asks nicely. SIGKILL (9) cannot be ignored.
+
+Task:
+  1. Find the PID of 'stubborn_process' (it ignores SIGTERM!)
+  2. Kill it with SIGKILL:
+     kill -9 <PID>
+  3. Write "SIGKILL:<PID>" to answer.txt

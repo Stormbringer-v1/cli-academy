@@ -1,0 +1,4 @@
+Run 'git log' to see all commits.
+Look for the one with the message "FIND_ME_NOW".
+The SHA hash is the long alphanumeric string after the word 'commit'.
+Copy it and do: echo "SHA_HASH" > hash.txt

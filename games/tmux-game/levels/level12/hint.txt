@@ -1,0 +1,1 @@
+Use `tmuxa select-pane -t pane-nav:main.2` or attach and use Ctrl-b arrow keys.

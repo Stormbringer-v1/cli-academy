@@ -1,0 +1,10 @@
+Level 7: Stop tracking a file
+
+A file called "debug.log" was accidentally committed to the repository.
+In Git, even if you add a file to .gitignore later, if it was already committed, Git will continue to track it!
+
+Your task:
+  1. Tell Git to stop tracking "debug.log" WITHOUT deleting it from your computer: git rm --cached debug.log
+  2. Create (or edit) a file called ".gitignore" and add "debug.log" on its own line.
+
+Exit the shell when you are done.

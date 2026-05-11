@@ -1,0 +1,8 @@
+== Level 10: LOG Target ==
+
+The LOG target writes packet info to the kernel log.
+
+Task:
+  1. Log all dropped packets before your DROP rule:
+     iptables -A INPUT -j LOG --log-prefix "DROPPED: "
+  2. Write the command to answer.txt

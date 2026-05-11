@@ -1,0 +1,16 @@
+== Final Boss: Debug a Broken Firewall ==
+
+The firewall has several problems. Your job is to diagnose and fix them.
+
+The sandbox has these issues:
+- SSH (port 22) is blocked by a DROP rule that comes before the ACCEPT rule
+- HTTP (port 80) has a typo in the port number (dport 808 instead of 80)
+- The ESTABLISHED,RELATED rule uses wrong syntax
+- Default INPUT policy is wrong (should be DROP, currently ACCEPT)
+
+Tasks:
+  1. Delete the SSH DROP rule (wrong position)
+  2. Fix the HTTP rule (808 → 80)
+  3. Fix the conntrack rule syntax
+  4. Set default INPUT policy to DROP
+  5. Write all your fix commands to answer.txt

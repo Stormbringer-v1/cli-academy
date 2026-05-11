@@ -1,0 +1,1 @@
+Use `tmuxa resize-pane -Z -t zoom:main.0` or attach and press Ctrl-b z.

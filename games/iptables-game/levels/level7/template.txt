@@ -1,0 +1,8 @@
+== Level 7: Connection Tracking ==
+
+Allow packets that are part of already-established connections.
+
+Task:
+  1. Allow ESTABLISHED and RELATED incoming packets:
+     iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+  2. Write the command to answer.txt

@@ -1,0 +1,3 @@
+The command is: virsh list --all
+- --all shows domains in all states (running, shut off, paused)
+- Without --all, only running domains are shown

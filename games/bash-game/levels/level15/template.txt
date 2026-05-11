@@ -1,0 +1,4 @@
+Level 15 - sed Basics
+
+input.txt exists with 'foo' entries.
+Create solution.sh that writes a transformed file output.txt replacing foo -> bar.

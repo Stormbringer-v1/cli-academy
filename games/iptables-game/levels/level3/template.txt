@@ -1,0 +1,8 @@
+== Level 3: Allow SSH (ACCEPT) ==
+
+Allow incoming SSH connections on port 22.
+
+Task:
+  1. Allow incoming TCP packets on port 22:
+     iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+  2. Write the command to answer.txt

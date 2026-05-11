@@ -1,0 +1,9 @@
+Level 16 - Bind mounts
+
+        You are inside an isolated working directory for this level.
+        Use Docker resources that start with `cliacademy_`.
+
+        A host directory `site/` contains `index.html`. Run nginx as `cliacademy_l16_bind` with a bind mount from `site/`
+to `/usr/share/nginx/html` and expose it on `8086:80`.
+
+        Type `exit` when you are done.

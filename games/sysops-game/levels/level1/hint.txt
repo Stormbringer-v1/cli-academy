@@ -1,0 +1,3 @@
+ps aux | grep rogue | grep -v grep
+Or: ps aux | grep [r]ogue
+The [r]ogue pattern matches 'rogue' but not 'grep rogue'.

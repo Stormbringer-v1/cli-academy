@@ -1,0 +1,1 @@
+Use read a b and echo $((a+b)).

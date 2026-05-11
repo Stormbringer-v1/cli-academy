@@ -1,0 +1,4 @@
+Level 27 - Traps
+
+Create solution.sh that creates /tmp/bashgame_trap_file, sets a trap on EXIT to remove it,
+prints cleaned, and exits.

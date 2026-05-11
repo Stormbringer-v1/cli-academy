@@ -1,0 +1,11 @@
+== Level 6: Known Hosts ==
+
+SSH stores server fingerprints in known_hosts for security.
+
+Task:
+  1. Check your known_hosts: cat ~/.ssh/known_hosts
+  2. Connect to the server and see the fingerprint prompt:
+     ssh -p 2224 player@127.0.0.1 (type 'yes')
+  3. Check known_hosts again: cat ~/.ssh/known_hosts | head -1
+  4. The server fingerprint is stored - write the first fingerprint hash to answer.txt
+  5. Type 'exit' to disconnect

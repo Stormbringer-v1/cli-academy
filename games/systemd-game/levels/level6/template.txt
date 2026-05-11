@@ -1,0 +1,8 @@
+== Level 6: systemctl list-unit-files ==
+
+list-unit-files shows all installed unit files (enabled or not).
+
+Task:
+  1. List all user unit files: systemctl --user list-unit-files
+  2. Find how many are "enabled"
+  3. Write the number to answer.txt

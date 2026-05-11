@@ -1,0 +1,4 @@
+ss -tlnp = TCP listening ports with process info
+-t = TCP, -l = listening, -n = numeric ports, -p = process
+ss -ulnp = UDP listening
+ss -tnp = established TCP connections

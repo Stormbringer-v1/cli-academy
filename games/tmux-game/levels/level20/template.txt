@@ -1,0 +1,9 @@
+Level 20 - Copy mode
+
+        This shell exports a helper function named `tmuxa`.
+        Always use `tmuxa ...` so you stay inside the game's isolated tmux server.
+
+        Session `copy` shows the word COPYME in its pane.
+Use copy mode to copy `COPYME` into tmux's paste buffer.
+
+        Type `exit` when you are done.

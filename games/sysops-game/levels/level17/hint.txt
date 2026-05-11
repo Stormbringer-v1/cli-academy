@@ -1,0 +1,4 @@
+uptime shows: load average: 1.23, 0.89, 0.75
+nproc shows number of CPU cores
+Per-core: 1.23 / 4 = 0.31 (healthy if < 1.0)
+Rule: per-core load > 1.0 = saturation

@@ -1,0 +1,11 @@
+== Level 27: iptables to nftables Translation ==
+
+Convert an iptables rule to nftables syntax.
+
+This iptables rule:
+  iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+
+Task:
+  1. Write the equivalent nftables rule:
+     nft add rule ip filter input tcp dport 80 accept
+  2. Write the nftables command to answer.txt

@@ -1,0 +1,8 @@
+== Level 22: Adding nftables Rules ==
+
+Add a rule to accept SSH connections.
+
+Task:
+  1. Add a rule to accept TCP port 22:
+     nft add rule ip filter input tcp dport 22 accept
+  2. Write the command to answer.txt

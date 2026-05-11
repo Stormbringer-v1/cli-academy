@@ -1,0 +1,8 @@
+This is a summary of all the basic commands you've used:
+- git init
+- git config user.name "..."
+- git add <file>
+- git commit -m "..."
+- git commit --amend -m "..."
+- echo "..." > .gitignore
+Check 'git status' and 'git log' along the way!

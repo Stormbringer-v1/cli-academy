@@ -1,0 +1,11 @@
+Level 23 - tmux.conf basics
+
+        This shell exports a helper function named `tmuxa`.
+        Always use `tmuxa ...` so you stay inside the game's isolated tmux server.
+
+        Create `.tmux_level23.conf` containing:
+- `set -g mouse on`
+- `set -g prefix C-a`
+Then load it with `tmuxa source-file .tmux_level23.conf`.
+
+        Type `exit` when you are done.

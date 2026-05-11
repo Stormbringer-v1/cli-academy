@@ -1,0 +1,9 @@
+== Level 19: virsh snapshot-list ==
+
+List all snapshots of a domain.
+
+The domain vsh19_vm already has a snapshot called 'init_snap'.
+
+Task:
+  1. Run: virsh snapshot-list vsh19_vm
+  2. Write the snapshot name from the output to answer.txt

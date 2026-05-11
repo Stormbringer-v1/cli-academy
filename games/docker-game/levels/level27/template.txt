@@ -1,0 +1,11 @@
+Level 27 - Scoped cleanup of game resources
+
+        You are inside an isolated working directory for this level.
+        Use Docker resources that start with `cliacademy_`.
+
+        This level teaches safe cleanup for game-owned Docker resources.
+Remove the stopped container `cliacademy_l27_old`, image `cliacademy_l27_tmp:latest`,
+volume `cliacademy_l27_data`, and network `cliacademy_l27_net`.
+Do NOT run an unfiltered global prune command.
+
+        Type `exit` when you are done.

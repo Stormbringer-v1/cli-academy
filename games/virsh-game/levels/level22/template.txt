@@ -1,0 +1,7 @@
+== Level 22: virsh domstats ==
+
+'virsh domstats' shows real-time performance metrics for domains.
+
+Task:
+  1. Run: virsh domstats vsh22_vm
+  2. Write the command to answer.txt

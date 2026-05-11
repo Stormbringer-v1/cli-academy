@@ -1,0 +1,1 @@
+Use `tmuxa rename-window -t rename:shell editor`.

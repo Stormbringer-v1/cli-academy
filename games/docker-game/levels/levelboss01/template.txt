@@ -1,0 +1,13 @@
+BOSS 01 - Nginx workflow
+
+        You are inside an isolated working directory for this level.
+        Use Docker resources that start with `cliacademy_`.
+
+        Complete this full Docker workflow:
+- run nginx detached as `cliacademy_boss01_web` on `8091:80`
+- use `docker exec` to replace `/usr/share/nginx/html/index.html` with `academy boss`
+- verify it with curl
+- save the page content into `answer.txt`
+- stop and remove any container named `cliacademy_boss01_old` if it exists
+
+        Type `exit` when you are done.

@@ -1,0 +1,8 @@
+== Level 9: Source IP Filtering ==
+
+Filter traffic based on source IP address.
+
+Task:
+  1. Allow all traffic from the 10.99.0.0/24 subnet:
+     iptables -A INPUT -s 10.99.0.0/24 -j ACCEPT
+  2. Write the command to answer.txt

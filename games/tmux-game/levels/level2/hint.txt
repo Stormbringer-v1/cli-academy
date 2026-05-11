@@ -1,0 +1,1 @@
+Try: `tmuxa ls | wc -l > answer.txt`

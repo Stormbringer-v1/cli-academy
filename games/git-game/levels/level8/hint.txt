@@ -1,0 +1,3 @@
+To rename a file: git mv old_name.txt new_name.txt
+To remove a file: git rm to_delete.txt
+Then exit the shell to check your progress.

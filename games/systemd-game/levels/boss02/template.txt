@@ -1,0 +1,18 @@
+== Boss 02: Write a Production-Ready Service ==
+
+Write a complete .service unit file for a Python web app.
+
+Your app:
+- Runs /usr/local/bin/web-app serve --port 8080
+- Needs network (After=network.target)
+- Should restart on failure (Restart=on-failure)
+- Should wait 10 seconds between restarts (RestartSec=10)
+- Has an environment file /etc/web-app.env
+- Should start on boot (WantedBy=default.target)
+
+Tasks:
+  1. Write the .service file to ~/.config/systemd/user/
+  2. Create /tmp/web-app.env with APP_PORT=8080
+  3. Run daemon-reload
+  4. Enable the service
+  5. Write "complete" to answer.txt

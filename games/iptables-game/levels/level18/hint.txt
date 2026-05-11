@@ -1,0 +1,3 @@
+iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+-m conntrack is more precise than -m state.
+ctstate is the conntrack equivalent of state.

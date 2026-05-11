@@ -1,0 +1,8 @@
+== Level 16: Restart Policies ==
+
+Restart policies control when systemd restarts a failed service.
+
+Task:
+  1. Create a service with: Restart=on-failure, RestartSec=5
+  2. The service should restart automatically if it fails
+  3. Write "Restart=on-failure RestartSec=5" to answer.txt

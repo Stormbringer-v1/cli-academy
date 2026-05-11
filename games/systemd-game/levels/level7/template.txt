@@ -1,0 +1,9 @@
+== Level 7: systemctl mask / unmask ==
+
+mask = completely prevent a service from starting (even manually)
+unmask = remove the mask
+
+Task:
+  1. Mask test-mask.service: systemctl --user mask test-mask.service
+  2. Try to start it: systemctl --user start test-mask.service (should fail)
+  3. Write "masked" to answer.txt

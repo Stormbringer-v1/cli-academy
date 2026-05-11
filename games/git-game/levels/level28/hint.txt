@@ -1,0 +1,1 @@
+Use git blame file.txt to see each line and its author. Look for the line with "line2" and note the author.

@@ -1,0 +1,8 @@
+Level 10 - docker images
+
+You are inside an isolated working directory for this level.
+Use Docker resources that start with `cliacademy_`.
+
+An image named `hello-world` is available. Use `docker images` to confirm that, then write `hello-world` to `answer.txt`.
+
+Type `exit` when you are done.

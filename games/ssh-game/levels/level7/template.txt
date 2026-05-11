@@ -1,0 +1,12 @@
+== Level 7: SSH Agent and Key Forwarding ==
+
+The ssh-agent holds your keys in memory so you don't type passwords.
+
+Task:
+  1. Start the agent: eval "$(ssh-agent -s)"
+  2. Add your key: ssh-add ~/.ssh/id_ed25519
+  3. Check added keys: ssh-add -l
+  4. Connect with agent forwarding (-A):
+     ssh -A -p 2225 player@127.0.0.1
+  5. On remote server, check forwarded keys: ssh-add -l
+  6. Write 'agent' to answer.txt

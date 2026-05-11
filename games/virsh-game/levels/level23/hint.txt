@@ -1,0 +1,3 @@
+virsh blockcopy DOMAIN DISK --wait --verbose
+This copies the disk contents to a new file.
+WARNING: This requires significant disk space.

@@ -1,0 +1,11 @@
+== Level 17: Load Average Deep Dive ==
+
+Load average: system demand over 1, 5, 15 minutes.
+Includes running + blocked (I/O-waiting) processes.
+
+Task:
+  1. Get load average: uptime
+  2. Get CPU cores: nproc
+  3. Calculate: load / cores = per-core load
+  4. If per-core load > 1.0, CPUs are saturated
+  5. Write to answer.txt: LOAD_1MIN:CORES:PER_CORE_LOAD

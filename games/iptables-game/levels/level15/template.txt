@@ -1,0 +1,8 @@
+== Level 15: NAT — SNAT ==
+
+SNAT (Source NAT) changes the source IP of outgoing packets.
+
+Task:
+  1. Configure NAT on the nat table for outbound traffic:
+     iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+  2. Write the command to answer.txt

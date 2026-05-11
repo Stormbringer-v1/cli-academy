@@ -1,0 +1,9 @@
+Level 19 - .dockerignore
+
+        You are inside an isolated working directory for this level.
+        Use Docker resources that start with `cliacademy_`.
+
+        A build context contains `app.txt`, `secret.env`, and a Dockerfile that copies the whole directory to `/app`.
+Create `.dockerignore` so `secret.env` is excluded, then build `cliacademy_l19_ignore:latest`.
+
+        Type `exit` when you are done.

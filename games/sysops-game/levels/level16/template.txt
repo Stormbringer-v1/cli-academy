@@ -1,0 +1,9 @@
+== Level 16: /proc/meminfo and /proc/cpuinfo ==
+
+System hardware information is in /proc.
+
+Task:
+  1. Find total RAM: grep MemTotal /proc/meminfo
+  2. Find CPU model: grep "model name" /proc/cpuinfo
+  3. Find CPU cores: grep -c processor /proc/cpuinfo
+  4. Write to answer.txt: RAM:CPU_MODEL:CORES

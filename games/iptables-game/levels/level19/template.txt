@@ -1,0 +1,8 @@
+== Level 19: Docker and iptables ==
+
+Docker automatically creates iptables rules. The DOCKER-USER chain lets you add rules before Docker's rules.
+
+Task:
+  1. Allow incoming traffic to port 8080 using DOCKER-USER:
+     iptables -A DOCKER-USER -p tcp --dport 8080 -j ACCEPT
+  2. Write the command to answer.txt

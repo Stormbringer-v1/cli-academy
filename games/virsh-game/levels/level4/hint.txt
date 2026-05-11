@@ -1,0 +1,2 @@
+Run: virsh undefine vsh4_vm
+Verify: virsh list --all should no longer show vsh4_vm

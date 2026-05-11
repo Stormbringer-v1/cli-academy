@@ -1,0 +1,1 @@
+Use one `RUN apk add --no-cache \` block, then build the image.

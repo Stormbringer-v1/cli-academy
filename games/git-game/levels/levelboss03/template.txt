@@ -1,0 +1,11 @@
+Level BOSS 03: History Rewriting Master
+
+This is the ultimate Git challenge. Use bisect, cherry-pick, revert, and tags.
+
+Your task:
+  1. Use git bisect to find the commit that introduced "BAD" (Commit 7 has BAD)
+  2. Write the bad commit hash to bad_commit.txt
+  3. Cherry-pick a clean commit from another branch to fix it
+  4. Create a tag: git tag -a v1.0 -m "Bugfix release"
+
+Type 'exit' when done.

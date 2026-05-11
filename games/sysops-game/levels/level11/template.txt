@@ -1,0 +1,10 @@
+== Level 11: renice (change running process priority) ==
+
+renice changes the priority of an already-running process.
+
+Task:
+  1. The 'cpu_hog' is running at nice 0
+  2. Change it to nice 15:
+     renice 15 <PID>
+  3. Verify: ps -o nice= -p <PID>
+  4. Write the new nice value to answer.txt

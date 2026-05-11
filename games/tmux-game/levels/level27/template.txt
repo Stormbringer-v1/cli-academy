@@ -1,0 +1,13 @@
+FINAL BOSS - Development Environment
+
+        This shell exports a helper function named `tmuxa`.
+        Always use `tmuxa ...` so you stay inside the game's isolated tmux server.
+
+        Create a reusable tmux setup script named `bootstrap.sh` that builds session `academy` with:
+- windows: `editor`, `server`, `logs`, `shell`
+- window `editor` split into 2 panes
+- global `status-right` set to `LIVE`
+- global `mouse` set to `on`
+Run the script and leave the tmux state active.
+
+        Type `exit` when you are done.

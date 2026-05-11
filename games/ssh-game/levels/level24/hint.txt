@@ -1,0 +1,4 @@
+# Complete infrastructure setup
+ssh-keygen -t ed25519 -f ~/ca -N ""
+ssh-keygen -t ed25519 -f ~/user1_key -N ""
+ssh-keygen -s ~/ca -I "user1" -n player ~/user1_key.pub

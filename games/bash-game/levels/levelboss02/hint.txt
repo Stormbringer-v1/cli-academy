@@ -1,0 +1,1 @@
+Use grep + awk + sort + uniq -c + sort -rn.

@@ -1,0 +1,2 @@
+iptables -D INPUT -p icmp -j DROP
+-D deletes the matching rule from the INPUT chain.

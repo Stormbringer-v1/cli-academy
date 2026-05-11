@@ -1,0 +1,1 @@
+Use `tmuxa new-window -t windows -n notes`.

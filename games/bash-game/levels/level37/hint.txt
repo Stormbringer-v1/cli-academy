@@ -1,0 +1,1 @@
+Combine getopts, file check, trap cleanup EXIT, and robust shell options.

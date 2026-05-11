@@ -1,0 +1,8 @@
+== Level 14: Multiple Ports with Multiport ==
+
+Use -m multiport --dports to match multiple specific ports.
+
+Task:
+  1. Allow TCP ports 22, 80, and 443 in one rule:
+     iptables -A INPUT -p tcp -m multiport --dports 22,80,443 -j ACCEPT
+  2. Write the command to answer.txt

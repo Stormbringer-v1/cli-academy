@@ -1,0 +1,12 @@
+== Level 21: SSH Escape Sequences ==
+
+Control your SSH session with special commands.
+
+Task:
+  1. Connect to server: ssh -p 2245 player@127.0.0.1
+  2. Try these escape sequences (type ~ followed by):
+     - ~? (show help)
+     - ~C (open command line)
+     - ~. (disconnect)
+  3. Reconnect and try ~V (decrease verbosity) or ~v (increase)
+  4. Write 'escape' to answer.txt

@@ -1,0 +1,9 @@
+Level 18 - docker commit
+
+        You are inside an isolated working directory for this level.
+        Use Docker resources that start with `cliacademy_`.
+
+        A container named `cliacademy_l18_live` is running.
+Create `/tmp/note.txt` inside it, then commit it to image `cliacademy_l18_snapshot:latest`.
+
+        Type `exit` when you are done.

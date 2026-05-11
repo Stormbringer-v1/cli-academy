@@ -1,0 +1,9 @@
+== Level 3: systemctl enable / disable ==
+
+enable = start on boot (creates symlink in wantedBy)
+disable = remove from boot (removes symlink)
+
+Task:
+  1. Enable test-boot.service: systemctl --user enable test-boot.service
+  2. Verify: systemctl --user is-enabled test-boot.service
+  3. Write the result to answer.txt

@@ -1,0 +1,13 @@
+== Level 18: SSH Hardening ==
+
+Secure your SSH server against common attacks.
+
+Task:
+  1. Check current sshd config for insecure settings:
+     ssh -p 2242 player@127.0.0.1 "sudo grep -E 'PermitRootLogin|PasswordAuthentication|PermitEmptyPasswords' /etc/ssh/sshd_config"
+  2. Modify /etc/ssh/sshd_config:
+     - PasswordAuthentication no
+     - PermitEmptyPasswords no
+     - MaxAuthTries 3
+  3. Restart sshd: ssh -p 2242 player@127.0.0.1 "sudo service ssh restart"
+  4. Write 'hardened' to answer.txt

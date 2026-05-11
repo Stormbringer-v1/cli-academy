@@ -1,0 +1,3 @@
+systemctl --user start SERVICE
+systemctl --user stop SERVICE
+systemctl --user status SERVICE (to verify)

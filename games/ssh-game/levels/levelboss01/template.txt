@@ -1,0 +1,14 @@
+== Boss 01: Multi-Server SSH Challenge ==
+
+You've learned the basics. Time to put them together.
+
+Task:
+  1. Generate an ed25519 key if not already done
+  2. Deploy your public key to BOTH servers:
+     - ssh-copy-id -p 2228 player@127.0.0.1
+     - ssh-copy-id -p 2229 player@127.0.0.1
+  3. On server 1 (port 2228): echo "server1" > /tmp/status.txt
+  4. Copy the file FROM server1 TO server2:
+     ssh -p 2228 player@127.0.0.1 "cat /tmp/status.txt" | ssh -p 2229 player@127.0.0.1 "cat > /tmp/status.txt"
+  5. Verify on server 2: ssh -p 2229 player@127.0.0.1 "cat /tmp/status.txt"
+  6. Write 'boss_complete' to answer.txt

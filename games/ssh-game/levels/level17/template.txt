@@ -1,0 +1,10 @@
+== Level 17: SSH Banners and MOTD ==
+
+Customize the login message users see.
+
+Task:
+  1. Connect to the server: ssh -p 2238 player@127.0.0.1
+  2. Check existing MOTD: cat /etc/motd
+  3. Create a custom banner: ssh -p 2238 player@127.0.0.1 "sudo sh -c 'echo Welcome to SSH Game > /etc/motd'"
+  4. Reconnect to see it: ssh -p 2238 player@127.0.0.1 "cat /etc/motd"
+  5. Write the banner text to answer.txt

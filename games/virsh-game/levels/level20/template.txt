@@ -1,0 +1,8 @@
+== Level 20: virsh snapshot-revert ==
+
+Revert a domain to a previous snapshot state.
+
+Task:
+  1. Revert: virsh snapshot-revert vsh20_vm snap1
+  2. Verify: virsh snapshot-current vsh20_vm
+  3. Write the revert command to answer.txt

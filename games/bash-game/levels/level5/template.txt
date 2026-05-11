@@ -1,0 +1,5 @@
+Level 5 - Test Expressions
+
+A file named marker.txt exists.
+Create solution.sh that checks for marker.txt and prints:
+file exists

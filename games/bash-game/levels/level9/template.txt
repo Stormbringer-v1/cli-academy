@@ -1,0 +1,8 @@
+Level 9 - Case Statements
+
+Create solution.sh that reads one word and prints:
+running when input is start
+stopped when input is stop
+unknown otherwise
+
+Validator input: start

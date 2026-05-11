@@ -1,0 +1,8 @@
+== Level 21: Change Default Target ==
+
+get-default shows the current default target.
+set-default changes it.
+
+Task:
+  1. Check current default: systemctl --user get-default
+  2. Write the current default to answer.txt

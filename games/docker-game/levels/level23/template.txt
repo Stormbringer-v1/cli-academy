@@ -1,0 +1,8 @@
+Level 23 - Port mapping
+
+You are inside an isolated working directory for this level.
+Use Docker resources that start with `cliacademy_`.
+
+Run nginx as `cliacademy_l23_web` and publish it on host port `8087`.
+
+Type `exit` when you are done.

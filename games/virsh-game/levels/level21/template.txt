@@ -1,0 +1,8 @@
+== Level 21: virsh snapshot-delete ==
+
+Delete a snapshot (recover the disk space).
+
+Task:
+  1. Delete: virsh snapshot-delete vsh21_vm snap1
+  2. Verify: virsh snapshot-list vsh21_vm
+  3. Write the delete command to answer.txt

@@ -1,0 +1,2 @@
+virsh vol-create-as POOL NAME CAPACITY [--format qcow2]
+Verify: virsh vol-list vsh12_pool

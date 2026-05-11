@@ -1,0 +1,3 @@
+iptables -P INPUT DROP
+This changes the default behavior for the INPUT chain.
+All packets that don't match any rule will be dropped.

@@ -1,0 +1,3 @@
+Check: systemctl --user status broken-app
+Logs: journalctl --user -u broken-app -n 20
+Common fixes: correct ExecStart path, add executable bit, fix WorkingDirectory

@@ -1,0 +1,1 @@
+Use `docker volume create` and `docker run --rm -v cliacademy_l15_data:/data alpine:3.19 sh -c 'echo saved > /data/status.txt'`.

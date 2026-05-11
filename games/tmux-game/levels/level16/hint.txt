@@ -1,0 +1,1 @@
+Use `tmuxa break-pane` or `tmuxa join-pane` until each window has 2 panes.

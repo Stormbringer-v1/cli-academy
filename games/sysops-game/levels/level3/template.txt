@@ -1,0 +1,12 @@
+== Level 3: ps Output Columns ==
+
+Understand the ps aux columns: USER, PID, %CPU, %MEM, VSZ, RSS, STAT, TIME, COMMAND
+
+Task:
+  1. Run: ps aux
+  2. Find the 'worker_process' in the output
+  3. Write its PID and %CPU usage to answer.txt (format: PID:%CPU)
+
+Example:
+  $ ps aux | grep worker_process
+  $ echo "1234:0.5" > answer.txt

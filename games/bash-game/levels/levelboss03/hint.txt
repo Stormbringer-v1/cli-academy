@@ -1,0 +1,1 @@
+Define a helper function, use arr=(...), trap cleanup EXIT, launch jobs with & and wait.

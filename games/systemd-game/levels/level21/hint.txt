@@ -1,0 +1,3 @@
+systemctl --user get-default = show current default target
+systemctl --user set-default TARGET = make TARGET the default
+Only affects user systemd instance (not system boot)

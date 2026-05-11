@@ -1,0 +1,4 @@
+High usr + low idle = CPU bound
+High iowait + high util = I/O bound
+High cached + low free = memory pressure
+Combine all three tools for accurate diagnosis

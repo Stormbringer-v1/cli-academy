@@ -1,0 +1,8 @@
+== Level 20: nft list ruleset ==
+
+nftables is the modern successor to iptables. Start by seeing what's there.
+
+Task:
+  1. List the current nftables ruleset:
+     nft list ruleset
+  2. Write the command to answer.txt

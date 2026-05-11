@@ -1,0 +1,10 @@
+Level 25 - compose services / depends_on / environment
+
+        You are inside an isolated working directory for this level.
+        Use Docker resources that start with `cliacademy_`.
+
+        A `compose.yaml` skeleton is missing `depends_on` and an environment variable.
+Update it so service `web` depends on service `api`, and set `GREETING=hello-compose` for the api service.
+Then bring the stack up in detached mode.
+
+        Type `exit` when you are done.

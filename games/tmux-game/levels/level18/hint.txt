@@ -1,0 +1,1 @@
+Use `tmuxa swap-pane -s swap:main.0 -t swap:main.1`.

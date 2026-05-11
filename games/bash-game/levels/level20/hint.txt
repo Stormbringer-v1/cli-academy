@@ -1,0 +1,1 @@
+Define greet() { ... } then call greet.

@@ -1,0 +1,1 @@
+Attach and paste with Ctrl-b ], or use `tmuxa paste-buffer -t paste:main.0`.

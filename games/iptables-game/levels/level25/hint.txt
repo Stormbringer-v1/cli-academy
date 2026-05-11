@@ -1,0 +1,3 @@
+nft add rule ip filter input tcp dport 22 counter accept
+counter tracks packets and bytes for that rule.
+View counters with: nft list ruleset

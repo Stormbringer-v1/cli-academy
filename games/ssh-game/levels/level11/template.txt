@@ -1,0 +1,12 @@
+== Level 11: Remote Port Forwarding ==
+
+Forward a port from the remote server back to your local machine.
+
+Task:
+  1. On your local machine, start a simple server:
+     nc -l -p 9999
+  2. Connect with remote port forwarding:
+     ssh -R 9999:localhost:9999 -p 2231 player@127.0.0.1
+  3. On the remote server, connect to localhost:9999
+  4. Type something and see it appear in your local terminal
+  5. Write 'forwarded' to answer.txt

@@ -1,0 +1,3 @@
+F5 in htop toggles tree view (parent-child hierarchy).
+T shows processes threaded. H shows threads.
+To sort: F6 or use sort shortcuts.

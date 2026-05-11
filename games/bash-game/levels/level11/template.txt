@@ -1,0 +1,3 @@
+Level 11 - Stdout Redirection
+
+Create solution.sh that writes 'deployment complete' into report.txt using stdout redirection.

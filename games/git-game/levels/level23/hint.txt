@@ -1,0 +1,1 @@
+Use git revert HEAD to create a new commit that undoes the last commit. This preserves history while removing the bad change.

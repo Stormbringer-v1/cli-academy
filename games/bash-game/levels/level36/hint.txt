@@ -1,0 +1,1 @@
+Include set -x, PS4='...', and trap '...' DEBUG in the script.

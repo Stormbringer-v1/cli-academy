@@ -1,0 +1,11 @@
+== Level 9: Unit File Anatomy ==
+
+A .service unit file has three main sections:
+- [Unit]: Description, documentation, dependencies
+- [Service]: How to run the service (ExecStart, Type, etc.)
+- [Install]: How to enable the service (WantedBy, RequiredBy)
+
+Task:
+  1. Read the example unit file at /tmp/example.service
+  2. Identify the Description, Type, ExecStart, and WantedBy values
+  3. Write them to answer.txt in format: Desc:TYPE:EXEC:WANTED

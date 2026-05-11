@@ -1,0 +1,12 @@
+BOSS 02 - Monitoring Dashboard
+
+        This shell exports a helper function named `tmuxa`.
+        Always use `tmuxa ...` so you stay inside the game's isolated tmux server.
+
+        Build a dashboard in session `dashboard`:
+- rename the only window to `monitor`
+- split it into 4 panes
+- run commands so the panes display the labels `cpu`, `mem`, `disk`, and `logs`
+The labels can appear in any pane.
+
+        Type `exit` when you are done.

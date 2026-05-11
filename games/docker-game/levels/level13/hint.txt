@@ -1,0 +1,1 @@
+Use `docker build -t cliacademy_l13_echo:latest .`.

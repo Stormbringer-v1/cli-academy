@@ -1,0 +1,9 @@
+== Level 28: Debugging with nft monitor ==
+
+nft monitor shows packets as they match rules in real time.
+
+Task:
+  1. Run in one terminal (simulated): nft monitor
+  2. Write the command to answer.txt
+
+Note: In the sandbox, the monitor command will show packet flows.

@@ -1,0 +1,1 @@
+scp -P 2226 test.txt player@127.0.0.1:/home/player/

@@ -1,0 +1,4 @@
+Level 20 - Functions
+
+Create solution.sh with a function named greet that prints:
+hello devops

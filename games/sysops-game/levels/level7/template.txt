@@ -1,0 +1,11 @@
+== Level 7: top Basics ==
+
+top shows real-time process activity: load average, CPU%, memory, process list.
+
+Task:
+  1. Run: top -b -n 1 (batch mode, 1 iteration)
+  2. Find these values:
+     - Load average (1 min)
+     - Total number of tasks
+     - CPU idle %
+  3. Write them to answer.txt in format: LOAD:TASKS:CPU_IDLE

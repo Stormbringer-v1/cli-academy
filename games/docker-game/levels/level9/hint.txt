@@ -1,0 +1,1 @@
+Use `docker run --name cliacademy_l9_named alpine:3.19 sh -c 'echo ready'`.

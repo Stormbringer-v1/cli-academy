@@ -1,0 +1,3 @@
+virsh pool-define creates from XML (but doesn't start).
+virsh pool-start activates an inactive pool.
+Verify: virsh pool-list

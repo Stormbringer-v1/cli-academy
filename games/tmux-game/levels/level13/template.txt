@@ -1,0 +1,8 @@
+Level 13 - Resize panes
+
+This shell exports a helper function named `tmuxa`.
+Always use `tmuxa ...` so you stay inside the game's isolated tmux server.
+
+Session `resize` has two vertical panes. Make the left pane noticeably wider than the right pane.
+
+Type `exit` when you are done.

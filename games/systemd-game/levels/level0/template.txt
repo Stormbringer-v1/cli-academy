@@ -1,0 +1,12 @@
+== Level 0: systemctl status ==
+
+systemctl status shows detailed information about a service.
+
+Task:
+  1. Check the status of the user D-Bus service:
+     systemctl --user status dbus
+  2. Write the service's main PID to answer.txt
+
+Example:
+  $ systemctl --user status dbus
+  $ echo "Main PID: 1234" > answer.txt

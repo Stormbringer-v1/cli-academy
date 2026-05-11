@@ -1,0 +1,11 @@
+== Level 14: Write a Basic .service Unit ==
+
+Create a simple oneshot service that runs a script.
+
+Task:
+  1. Create a unit file my-app.service in ~/.config/systemd/user/
+  2. It should: run /tmp/my-app.sh, start on boot (WantedBy=default.target)
+  3. Create the script /tmp/my-app.sh that echoes "Hello"
+  4. Run: systemctl --user daemon-reload
+  5. Enable and start: systemctl --user enable --now my-app.service
+  6. Write "created" to answer.txt

@@ -1,0 +1,8 @@
+== Level 11: journalctl -f (follow logs) ==
+
+journalctl -f follows logs in real time (like tail -f).
+
+Task:
+  1. Start following dbus logs: journalctl --user -f -u dbus &
+  2. In another terminal or after a moment, check the output
+  3. Write "following" to answer.txt

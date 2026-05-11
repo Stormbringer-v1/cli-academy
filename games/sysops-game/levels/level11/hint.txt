@@ -1,0 +1,3 @@
+renice NEW_NICE PID
+renice -n NEW_NICE PID (same effect)
+Can also target by user: renice 10 -u username

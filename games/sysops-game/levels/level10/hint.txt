@@ -1,0 +1,4 @@
+nice -n 19 COMMAND
+-n 19 = very low priority (nice to other processes)
+Regular users can only increase nice (lower priority).
+Root can use negative nice (higher priority).

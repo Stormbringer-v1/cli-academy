@@ -1,0 +1,8 @@
+== Level 20: systemd Targets ==
+
+Targets are groups of units that the system can transition between.
+
+Task:
+  1. List available targets: systemctl --user list-units --type=target
+  2. Check if default.target exists
+  3. Write the default target name to answer.txt

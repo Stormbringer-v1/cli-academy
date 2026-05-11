@@ -1,0 +1,1 @@
+Use git rebase --onto main old-base feature. The --onto option redirects the chain of commits to a new base.

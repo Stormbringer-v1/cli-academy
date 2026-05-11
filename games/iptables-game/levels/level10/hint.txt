@@ -1,0 +1,3 @@
+iptables -A INPUT -j LOG --log-prefix "DROPPED: "
+LOG doesn't stop packets, it just logs them.
+Useful for debugging firewall rules.

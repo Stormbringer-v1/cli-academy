@@ -1,0 +1,8 @@
+Level 28 - Multi-stage builds
+
+You are inside an isolated working directory for this level.
+Use Docker resources that start with `cliacademy_`.
+
+Create a multi-stage `Dockerfile` with at least two `FROM` lines, then build image `cliacademy_l28_multi:latest`.
+
+Type `exit` when you are done.

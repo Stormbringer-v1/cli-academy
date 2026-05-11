@@ -1,0 +1,1 @@
+Attach with `tmuxa attach -t attachme`, detach with Ctrl-b d.

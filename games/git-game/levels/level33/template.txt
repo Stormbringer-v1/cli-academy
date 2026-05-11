@@ -1,0 +1,8 @@
+Level 33: Octopus Merge
+
+Merge three branches at once using an octopus merge.
+
+Your task:
+  git merge feature1 feature2 feature3 -m "Octopus merge"
+
+Type 'exit' when done.

@@ -1,0 +1,10 @@
+== Level 12: htop renice (F7/F8) ==
+
+htop lets you renice processes interactively.
+
+Task:
+  1. Launch: htop
+  2. Find 'priority_test' process
+  3. Press F7 (renice down) or F8 (renice up) to set nice to 10
+  4. Press F10 to quit
+  5. Write "reniced:10" to answer.txt

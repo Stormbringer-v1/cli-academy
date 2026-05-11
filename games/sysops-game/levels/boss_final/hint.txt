@@ -1,0 +1,6 @@
+1. ps aux | grep -E "system-updater|log-rotator" | grep -v grep
+2. lsof /tmp/critical.lock
+3. fuser -k 9999/tcp
+4. ps aux | grep Z, find PPid of zombie, kill parent
+5. ps aux --sort=-%mem | head, check FD count
+6. uptime to check load

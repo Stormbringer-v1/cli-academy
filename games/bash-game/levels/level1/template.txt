@@ -1,0 +1,4 @@
+Level 1 - Variables
+
+Create solution.sh that stores world in a variable and prints:
+Hello world

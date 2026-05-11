@@ -1,0 +1,3 @@
+systemctl --user enable SERVICE = enable at boot
+systemctl --user disable SERVICE = disable at boot
+systemctl --user is-enabled SERVICE = check enable status

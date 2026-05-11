@@ -1,0 +1,9 @@
+Level 20: Git Rebase
+
+You're on 'main' with a feature branch that diverged. Rebase it onto main.
+
+Your task:
+  Switch to feature: git checkout feature
+  Rebase onto main: git rebase main
+
+Type 'exit' when done.

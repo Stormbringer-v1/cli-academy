@@ -1,0 +1,9 @@
+== Level 23: systemd-analyze (Boot Analysis) ==
+
+systemd-analyze shows where boot time is spent.
+
+Task:
+  1. Run: systemd-analyze time (show total boot time)
+  2. Run: systemd-analyze blame (show slowest units)
+  3. Find the slowest unit
+  4. Write the unit name and its time to answer.txt

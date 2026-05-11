@@ -1,0 +1,4 @@
+systemd-analyze = total boot time
+systemd-analyze blame = slowest units by time
+systemd-analyze critical-chain = boot critical path
+systemd-analyze plot > boot.svg (visual timeline)

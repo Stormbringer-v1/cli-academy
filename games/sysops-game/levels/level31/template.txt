@@ -1,0 +1,11 @@
+== Level 31: Process Forensics (/proc + lsof + strace) ==
+
+Fully profile an unknown process using multiple tools.
+
+Task:
+  1. For 'mystery_proc', gather:
+     - What command: cat /proc/<PID>/cmdline
+     - What files: lsof -p <PID>
+     - What syscalls: strace -p <PID> -c 2>&1 | head -10
+     - What network: lsof -i -p <PID>
+  2. Write a summary to answer.txt

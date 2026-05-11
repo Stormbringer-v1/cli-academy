@@ -1,0 +1,8 @@
+Level 21 - docker network create
+
+You are inside an isolated working directory for this level.
+Use Docker resources that start with `cliacademy_`.
+
+Create a bridge network named `cliacademy_l21_bridge`.
+
+Type `exit` when you are done.

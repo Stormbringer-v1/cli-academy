@@ -1,0 +1,12 @@
+== Level 22: Port Knocking ==
+
+Hide services behind a secret knock sequence.
+
+Task:
+  1. Install knockd: apt-get install knockd
+  2. Create a simple knock sequence script:
+     for port in 1111 2222 3333; do
+       ncat -p 9999 127.0.0.1 $port || true
+     done
+  3. Explain the concept: ports must be "knocked" in sequence before SSH opens
+  4. Write the concept explanation to answer.txt

@@ -1,0 +1,11 @@
+Level 4: Check the status
+
+Git is tracking this repository, and one file has been created for you, but it's not being tracked yet.
+
+Your task:
+  1. Use 'git status' to find the name of the "untracked" file.
+  2. Create a new file called "answer.txt" and write that filename inside it.
+
+Example: If the untracked file was 'foo.txt', you'd run: echo "foo.txt" > answer.txt
+
+Exit the shell when you are done.

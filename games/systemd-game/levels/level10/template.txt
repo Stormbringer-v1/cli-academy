@@ -1,0 +1,8 @@
+== Level 10: journalctl -u (unit logs) ==
+
+journalctl -u shows logs for a specific service.
+
+Task:
+  1. Read logs for dbus: journalctl --user -u dbus
+  2. Find the last 5 log lines
+  3. Write the last timestamp you see to answer.txt

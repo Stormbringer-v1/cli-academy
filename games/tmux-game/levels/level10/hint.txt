@@ -1,0 +1,1 @@
+Use `tmuxa split-window -v -t panes:main`.

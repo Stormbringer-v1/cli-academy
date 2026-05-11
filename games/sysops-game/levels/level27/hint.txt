@@ -1,0 +1,4 @@
+strace -e trace=write = trace write() calls
+strace -e trace=network = trace socket-related syscalls
+strace -e trace=ipc = IPC (pipes, shared memory)
+strace -e trace=signal = signal delivery

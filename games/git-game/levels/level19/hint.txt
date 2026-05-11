@@ -1,0 +1,1 @@
+Use git remote add origin URL to add a remote. Use git fetch origin to download objects and refs from another repository.

@@ -1,0 +1,3 @@
+systemctl --user mask SERVICE = create symlink to /dev/null
+systemctl --user unmask SERVICE = remove the symlink
+A masked service cannot be started, even manually!

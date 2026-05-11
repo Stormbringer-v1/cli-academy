@@ -1,0 +1,1 @@
+Use `tmuxa new-session -d -s dev -n editor` plus `tmuxa new-window` calls inside layout.sh.

@@ -1,0 +1,10 @@
+Level 18: Delete Branch
+
+The 'feature' branch has been merged into 'main'.
+
+Your task:
+  Delete the merged branch: git branch -d feature
+
+Verify it's gone: git branch --list
+
+Type 'exit' when done.

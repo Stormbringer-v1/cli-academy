@@ -1,0 +1,2 @@
+ssh -M -S /tmp/ssh_multiplex -p 2235 player@127.0.0.1
+ssh -S /tmp/ssh_multiplex player@127.0.0.1 "echo multiplexed" 

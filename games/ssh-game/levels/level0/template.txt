@@ -1,0 +1,10 @@
+== Level 0: SSH Connection Basics ==
+
+Connect to the SSH server running in the game container.
+
+Task:
+  1. The SSH server is running on localhost port 2220
+  2. Username: player
+  3. Password: cliacademy
+  4. Connect with: ssh player@127.0.0.1 -p 2220
+  5. Type 'exit' when done to complete the level

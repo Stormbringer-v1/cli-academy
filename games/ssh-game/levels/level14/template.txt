@@ -1,0 +1,12 @@
+== Level 14: SSH Connection Multiplexing ==
+
+Reuse a single SSH connection for multiple sessions.
+
+Task:
+  1. Start a master connection:
+     ssh -M -S /tmp/ssh_multiplex -p 2235 player@127.0.0.1
+  2. In ANOTHER terminal, connect using the socket:
+     ssh -S /tmp/ssh_multiplex player@127.0.0.1 "echo multiplexed"
+  3. The second connection should be faster (no auth needed)
+  4. Close all sessions
+  5. Write 'multiplexed' to answer.txt

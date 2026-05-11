@@ -1,0 +1,3 @@
+nft monitor prints events as rules are matched.
+Useful for seeing which rules packets hit.
+nft monitor trace shows detailed packet processing.

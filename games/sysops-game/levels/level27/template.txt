@@ -1,0 +1,10 @@
+== Level 27: strace write and network tracing ==
+
+Trace what a process writes and where it sends data.
+
+Task:
+  1. Trace write syscalls:
+     strace -p <PID> -e trace=write 2>&1 | head -10
+  2. Trace network syscalls:
+     strace -p <PID> -e trace=network 2>&1 | head -10
+  3. Write what you found to answer.txt

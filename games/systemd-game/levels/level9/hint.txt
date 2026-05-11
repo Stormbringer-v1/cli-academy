@@ -1,0 +1,3 @@
+[Unit] section: Description, After, Requires
+[Service] section: Type (simple/forking/oneshot), ExecStart, ExecStop
+[Install] section: WantedBy, RequiredBy

@@ -1,0 +1,12 @@
+== Level 0: ps aux basics ==
+
+The 'ps aux' command shows all running processes.
+
+Task:
+  1. Run: ps aux
+  2. Find the process named 'rogue_sleep' in the output
+  3. Write its PID to answer.txt
+
+Example:
+  $ ps aux | grep rogue_sleep
+  $ echo "1234" > answer.txt

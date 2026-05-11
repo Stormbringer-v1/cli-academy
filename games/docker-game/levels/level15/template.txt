@@ -1,0 +1,9 @@
+Level 15 - docker volumes
+
+        You are inside an isolated working directory for this level.
+        Use Docker resources that start with `cliacademy_`.
+
+        Create volume `cliacademy_l15_data`, run a temporary alpine container that writes `saved` to `/data/status.txt`,
+and leave the volume behind.
+
+        Type `exit` when you are done.

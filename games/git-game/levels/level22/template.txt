@@ -1,0 +1,10 @@
+Level 22: Cherry-pick
+
+A commit on the 'feature' branch needs to be applied to 'main'.
+
+Your task:
+  Switch to main: git checkout main
+  Find the commit hash: git log feature --oneline
+  Cherry-pick it: git cherry-pick <hash>
+
+Type 'exit' when done.

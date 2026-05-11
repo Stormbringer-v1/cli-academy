@@ -1,0 +1,13 @@
+# NAT table
+nft add table ip nat
+nft add chain ip nat postrouting { type nat hook postrouting priority 100 \; }
+nft add chain ip nat prerouting { type nat hook prerouting priority 100 \; }
+nft add rule ip nat postrouting masquerade
+
+# DNAT example
+nft add rule ip nat prerouting tcp dport 80 dnat to 10.99.0.100:8080
+
+# Filter with counters
+nft add table ip filter
+nft add chain ip filter input { type filter hook input priority 0 \; }
+nft add rule ip filter input tcp dport 22 counter accept

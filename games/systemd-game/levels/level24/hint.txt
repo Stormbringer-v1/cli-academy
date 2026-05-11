@@ -1,0 +1,4 @@
+1. Circular deps: remove one Wants/Requires
+2. Missing exec: check ExecStart path exists
+3. Masked: systemctl --user unmask SERVICE
+4. Timer syntax: OnCalendar=*-*-* *:*:00 (correct format)

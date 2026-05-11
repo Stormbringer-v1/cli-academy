@@ -1,0 +1,9 @@
+== Level 12: Time-Based Log Filtering ==
+
+--since and --until filter logs by timestamp.
+
+Task:
+  1. Get logs from the last hour: journalctl --user --since "1 hour ago"
+  2. Get logs from today: journalctl --user --since today
+  3. Get logs from yesterday: journalctl --user --since yesterday --until today
+  4. Write the count of entries from the last hour to answer.txt

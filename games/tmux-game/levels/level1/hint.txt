@@ -1,0 +1,1 @@
+Use `tmuxa rename-session -t temp mysession`.

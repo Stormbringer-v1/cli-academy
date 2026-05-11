@@ -1,0 +1,11 @@
+== Boss 02: Storage and Network ==
+
+Combine storage pools, volumes, networks, and domains!
+
+Tasks:
+  1. Create a storage pool 'boss2_pool' in the pool directory
+  2. Create a 2GB volume 'boss2_disk.qcow2' in the pool
+  3. Create a NAT network 'boss2_net' (192.168.200.0/24)
+  4. Define a domain 'boss2_vm' using boss2_disk as its disk
+  5. Attach boss2_net to boss2_vm
+  6. Write a summary to answer.txt

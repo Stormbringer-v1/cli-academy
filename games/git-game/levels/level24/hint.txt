@@ -1,0 +1,1 @@
+--soft: unstages commits but keeps changes | --mixed (default): unstages and removes from index | --hard: discards everything

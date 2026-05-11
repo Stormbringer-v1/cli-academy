@@ -1,0 +1,1 @@
+Use `tmuxa select-window -t nav:logs` if you want a fast path.

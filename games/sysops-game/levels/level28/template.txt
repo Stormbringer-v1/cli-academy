@@ -1,0 +1,10 @@
+== Level 28: vmstat, iostat, mpstat ==
+
+System performance monitoring tools.
+
+Task:
+  1. Run: vmstat 1 5 (5 samples, 1 second apart)
+  2. Run: iostat -x 1 2 (extended stats, 2 samples)
+  3. Run: mpstat -P ALL 1 2 (per-CPU stats)
+  4. Identify if system is CPU-bound, I/O-bound, or memory-bound
+  5. Write your diagnosis to answer.txt

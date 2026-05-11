@@ -1,0 +1,1 @@
+ssh -p 2244 player@127.0.0.1 "echo 'command="/bin/echo forced"' >> ~/.ssh/authorized_keys" 

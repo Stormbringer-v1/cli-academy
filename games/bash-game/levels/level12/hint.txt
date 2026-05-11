@@ -1,0 +1,1 @@
+Example: ls missing-file 2> errors.log

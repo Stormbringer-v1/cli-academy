@@ -1,0 +1,9 @@
+Level 0 - docker run
+
+        You are inside an isolated working directory for this level.
+        Use Docker resources that start with `cliacademy_`.
+
+        Run the hello-world image with the exact container name `cliacademy_l0_hello`.
+Command shape: `docker run --name cliacademy_l0_hello hello-world`
+
+        Type `exit` when you are done.

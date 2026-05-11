@@ -1,0 +1,5 @@
+cat /proc/PID/status | grep -E "^(PPid|State|VmRSS|VmSize):"
+PPid = parent PID
+State = process state (R=running, S=sleeping, Z=zombie, T=stopped)
+VmRSS = resident set size (actual memory)
+VmSize = virtual memory size

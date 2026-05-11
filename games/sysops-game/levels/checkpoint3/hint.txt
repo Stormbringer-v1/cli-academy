@@ -1,0 +1,4 @@
+r > cores*4 = CPU saturated
+%iowait (wa) > 30% = I/O bottleneck
+%idle < 20% = system under load
+Combine metrics: look for the limiting factor

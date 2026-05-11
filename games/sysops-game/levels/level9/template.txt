@@ -1,0 +1,10 @@
+== Level 9: htop Tree View ==
+
+htop tree view (F5) shows parent-child relationships.
+
+Task:
+  1. Launch: htop
+  2. Press F5 to switch to tree view
+  3. Find 'parent_worker' and its children
+  4. Write the PIDs in format: PARENT_PID:CHILD1_PID,CHILD2_PID
+  5. Press F10 to quit

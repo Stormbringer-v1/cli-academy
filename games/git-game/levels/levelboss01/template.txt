@@ -1,0 +1,16 @@
+Level BOSS 01: The First Commits Master
+
+It's time to put everything you've learned into practice in one single run.
+
+Your task:
+  1. Initialize a new Git repository: git init
+  2. Configure your identity for this repository:
+     git config user.name "Player"
+     git config user.email "player@cli-academy.local"
+  3. Create a file called "README.md" with some content, stage it, and commit it with message "First commit".
+  4. Create a file called "code.py", stage it, and commit it with message "Add code".
+  5. Create a file called "config.json" and commit it with message "Add config".
+  6. Oops! Amend the last commit's message to: "Initial project setup"
+  7. Create a file called "temp.log" and add it to a ".gitignore" file. Make sure Git does NOT track "temp.log".
+
+Exit the shell when you are done.

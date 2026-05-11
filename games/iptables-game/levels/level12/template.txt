@@ -1,0 +1,9 @@
+== Level 12: Rate Limiting ==
+
+Protect against ping floods using rate limiting.
+
+Task:
+  1. Limit ICMP ping replies to 5 per minute:
+     iptables -A INPUT -p icmp --icmp-type echo-reply -m limit --limit 5/min -j ACCEPT
+     iptables -A INPUT -p icmp --icmp-type echo-reply -j DROP
+  2. Write both commands to answer.txt

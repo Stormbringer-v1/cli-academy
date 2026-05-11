@@ -1,0 +1,8 @@
+Level 17 - Synchronize panes
+
+This shell exports a helper function named `tmuxa`.
+Always use `tmuxa ...` so you stay inside the game's isolated tmux server.
+
+Session `sync` has two panes. Turn `synchronize-panes` on for the current window.
+
+Type `exit` when you are done.

@@ -1,0 +1,1 @@
+Use `tmuxa new-session` and `tmuxa new-window`. End state: only staging remains with 3 windows.

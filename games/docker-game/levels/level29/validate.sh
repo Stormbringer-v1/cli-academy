@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+        set -euo pipefail
+
+        DOCKER_GAME_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+        source "${DOCKER_GAME_ROOT}/validate_docker_state.sh"
+
+        if docker_image_exists cliacademy_l29_health:latest           && docker_container_exists cliacademy_l29_health           && [[ -n "$(docker_inspect_value cliacademy_l29_health '{{json .Config.Healthcheck}}')" ]]; then
+  exit 0
+fi
+echo "Expected image/container with HEALTHCHECK metadata."
+exit 1

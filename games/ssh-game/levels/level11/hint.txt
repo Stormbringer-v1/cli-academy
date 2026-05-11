@@ -1,0 +1,2 @@
+ssh -R 9999:localhost:9999 -p 2231 player@127.0.0.1
+# On remote: nc localhost 9999

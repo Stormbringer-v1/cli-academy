@@ -1,0 +1,1 @@
+Use git branch -d feature to delete a branch that has been merged. Use -D (uppercase) to force delete an unmerged branch.

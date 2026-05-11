@@ -1,0 +1,14 @@
+== Boss 02: Port Forwarding Challenge ==
+
+Master the art of SSH tunneling.
+
+Setup:
+  - bastion: port 2239 (jump host)
+  - webserver: port 2240 (internal, only accessible via bastion)
+  - database: port 2241 (internal, only accessible via webserver)
+
+Task:
+  1. Use ProxyJump to reach webserver through bastion
+  2. Set up local port forwarding: local 8080 -> webserver port 80
+  3. On webserver, forward to database port 5432
+  4. Write 'tunnel_complete' to answer.txt

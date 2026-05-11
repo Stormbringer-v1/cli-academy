@@ -1,0 +1,3 @@
+Level 31 - Error Handling
+
+Create solution.sh that starts with set -euo pipefail and prints: safe

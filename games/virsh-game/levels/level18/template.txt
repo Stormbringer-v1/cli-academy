@@ -1,0 +1,8 @@
+== Level 18: virsh snapshot-create-as ==
+
+Snapshots capture the state of a running domain at a point in time.
+
+Task:
+  1. Create a snapshot: virsh snapshot-create-as vsh18_vm snap1
+  2. Verify: virsh snapshot-list vsh18_vm
+  3. Write the snapshot-create-as command to answer.txt

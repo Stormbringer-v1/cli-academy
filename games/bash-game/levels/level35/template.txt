@@ -1,0 +1,4 @@
+Level 35 - find + exec
+
+logs/ contains multiple .log files.
+Create solution.sh that finds all .log files and writes ERROR lines to errors.txt using find -exec.

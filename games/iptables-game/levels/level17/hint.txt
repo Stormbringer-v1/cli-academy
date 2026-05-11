@@ -1,0 +1,3 @@
+iptables -N LOGGING creates a new chain called LOGGING.
+iptables -A INPUT -j LOGGING sends matching packets there.
+Custom chains are useful for organizing rules.

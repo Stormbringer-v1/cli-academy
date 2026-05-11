@@ -1,0 +1,9 @@
+Level 26 - compose volumes and networks
+
+        You are inside an isolated working directory for this level.
+        Use Docker resources that start with `cliacademy_`.
+
+        Edit `compose.yaml` so service `worker` uses a named volume `cliacademy_l26_data` mounted at `/data`
+and joins a custom network `cliacademy_l26_net`. Then bring the stack up.
+
+        Type `exit` when you are done.

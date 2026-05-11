@@ -1,0 +1,2 @@
+ssh player@127.0.0.1 -p 2220
+Password: cliacademy

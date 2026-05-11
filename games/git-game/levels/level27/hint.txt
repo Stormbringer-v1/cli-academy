@@ -1,0 +1,1 @@
+Use git tag -a v1.0 -m "message" to create an annotated tag. Use git tag --list to see all tags.

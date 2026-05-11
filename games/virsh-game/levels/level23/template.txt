@@ -1,0 +1,11 @@
+== Level 23: virsh blockcopy / blockcommit ==
+
+These are advanced storage migration operations.
+
+- blockcopy: copy a domain's disk to a new file
+- blockcommit: commit changes back to a backing file
+
+Task:
+  1. First, export current disk path: virsh dumpxml vsh23_vm | grep '<source'
+  2. Run: virsh blockcopy vsh23_vm vda --wait --verbose
+  3. Write the blockcopy command to answer.txt

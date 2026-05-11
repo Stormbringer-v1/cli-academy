@@ -1,0 +1,15 @@
+== CHECKPOINT 2: /proc Analysis ==
+
+Given a /proc dump, identify process details.
+
+A process has these /proc/PID/status fields:
+  PPid: 1234
+  State: S (sleeping)
+  VmRSS: 8192
+  Name: worker
+
+Write to answer.txt:
+1. Parent PID: 1234
+2. Process state: sleeping
+3. Memory usage (RSS in KB): 8192
+4. Process name: worker

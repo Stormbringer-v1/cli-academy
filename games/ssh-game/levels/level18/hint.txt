@@ -1,0 +1,2 @@
+ssh -p 2242 player@127.0.0.1 "sudo sed -i 's/PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config"
+ssh -p 2242 player@127.0.0.1 "sudo service ssh restart" 

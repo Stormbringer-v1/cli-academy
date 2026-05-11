@@ -1,0 +1,13 @@
+== Level 0: virsh list --all ==
+
+virsh is the command-line tool for managing KVM/libvirt virtual machines.
+
+Task:
+  1. Run: virsh list --all
+  2. Write the command to answer.txt
+
+Example:
+  $ virsh list --all
+  $ echo "virsh list --all" > answer.txt
+
+The --all flag shows ALL domains, including inactive ones.

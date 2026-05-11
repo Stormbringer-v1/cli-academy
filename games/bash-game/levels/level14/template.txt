@@ -1,0 +1,4 @@
+Level 14 - grep Basics
+
+service.log exists.
+Create solution.sh that writes only ERROR lines to errors.txt.

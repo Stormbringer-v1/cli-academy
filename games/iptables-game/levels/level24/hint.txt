@@ -1,0 +1,2 @@
+nft add map ip filter port_action { type inet_service → verdict; }
+Maps let you look up a value (port) and get a verdict (accept/drop).

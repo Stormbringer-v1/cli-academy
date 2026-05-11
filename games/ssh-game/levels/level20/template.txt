@@ -1,0 +1,11 @@
+== Level 20: Forced Commands in authorized_keys ==
+
+Limit what a SSH key can do.
+
+Task:
+  1. Create a forced command entry in authorized_keys:
+  2. On server, add to ~/.ssh/authorized_keys:
+     command="/bin/echo 'Only echo allowed'" ssh-ed25519 AAAAC3... your-key
+  3. The actual command run is determined by the command= prefix
+  4. Connect with that key - notice the forced output
+  5. Write 'forced' to answer.txt

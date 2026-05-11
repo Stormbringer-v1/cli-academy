@@ -1,0 +1,1 @@
+Use `docker run -it --name cliacademy_l3_shell alpine:3.19 sh`, then `touch /tmp/inside.txt`.

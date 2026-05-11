@@ -1,0 +1,3 @@
+lsof -p PID = files for specific process
+lsof +D DIR = all processes with files in directory
+lsof -c NAME = files for processes matching name

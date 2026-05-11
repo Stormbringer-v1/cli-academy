@@ -1,0 +1,4 @@
+sftp -P 2227 player@127.0.0.1
+pwd
+ls
+bye

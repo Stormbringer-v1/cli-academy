@@ -1,0 +1,16 @@
+<domain type='kvm'>
+  <name>vsh1_testvm</name>
+  <memory unit='MiB'>512</memory>
+  <vcpu>1</vcpu>
+  <os>
+    <type arch='x86_64'>hvm</type>
+  </os>
+  <devices>
+    <disk type='file'>
+      <driver name='qemu' type='qcow2'/>
+      <source file='/var/lib/libvirt/images/vsh1_testvm.qcow2'/>
+      <target dev='vda'/>
+    </disk>
+    <console type='pty'/>
+  </devices>
+</domain>

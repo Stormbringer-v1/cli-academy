@@ -1,0 +1,9 @@
+Level 14 - Multi-line RUN
+
+        You are inside an isolated working directory for this level.
+        Use Docker resources that start with `cliacademy_`.
+
+        Create a `Dockerfile` that installs `curl` and `bash` using a single multi-line `RUN` instruction,
+then build image `cliacademy_l14_tools:latest`.
+
+        Type `exit` when you are done.

@@ -1,0 +1,1 @@
+Script the session with `tmuxa new-session`, `tmuxa new-window`, one split in editor, and global options.

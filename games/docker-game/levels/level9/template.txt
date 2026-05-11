@@ -1,0 +1,9 @@
+Level 9 - docker run --name
+
+        You are inside an isolated working directory for this level.
+        Use Docker resources that start with `cliacademy_`.
+
+        Run an alpine container with the exact name `cliacademy_l9_named`.
+It can exit immediately after printing any message.
+
+        Type `exit` when you are done.

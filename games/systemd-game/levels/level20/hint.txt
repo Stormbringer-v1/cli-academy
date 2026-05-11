@@ -1,0 +1,4 @@
+multi-user.target = text mode (no GUI)
+graphical.target = GUI mode
+rescue.target = single user mode
+Default target is what the system boots into.

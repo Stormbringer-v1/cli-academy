@@ -1,0 +1,6 @@
+ss state established
+ss state time-wait
+ss state close-wait
+ss dport = :PORT (destination port)
+ss sport = :PORT (source port)
+Many connections in TIME_WAIT = high connection churn

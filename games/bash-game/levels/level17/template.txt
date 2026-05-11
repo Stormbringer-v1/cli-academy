@@ -1,0 +1,4 @@
+Level 17 - sort + uniq
+
+words.txt contains duplicate words.
+Create solution.sh that writes frequency counts sorted descending to freq.txt.

@@ -1,0 +1,1 @@
+Use `docker logs cliacademy_l7_logs` and copy the line into answer.txt.

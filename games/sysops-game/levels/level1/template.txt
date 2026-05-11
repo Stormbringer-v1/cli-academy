@@ -1,0 +1,9 @@
+== Level 1: ps aux | grep (and avoiding grep) ==
+
+Filtering with grep shows only matching lines. But 'grep grep' also shows the grep command itself!
+
+Task:
+  1. Run: ps aux | grep rogue
+  2. Notice the grep process appears in results (grep rogue)
+  3. Fix it using grep -v to exclude grep itself, or grep [r]ogue pattern
+  4. Write the PIDs you found to answer.txt

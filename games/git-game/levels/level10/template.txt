@@ -1,0 +1,10 @@
+Level 10: Create a Branch
+
+A repository has been initialized with an initial commit.
+
+Your task:
+  Create a branch named 'feature': git branch feature
+
+Verify with: git branch --list
+
+Type 'exit' when done.

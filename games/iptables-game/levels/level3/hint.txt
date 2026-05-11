@@ -1,0 +1,3 @@
+iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+-p tcp matches TCP protocol
+--dport 22 matches destination port 22

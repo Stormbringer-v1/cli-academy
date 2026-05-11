@@ -1,0 +1,5 @@
+Level 0 - Echo and Exit
+
+Create solution.sh that prints exactly: hello
+Then exit with code 0.
+Type exit when done.

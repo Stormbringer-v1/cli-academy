@@ -1,0 +1,16 @@
+== CHECKPOINT 1: Signal Quiz ==
+
+Test your knowledge of signals and process states.
+
+Write your answers to answer.txt:
+
+1. What signal does 'kill' send by default? (signal number and name)
+2. What signal cannot be caught or ignored? (number and name)
+3. What signal stops a process? What continues it?
+4. What process state does 'T' mean in ps output?
+
+Format:
+answer1:15:SIGTERM
+answer2:9:SIGKILL
+answer3:STOP:CONT
+answer4:stopped

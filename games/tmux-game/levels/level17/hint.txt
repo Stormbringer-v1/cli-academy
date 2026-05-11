@@ -1,0 +1,1 @@
+Use `tmuxa setw -t sync:main synchronize-panes on`.

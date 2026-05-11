@@ -1,0 +1,12 @@
+Level 17: Git Log Graph
+
+A repository with branching history has been set up for you.
+
+Your task:
+  View the commit graph: git log --graph --oneline --all
+
+Identify the branching structure and count how many commits are on the 'feature' branch.
+
+Write the count to a file: echo NUMBER > branch_commits.txt
+
+Type 'exit' when done.

@@ -1,0 +1,2 @@
+To initialize a new Git repository, just type: git init
+Then exit the shell to check your progress.

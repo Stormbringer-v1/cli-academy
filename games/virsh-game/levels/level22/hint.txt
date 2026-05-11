@@ -1,0 +1,2 @@
+virsh domstats shows CPU, memory, disk, and network stats.
+Add --total for summary stats across all domains.

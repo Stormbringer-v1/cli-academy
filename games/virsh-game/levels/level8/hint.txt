@@ -1,0 +1,3 @@
+Run: virsh edit vsh8_vm
+Change: <vcpu>1</vcpu> → <vcpu>2</vcpu>
+Verify: virsh dominfo vsh8_vm | grep "CPU(s)

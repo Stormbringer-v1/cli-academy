@@ -1,0 +1,4 @@
+Level 21 - Local Variables
+
+Create solution.sh with a function that uses local variables.
+After the function call, print 'unset' if the local variable is not visible globally.

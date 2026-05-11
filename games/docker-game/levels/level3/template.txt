@@ -1,0 +1,9 @@
+Level 3 - docker run -it
+
+        You are inside an isolated working directory for this level.
+        Use Docker resources that start with `cliacademy_`.
+
+        Start an interactive shell container named `cliacademy_l3_shell` from `alpine:3.19`.
+Inside the container create `/tmp/inside.txt`, then exit the shell.
+
+        Type `exit` when you are done.

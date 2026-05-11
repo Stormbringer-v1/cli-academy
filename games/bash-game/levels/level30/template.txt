@@ -1,0 +1,6 @@
+Level 30 - getopts
+
+Create solution.sh that parses -n NAME and -e ENV using getopts.
+Print: NAME:ENV
+
+Validator args: -n Alice -e prod

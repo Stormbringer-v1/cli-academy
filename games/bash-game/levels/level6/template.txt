@@ -1,0 +1,6 @@
+Level 6 - Read Input
+
+Create solution.sh that reads one name and prints:
+Hello <name>
+
+Validator input: Robert

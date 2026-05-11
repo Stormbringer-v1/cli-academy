@@ -1,0 +1,10 @@
+Level 29: Git Submodule
+
+Add a submodule to your repository.
+
+Your task:
+  Add the submodule: git submodule add /tmp/submod lib
+
+Verify with: git submodule --status
+
+Type 'exit' when done.

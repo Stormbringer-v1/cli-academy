@@ -1,0 +1,3 @@
+kill PID sends SIGTERM (15).
+kill -0 PID checks if process exists (exit 0 if alive, 1 if dead).
+Verify: kill -0 <PID> || echo "Process is dead".

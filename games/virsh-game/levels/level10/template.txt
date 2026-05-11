@@ -1,0 +1,7 @@
+== Level 10: virsh pool-list ==
+
+Storage pools are where virtual disks are stored.
+
+Task:
+  1. Run: virsh pool-list --all
+  2. Write the command to answer.txt

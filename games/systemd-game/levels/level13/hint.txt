@@ -1,0 +1,3 @@
+journalctl --user -p err = errors only
+journalctl --user -p warning = warnings and above
+Priority: emerg > alert > crit > err > warning > notice > info > debug

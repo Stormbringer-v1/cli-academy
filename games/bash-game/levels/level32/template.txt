@@ -1,0 +1,3 @@
+Level 32 - Here Strings
+
+Create solution.sh that uses a here string to count words in 'lorem ipsum' and prints the count.

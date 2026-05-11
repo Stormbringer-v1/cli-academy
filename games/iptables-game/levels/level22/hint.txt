@@ -1,0 +1,3 @@
+nft add rule ip filter input tcp dport 22 accept
+Syntax: nft add rule TABLE CHAIN MATCH EXPRESSION ACTION
+Shorter and more readable than iptables.

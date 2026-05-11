@@ -1,0 +1,12 @@
+Level 1: Set Your Identity
+
+Before you can make commits, Git needs to know who you are.
+A repository has already been initialized for you.
+
+Your task:
+  Set your user name:  git config user.name "Your Name"
+  Set your email:      git config user.email "you@example.com"
+
+Use any name and email you want — just make sure both are set.
+
+Exit the shell (type 'exit' or Ctrl+D) when you are done.

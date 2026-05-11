@@ -1,0 +1,8 @@
+Level 29 - Health checks
+
+You are inside an isolated working directory for this level.
+Use Docker resources that start with `cliacademy_`.
+
+Create a Dockerfile with a `HEALTHCHECK`, build `cliacademy_l29_health:latest`, and run container `cliacademy_l29_health`.
+
+Type `exit` when you are done.

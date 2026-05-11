@@ -1,0 +1,1 @@
+Include set -euo pipefail at the top of the script.

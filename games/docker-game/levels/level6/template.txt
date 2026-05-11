@@ -1,0 +1,8 @@
+Level 6 - docker stop / docker rm
+
+You are inside an isolated working directory for this level.
+Use Docker resources that start with `cliacademy_`.
+
+A container named `cliacademy_l6_old` is running. Stop it and remove it completely.
+
+Type `exit` when you are done.

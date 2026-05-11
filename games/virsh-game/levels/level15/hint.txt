@@ -1,0 +1,3 @@
+virsh net-define creates from XML.
+virsh net-start activates the network.
+Verify: virsh net-list

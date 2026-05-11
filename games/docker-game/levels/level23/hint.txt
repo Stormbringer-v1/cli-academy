@@ -1,0 +1,1 @@
+Use `docker run -d --name cliacademy_l23_web -p 8087:80 nginx:alpine`.

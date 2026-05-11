@@ -1,0 +1,5 @@
+btop shortcuts:
+arrows = navigate, Enter = expand panel
+c = CPU panel, m = memory, n = network, d = disk
+Esc or q = quit
+t = theme selector

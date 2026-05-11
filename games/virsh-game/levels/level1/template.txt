@@ -1,0 +1,9 @@
+== Level 1: virsh define ==
+
+The 'virsh define' command creates a domain from an XML file without starting it.
+
+The game provides a minimal domain XML for you to define.
+
+Task:
+  1. Run: virsh define domain.xml
+  2. Write "virsh define domain.xml" to answer.txt

@@ -1,0 +1,4 @@
+Level 10 - Pipes
+
+Use a pipeline in solution.sh to count lines containing ERROR (case-insensitive) in app.log.
+Print only the count.

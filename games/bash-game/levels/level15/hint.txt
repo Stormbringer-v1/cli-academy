@@ -1,0 +1,1 @@
+Use sed 's/foo/bar/g' input.txt > output.txt

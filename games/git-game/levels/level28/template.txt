@@ -1,0 +1,9 @@
+Level 28: Git Blame
+
+Find who last modified line 2 of file.txt.
+
+Your task:
+  Use git blame file.txt to see who modified each line
+  Write the author's name (from line 2) to author.txt
+
+Type 'exit' when done.

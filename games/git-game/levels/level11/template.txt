@@ -1,0 +1,10 @@
+Level 11: Switch Branches
+
+You're on 'main'. A branch called 'develop' exists.
+
+Your task:
+  Switch to the 'develop' branch: git checkout develop
+
+Verify with: git branch --show-current
+
+Type 'exit' when done.

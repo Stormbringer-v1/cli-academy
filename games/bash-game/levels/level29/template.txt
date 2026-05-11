@@ -1,0 +1,4 @@
+Level 29 - Signal Handling
+
+Create solution.sh that traps SIGTERM, prints caught, and exits 0 when SIGTERM is sent.
+You may send SIGTERM to your own process (kill -s TERM $$).

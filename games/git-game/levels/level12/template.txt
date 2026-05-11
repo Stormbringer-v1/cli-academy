@@ -1,0 +1,10 @@
+Level 12: Fast-forward Merge
+
+You're on 'main' with a commit ahead. A branch called 'feature' has one commit.
+
+Your task:
+  Merge 'feature' into 'main': git merge feature
+
+The merge should be a fast-forward since main has no new commits.
+
+Type 'exit' when done.

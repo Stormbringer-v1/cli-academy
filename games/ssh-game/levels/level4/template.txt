@@ -1,0 +1,17 @@
+== Level 4: SSH Config File ==
+
+Simplify your SSH commands with host aliases.
+
+Task:
+  1. Edit ~/.ssh/config with: nano ~/.ssh/config (or vim)
+  2. Add a host entry for the game server:
+     
+     Host game
+         HostName 127.0.0.1
+         Port 2223
+         User player
+         PasswordAuthentication no
+     
+  3. Save and exit
+  4. Connect with just: ssh game
+  5. Write 'game' to answer.txt

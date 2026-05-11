@@ -1,0 +1,4 @@
+Run each chain command:
+  iptables -L INPUT
+  iptables -L OUTPUT
+  iptables -L FORWARD

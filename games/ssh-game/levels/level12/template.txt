@@ -1,0 +1,12 @@
+== Level 12: Dynamic Port Forwarding (SOCKS) ==
+
+Create a SOCKS proxy that tunnels all traffic through SSH.
+
+Task:
+  1. Start a SOCKS proxy:
+     ssh -D 1080 -p 2232 player@127.0.0.1
+  2. Configure curl to use the proxy:
+     curl --socks5 localhost:1080 http://example.com
+  3. Or test with curl if socks is not available:
+     curl -x socks5://localhost:1080 http://example.com
+  4. Write 'proxy' to answer.txt

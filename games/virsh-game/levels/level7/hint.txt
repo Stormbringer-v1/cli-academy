@@ -1,0 +1,2 @@
+Run: virsh dumpxml vsh7_vm > vsh7_vm_backup.xml
+This creates a backup of the domain's configuration.

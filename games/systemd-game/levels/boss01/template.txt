@@ -1,0 +1,11 @@
+== Boss 01: Diagnose and Fix a Failing Service ==
+
+The broken-app.service is failing to start. Figure out why and fix it.
+
+Tasks:
+  1. Check status: systemctl --user status broken-app.service
+  2. Read the logs: journalctl --user -u broken-app.service
+  3. Find the problem (likely in ExecStart path)
+  4. Fix the unit file
+  5. Reload and start the service
+  6. Write "fixed" and the fix to answer.txt

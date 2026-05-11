@@ -1,0 +1,10 @@
+== Level 2: virsh start ==
+
+Use 'virsh start' to boot a defined domain.
+
+Task:
+  1. First check domains: virsh list --all
+  2. Start the domain: virsh start vsh2_vm
+  3. Write "virsh start vsh2_vm" to answer.txt
+
+Note: This level has a pre-defined domain ready to start.

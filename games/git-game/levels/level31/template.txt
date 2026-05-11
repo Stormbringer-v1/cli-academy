@@ -1,0 +1,15 @@
+Level 31: Git Hooks
+
+Create a pre-commit hook that prevents commits with "WIP" in the message.
+
+Your task:
+  Create .git/hooks/pre-commit:
+    #!/bin/bash
+    if git log -1 --format="%s" | grep -q "WIP"; then
+      echo "WIP commits are not allowed!"
+      exit 1
+    fi
+  Make it executable: chmod +x .git/hooks/pre-commit
+  Try to commit with "WIP" (should fail), then commit properly
+
+Type 'exit' when done.

@@ -1,0 +1,8 @@
+== Level 9: virsh autostart ==
+
+'virsh autostart' makes a domain start automatically when libvirtd starts.
+
+Task:
+  1. Enable autostart: virsh autostart vsh9_vm
+  2. Verify: virsh dominfo vsh9_vm | grep Autostart
+  3. Write "virsh autostart vsh9_vm" to answer.txt

@@ -1,0 +1,2 @@
+virsh net-list --all shows all virtual networks.
+Like virsh list, the --all flag includes inactive networks.

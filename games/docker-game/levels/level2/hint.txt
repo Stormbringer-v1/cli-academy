@@ -1,0 +1,1 @@
+Create answer.txt with the stopped container name from `docker ps -a`.

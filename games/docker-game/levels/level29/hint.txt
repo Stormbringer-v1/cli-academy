@@ -1,0 +1,1 @@
+Use a simple image plus `HEALTHCHECK CMD ...`, then run the container detached.

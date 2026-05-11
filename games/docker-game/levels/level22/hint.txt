@@ -1,0 +1,1 @@
+Try `docker run --rm --network cliacademy_l22_net alpine:3.19 sh -c 'wget -qO- http://cliacademy_l22_api' > answer.txt`.

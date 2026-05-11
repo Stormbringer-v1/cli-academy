@@ -1,0 +1,2 @@
+nft list ruleset shows all tables, chains, and rules.
+If the output is empty, no rules have been defined yet.

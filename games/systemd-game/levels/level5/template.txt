@@ -1,0 +1,8 @@
+== Level 5: systemctl list-units ==
+
+list-units shows all active units.
+
+Task:
+  1. List all active user services: systemctl --user list-units --type=service
+  2. Count how many are running
+  3. Write the count to answer.txt

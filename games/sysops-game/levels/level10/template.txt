@@ -1,0 +1,10 @@
+== Level 10: nice (run at low priority) ==
+
+nice runs a command with modified scheduling priority.
+Range: -20 (highest priority) to 19 (lowest priority). Root can use negative.
+
+Task:
+  1. Run a CPU hog at nice 19 (lowest priority):
+     nice -n 19 bash -c 'while true; do :; done' &
+  2. Verify its nice value: ps -o nice= -p <PID>
+  3. Write the nice value to answer.txt

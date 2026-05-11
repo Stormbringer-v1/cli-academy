@@ -1,0 +1,13 @@
+== Level 1: The Three Main Chains ==
+
+iptables has three built-in chains:
+- INPUT: packets destined for your machine
+- OUTPUT: packets originating from your machine
+- FORWARD: packets routed through your machine (router behavior)
+
+Task:
+  1. List rules in each chain separately:
+     iptables -L INPUT
+     iptables -L OUTPUT
+     iptables -L FORWARD
+  2. Write all three commands to answer.txt

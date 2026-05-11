@@ -1,0 +1,3 @@
+Restart= options: no, always, on-success, on-failure, on-abnormal, on-abort
+RestartSec= = seconds to wait before restarting
+For a service that crashes: Restart=on-failure

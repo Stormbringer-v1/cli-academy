@@ -1,0 +1,1 @@
+Use: case "$input" in start) ... ;; stop) ... ;; *) ... ;; esac

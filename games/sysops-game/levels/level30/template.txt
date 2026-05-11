@@ -1,0 +1,9 @@
+== Level 30: btop Deep Dive ==
+
+btop is a modern resource monitor with CPU/mem/net/disk panels.
+
+Task:
+  1. Launch: btop
+  2. Navigate with arrows, exit with Esc
+  3. Note the CPU temperature (if available), memory used, network rates
+  4. Write the total mem and CPU count to answer.txt

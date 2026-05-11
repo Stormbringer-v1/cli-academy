@@ -1,0 +1,10 @@
+Level 22 - Container-to-container networking
+
+        You are inside an isolated working directory for this level.
+        Use Docker resources that start with `cliacademy_`.
+
+        A custom network `cliacademy_l22_net` and a web container `cliacademy_l22_api` already exist on it.
+Run a second container named `cliacademy_l22_client` on the same network and use it to fetch the API homepage.
+Write the fetched text to `answer.txt`.
+
+        Type `exit` when you are done.

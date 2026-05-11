@@ -1,0 +1,10 @@
+== Level 25: fuser (find process by file/port) ==
+
+fuser identifies processes using files or ports.
+
+Task:
+  1. Find PID using port 7777:
+     fuser 7777/tcp
+  2. Kill it: fuser -k 7777/tcp
+  3. Verify it's gone: fuser 7777/tcp
+  4. Write "KILLED:7777" to answer.txt

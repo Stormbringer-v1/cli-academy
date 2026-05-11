@@ -1,0 +1,1 @@
+Use awk -F: '{print $1}' users.txt > names.txt

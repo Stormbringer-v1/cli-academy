@@ -1,0 +1,1 @@
+Use `docker run -d --name cliacademy_l30_limits --memory 128m --cpus 0.5 alpine:3.19 sh -c 'sleep 600'`.

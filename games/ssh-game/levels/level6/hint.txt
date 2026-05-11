@@ -1,0 +1,2 @@
+ssh -p 2224 player@127.0.0.1
+yes

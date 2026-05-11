@@ -1,0 +1,12 @@
+== CHECKPOINT 3: Performance Triage ==
+
+Given these vmstat outputs, determine the bottleneck:
+
+Test 1: r=20, id=10, wa=5
+Test 2: r=2, id=85, wa=0
+Test 3: r=5, id=50, wa=45
+
+Write your answer for each:
+Test1: CPU-BOUND (high run queue, low idle)
+Test2: HEALTHY (low run queue, high idle)
+Test3: IO-BOUND (high iowait, moderate run queue)

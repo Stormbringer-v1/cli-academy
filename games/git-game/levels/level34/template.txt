@@ -1,0 +1,12 @@
+Level 34: Git Rerere
+
+Enable rerere to record conflict resolutions for future reuse.
+
+Your task:
+  Enable rerere: git config rerere.enabled true
+  Attempt merge: git merge feature
+  Resolve conflict by keeping both lines
+  Stage and commit
+  Reset and redo merge - rerere should auto-apply the resolution
+
+Type 'exit' when done.

@@ -1,0 +1,8 @@
+== Level 11: REJECT vs DROP ==
+
+REJECT sends an ICMP error back to the sender; DROP silently discards.
+
+Task:
+  1. Reject (not drop) incoming TCP packets on port 23 (telnet):
+     iptables -A INPUT -p tcp --dport 23 -j REJECT
+  2. Write the command to answer.txt

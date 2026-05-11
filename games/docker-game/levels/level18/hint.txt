@@ -1,0 +1,1 @@
+Use `docker exec` to create the file, then `docker commit cliacademy_l18_live cliacademy_l18_snapshot:latest`.

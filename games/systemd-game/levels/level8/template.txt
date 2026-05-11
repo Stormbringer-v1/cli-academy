@@ -1,0 +1,9 @@
+== Level 8: systemctl daemon-reload ==
+
+daemon-reload reloads the systemd manager configuration.
+
+Task:
+  1. Create test-reload.service unit file (already done in sandbox)
+  2. Run: systemctl --user daemon-reload
+  3. Start the service: systemctl --user start test-reload.service
+  4. Write "reloaded" to answer.txt

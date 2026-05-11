@@ -1,0 +1,10 @@
+== Level 23: nftables Sets ==
+
+Sets group IPs or ports into named collections.
+
+Task:
+  1. Create a set of allowed IPs:
+     nft add set ip filter allowed_ips { type ipv4_addr\; }
+  2. Add IPs to the set:
+     nft add element ip filter allowed_ips { 10.99.0.1, 10.99.0.2 }
+  3. Write both commands to answer.txt

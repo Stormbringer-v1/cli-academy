@@ -1,0 +1,4 @@
+Level 26 - Process Substitution
+
+a.txt and b.txt contain same values in different order.
+Create solution.sh that compares sorted content via process substitution and prints: same

@@ -1,0 +1,10 @@
+== Level 14: /proc/PID/cmdline and /proc/PID/environ ==
+
+/proc/PID/cmdline contains the full command line (null-separated).
+/proc/PID/environ contains environment variables.
+
+Task:
+  1. Read: cat /proc/<PID>/cmdline
+  2. Notice fields are separated by null bytes (\0)
+  3. Replace nulls: tr '\0' '\n' < /proc/<PID>/cmdline
+  4. Write the command name (first field) to answer.txt

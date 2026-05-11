@@ -1,0 +1,1 @@
+Use git filter-branch --tree-filter 'rm -f filename' -- --all to remove a file from every commit in history.

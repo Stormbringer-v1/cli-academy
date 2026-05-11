@@ -1,0 +1,2 @@
+Run: virsh start vsh2_vm
+Verify with: virsh list (should show vsh2_vm as running)

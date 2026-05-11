@@ -1,0 +1,1 @@
+trap 'rm -f /tmp/bashgame_trap_file' EXIT

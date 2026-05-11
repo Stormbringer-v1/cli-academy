@@ -1,0 +1,4 @@
+Level 18 - cut, paste, tr
+
+data.csv has first names in column 1.
+Create solution.sh that writes uppercase first names to upper.txt (one per line).

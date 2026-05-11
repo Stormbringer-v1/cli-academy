@@ -1,0 +1,10 @@
+== Level 12: virsh vol-create-as ==
+
+Create a disk volume in a storage pool.
+
+The pool vsh12_pool already exists. Create a 1GB qcow2 volume.
+
+Task:
+  1. Run: virsh vol-create-as vsh12_pool mydisk.qcow2 1G --format qcow2
+  2. Verify: virsh vol-list vsh12_pool
+  3. Write the vol-create-as command to answer.txt

@@ -1,0 +1,11 @@
+== Level 0: iptables -L ==
+
+The first step to understanding a firewall is seeing what's already there.
+
+Task:
+  1. List all iptables rules: iptables -L
+  2. Write the command to answer.txt
+
+Example:
+  $ iptables -L
+  $ echo "iptables -L" > answer.txt

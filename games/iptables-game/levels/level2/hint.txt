@@ -1,0 +1,4 @@
+iptables -A INPUT -p icmp -j DROP
+-A appends to the INPUT chain
+-p icmp matches ICMP protocol
+-j DROP drops the packet

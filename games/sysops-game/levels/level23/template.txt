@@ -1,0 +1,9 @@
+== Level 23: ss (socket statistics) ==
+
+ss replaces netstat — faster and more detailed.
+
+Task:
+  1. List all listening TCP ports:
+     ss -tlnp
+  2. Find which process is on port 8888
+  3. Write "PORT:8888:PID:<PID>" to answer.txt

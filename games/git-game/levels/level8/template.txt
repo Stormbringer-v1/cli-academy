@@ -1,0 +1,11 @@
+Level 8: Rename and remove files
+
+Git can track when files are moved or deleted, but it's best to use Git's own commands for this.
+
+Your task:
+  1. Rename the file "old_name.txt" to "new_name.txt" using Git: git mv old_name.txt new_name.txt
+  2. Remove the file "to_delete.txt" from both Git and your computer: git rm to_delete.txt
+
+You can check the status with: git status
+
+Exit the shell when you are done.

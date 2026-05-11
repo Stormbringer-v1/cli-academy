@@ -1,0 +1,9 @@
+Level 3 - Attach and detach
+
+        This shell exports a helper function named `tmuxa`.
+        Always use `tmuxa ...` so you stay inside the game's isolated tmux server.
+
+        Attach to the existing `attachme` session, then detach cleanly.
+Command: `tmuxa attach -t attachme`
+
+        Type `exit` when you are done.

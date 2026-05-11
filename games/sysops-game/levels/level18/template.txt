@@ -1,0 +1,10 @@
+== Level 18: nproc, ulimit, /proc/sys ==
+
+System resource limits and kernel parameters.
+
+Task:
+  1. Check CPU cores: nproc
+  2. Check file descriptor limit: ulimit -n
+  3. Check max files: cat /proc/sys/fs/file-max
+  4. Check PID max: cat /proc/sys/kernel/pid_max
+  5. Write all values to answer.txt

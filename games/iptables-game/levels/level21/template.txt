@@ -1,0 +1,8 @@
+== Level 21: nftables Tables and Chains ==
+
+nftables organizes rules into tables and chains.
+
+Task:
+  1. Create a filter table: nft add table ip filter
+  2. Create an input chain: nft add chain ip filter input { type filter hook input priority 0 \; }
+  3. Write both commands to answer.txt

@@ -1,0 +1,10 @@
+Level 16: Stash Pop
+
+Your changes are in the stash. Apply them back to your working directory.
+
+Your task:
+  Apply the stashed changes: git stash pop
+
+This will apply the changes AND remove the stash.
+
+Type 'exit' when done.

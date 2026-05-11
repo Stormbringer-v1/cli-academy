@@ -1,0 +1,21 @@
+== FINAL BOSS: Midnight Incident ==
+
+Everything is broken. Fix it in the right order!
+
+Your system has these problems:
+1. 2 CPU hogs disguised as "system-updater" and "log-rotator"
+2. A process holding a lock on /tmp/critical.lock
+3. A rogue listener on port 9999
+4. A zombie process
+5. A process with 500+ leaked file descriptors
+6. System load is 15+ on a 4-core machine
+
+Tasks:
+  1. Kill the CPU hogs (SIGKILL)
+  2. Find and kill the lock holder
+  3. Kill the rogue listener on port 9999
+  4. Kill the zombie's parent (to reap the zombie)
+  5. Kill the FD leaker
+  6. Verify load drops below 2.0
+
+Write a summary to answer.txt

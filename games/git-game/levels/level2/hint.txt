@@ -1,0 +1,3 @@
+Use: git add hello.txt
+Check your work with: git status
+Look for "Changes to be committed" in the output.

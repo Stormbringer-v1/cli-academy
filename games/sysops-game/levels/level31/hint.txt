@@ -1,0 +1,6 @@
+Combine tools for complete picture:
+/proc/PID/status = memory and state
+/proc/PID/fd = open files
+/proc/PID/net/tcp = TCP connections
+strace -c = syscall summary
+lsof -i = network connections

@@ -1,0 +1,9 @@
+== Level 4: is-active / is-enabled ==
+
+is-active = is the service running right now?
+is-enabled = will it start on boot?
+
+Task:
+  1. Check if dbus is active: systemctl --user is-active dbus
+  2. Check if dbus is enabled: systemctl --user is-enabled dbus
+  3. Write both results to answer.txt

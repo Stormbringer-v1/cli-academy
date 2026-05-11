@@ -1,0 +1,10 @@
+== Level 3: virsh shutdown / destroy ==
+
+Two ways to stop a domain:
+- 'virsh shutdown': graceful shutdown (asks guest to power off)
+- 'virsh destroy': force-stop immediately (like pulling the plug)
+
+Task:
+  1. Try graceful shutdown: virsh shutdown vsh3_vm
+  2. If still running after a moment, use: virsh destroy vsh3_vm
+  3. Write the final command to answer.txt

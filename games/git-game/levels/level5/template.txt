@@ -1,0 +1,13 @@
+Level 5: Search the history
+
+This repository has a history of several commits.
+One of those commits has a message that says: "FIND_ME_NOW"
+
+Your task:
+  1. Use 'git log' to see the commit history.
+  2. Find the commit with the message "FIND_ME_NOW".
+  3. Copy the full SHA-1 hash of that commit (a long string like 'a1b2c3d4...') and write it to a file called "hash.txt".
+
+Example: If the hash is 'abc123456...', you'd run: echo "abc123456" > hash.txt
+
+Exit the shell when you are done.

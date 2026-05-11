@@ -1,0 +1,2 @@
+virsh net-info shows bridge name, forward mode, IP range.
+virsh net-dumpxml exports the full network configuration.

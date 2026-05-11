@@ -1,0 +1,13 @@
+BOSS 03 - Three-tier app
+
+        You are inside an isolated working directory for this level.
+        Use Docker resources that start with `cliacademy_`.
+
+        Write a `compose.yaml` for a three-service app:
+- `frontend`: nginx on `8093:80`
+- `api`: alpine container kept alive with `sleep 600`
+- `db`: postgres:15-alpine with a password env var
+All services must share a custom network `cliacademy_boss03_net`.
+Bring the stack up in detached mode.
+
+        Type `exit` when you are done.

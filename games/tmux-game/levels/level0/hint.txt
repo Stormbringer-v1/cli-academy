@@ -1,0 +1,1 @@
+Start a session with `tmuxa new-session -s intro`. Detach with Ctrl-b d.

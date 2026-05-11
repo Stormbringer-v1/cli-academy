@@ -1,0 +1,5 @@
+nft add rule ip filter input tcp dport 80 accept
+Key differences:
+- No -A (append), just "add rule"
+- No -j (jump), the action is at the end
+- Chain specification comes after "rule" instead of before

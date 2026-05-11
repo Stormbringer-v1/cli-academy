@@ -1,0 +1,2 @@
+Run: virsh autostart vsh9_vm
+Check: virsh dominfo vsh9_vm → Autostart: enable

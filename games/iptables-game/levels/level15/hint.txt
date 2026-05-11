@@ -1,0 +1,4 @@
+iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+-t nat selects the NAT table
+POSTROUTING chain handles packets after routing (outbound)
+ MASQUERADE auto-replaces source IP with the interface IP

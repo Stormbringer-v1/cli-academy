@@ -1,0 +1,3 @@
+[Timer] OnCalendar=hourly (or *-*-*:*:00)
+[Timer] OnBootSec=5min (run 5 min after boot)
+[Install] WantedBy=timers.target

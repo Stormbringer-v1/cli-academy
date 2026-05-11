@@ -1,0 +1,1 @@
+Run nginx detached, edit index.html with docker exec, then `curl http://127.0.0.1:8091 > answer.txt`.

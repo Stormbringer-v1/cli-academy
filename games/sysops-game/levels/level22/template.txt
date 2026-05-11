@@ -1,0 +1,9 @@
+== Level 22: lsof -i (network connections) ==
+
+lsof -i shows processes with network connections.
+
+Task:
+  1. Find processes listening on ports:
+     lsof -i -P -n | grep LISTEN
+  2. Find the PID of the process on port 9999
+  3. Write "LISTEN:<PID>" to answer.txt

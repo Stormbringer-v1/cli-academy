@@ -1,0 +1,4 @@
+Level 19 - xargs
+
+remove-list.txt contains files to delete.
+Create solution.sh that deletes them using xargs.

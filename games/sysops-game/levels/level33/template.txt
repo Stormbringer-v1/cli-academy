@@ -1,0 +1,12 @@
+== Level 33: Bottleneck Analysis ==
+
+System is slow. Use vmstat, iostat, ps to find why.
+
+Task:
+  1. Run: vmstat 1 5
+  2. Run: iostat -x 1 2
+  3. Run: ps aux --sort=-%cpu | head -5
+  4. Determine: CPU-bound, I/O-bound, or memory-bound?
+  5. Write diagnosis to answer.txt
+
+Run these commands and analyze the output.

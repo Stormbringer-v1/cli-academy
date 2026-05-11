@@ -1,0 +1,8 @@
+== Level 13: Port Ranges ==
+
+Open a range of consecutive ports with : syntax.
+
+Task:
+  1. Allow incoming TCP on ports 8000-8100:
+     iptables -A INPUT -p tcp --dport 8000:8100 -j ACCEPT
+  2. Write the command to answer.txt

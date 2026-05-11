@@ -1,0 +1,9 @@
+== Level 15: /proc/PID/fd (file descriptors) ==
+
+/proc/PID/fd/ lists all file descriptors open by a process.
+
+Task:
+  1. Count open FDs for 'fd_watcher':
+     ls /proc/<PID>/fd | wc -l
+  2. List them: ls -la /proc/<PID>/fd
+  3. Write the count to answer.txt

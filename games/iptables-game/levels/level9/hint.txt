@@ -1,0 +1,3 @@
+iptables -A INPUT -s 10.99.0.0/24 -j ACCEPT
+-s specifies the source IP or network
+/24 is CIDR notation for a 255.255.255.0 netmask

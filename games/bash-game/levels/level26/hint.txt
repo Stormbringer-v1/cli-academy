@@ -1,0 +1,1 @@
+Use diff <(sort a.txt) <(sort b.txt) and print same when equal.

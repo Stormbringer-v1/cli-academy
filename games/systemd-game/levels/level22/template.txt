@@ -1,0 +1,10 @@
+== Level 22: Unit Dependencies ==
+
+Dependencies control startup order and requirements:
+- After= = start after these units
+- Requires= = these units must be active (fail if they fail)
+- Wants= = start these units (but don fail if they fail)
+
+Task:
+  1. Create a service with: After=dbus.socket, Wants=dbus.socket
+  2. Write the After and Wants directives to answer.txt

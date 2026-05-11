@@ -1,0 +1,26 @@
+== Level 23: SSH Bastion Architecture ==
+
+Design a secure network with a bastion host.
+
+Architecture:
+  - bastion (2230): Public-facing jump host
+  - app1 (2231): Backend application server
+  - app2 (2232): Another backend server
+  
+Task:
+  1. Create SSH config for bastion:
+     Host bastion
+       HostName 127.0.0.1
+       Port 2230
+       User player
+  2. Create config for internal hosts using ProxyJump:
+     Host app1
+       HostName 127.0.0.1
+       Port 2231
+       ProxyJump bastion
+     Host app2
+       HostName 127.0.0.1
+       Port 2232
+       ProxyJump bastion
+  3. Test: ssh app1 "hostname"
+  4. Write 'bastion' to answer.txt

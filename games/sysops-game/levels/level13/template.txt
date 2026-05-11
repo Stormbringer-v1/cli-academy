@@ -1,0 +1,10 @@
+== Level 13: /proc/PID/status ==
+
+/proc/PID/status contains process metadata: PPid, State, VmRSS, etc.
+
+Task:
+  1. Read /proc/<PID>/status for 'status_test'
+  2. Find these fields: PPid, State, VmRSS, VmSize
+  3. Write them to answer.txt
+
+Format: PPid:1234 State:R VmRSS:5000 VmSize:100000

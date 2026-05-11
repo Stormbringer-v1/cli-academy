@@ -1,0 +1,1 @@
+Use [[ -f marker.txt ]] in an if statement.
