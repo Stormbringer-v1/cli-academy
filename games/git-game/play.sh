@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -euo pipefail
+set -uo pipefail
 
 # git-game: Learn Git through interactive terminal challenges
 # Part of CLI Academy — https://github.com/Stormbringer-v1/cli-academy
@@ -11,10 +11,11 @@ if ! command -v git &>/dev/null; then
   echo "   • macOS: brew install git"
   echo "   • Ubuntu/Debian: sudo apt install git"
   echo "   • Fedora: sudo dnf install git"
-  exit 1
+  exit 2
 fi
 
 # 1. Define level order (38 levels total)
+# shellcheck disable=SC2034  # LEVEL_ORDER is read by engine/engine.sh
 LEVEL_ORDER=(
   0 1 2 3 4 5 6 7 8 9
   boss01
@@ -31,9 +32,10 @@ ENGINE_PATH="$SCRIPT_DIR/../../engine/engine.sh"
 
 if [[ ! -f "$ENGINE_PATH" ]]; then
   echo "❌ Error: Game engine not found at $ENGINE_PATH"
-  exit 1
+  exit 2
 fi
 
+# shellcheck source=../../engine/engine.sh
 source "$ENGINE_PATH"
 
 # 3. Start the game

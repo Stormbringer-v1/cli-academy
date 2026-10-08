@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
-set -euo pipefail
+set -uo pipefail
 
 check_dependencies() {
     if ! command -v ssh &>/dev/null; then
         echo "❌ Error: ssh client not found."
         echo "   OpenSSH client is required."
-        exit 1
+        exit 2
     fi
 
     if ! command -v sshpass &>/dev/null; then
@@ -17,18 +17,19 @@ check_dependencies() {
     if ! command -v docker &>/dev/null; then
         echo "❌ Error: docker not found."
         echo "   Docker is required to run SSH target containers."
-        exit 1
+        exit 2
     fi
 
     if ! docker info &>/dev/null; then
         echo "❌ Error: Docker daemon is not running."
         echo "   Please start Docker and try again."
-        exit 1
+        exit 2
     fi
 }
 
 check_dependencies
 
+# shellcheck disable=SC2034  # LEVEL_ORDER is read by engine/engine.sh
 LEVEL_ORDER=(
     0 1 2 3 4 5 6 7 8 9
     boss01
@@ -43,9 +44,10 @@ ENGINE_PATH="$SCRIPT_DIR/../../engine/engine.sh"
 
 if [[ ! -f "$ENGINE_PATH" ]]; then
     echo "❌ Error: Game engine not found at $ENGINE_PATH"
-    exit 1
+    exit 2
 fi
 
+# shellcheck source=../../engine/engine.sh
 source "$ENGINE_PATH"
 
 start_game "$@"

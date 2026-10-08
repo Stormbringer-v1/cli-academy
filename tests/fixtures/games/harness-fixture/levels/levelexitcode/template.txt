@@ -1,0 +1,1 @@
+Fixture level exitcode: write 42 to answer.txt.

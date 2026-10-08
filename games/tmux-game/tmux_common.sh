@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-set -euo pipefail
 
 tmux_game_init() {
   export TMUX_SOCKET="${TMUX_SOCKET:-tmuxgame_${PPID}_${RANDOM}}"

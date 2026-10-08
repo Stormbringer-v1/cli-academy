@@ -1,5 +1,12 @@
 # SnapSecurity Academy — Master Plan
 
+> **Status note (2026-10-08):** this document is the original vision and game catalog. The
+> engine design in §4 and the phase status markers are superseded by
+> [`engine-contract.md`](engine-contract.md) (binding engine behaviour) and
+> [`sprint-1.md`](sprint-1.md) (current defects, tickets, decisions and progress). All ten
+> games now exist as level trees in `games/`; htop-game became sysops-game; vim-game is
+> pending import from its original repository.
+
 > **Lead Architect:** Claude (Opus)
 > **Developer:** Robert Harutyunyan
 > **Repo:** https://github.com/Stormbringer-v1/vim-game

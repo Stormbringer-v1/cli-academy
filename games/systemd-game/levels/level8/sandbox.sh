@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
-set -euo pipefail
+
 SYSTEMD_GAME_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 source "${SYSTEMD_GAME_ROOT}/systemd_common.sh"
 setup_sandbox() {
-    SANDBOX_DIR="$(mktemp -d -t "systemdgame_level8.XXXXXX")"
-    cd "$SANDBOX_DIR"
     create_user_unit "test-reload.service" "[Unit]
 Description=Test Reload Service
 
@@ -16,7 +14,6 @@ ExecStart=/bin/true
 WantedBy=default.target"
     systemctl_user daemon-reload
     touch answer.txt
-    export SANDBOX_DIR
 }
 cleanup_sandbox() {
     systemctl_user stop test-reload 2>/dev/null || true

@@ -1,21 +1,19 @@
 #!/usr/bin/env bash
-set -euo pipefail
 
-SSH_GAME_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-GAME_PREFIX="cliacademy_"
+GAME_PREFIX="cliacademy_ssh_"
 DOCKER_NETWORK="${GAME_PREFIX}net"
 
 ssh_game_init() {
     if ! command -v ssh &>/dev/null; then
         echo "❌ Error: ssh client not found."
         echo "   OpenSSH client is required but not installed."
-        exit 1
+        return 1
     fi
 
     if ! command -v docker &>/dev/null; then
         echo "❌ Error: docker not found."
         echo "   Docker is required for ssh-game to run SSH targets."
-        exit 1
+        return 1
     fi
 }
 
@@ -67,7 +65,7 @@ start_ssh_container() {
     local ATTEMPTS=0
     while ! docker exec "$NAME" sh -c "echo ready" &>/dev/null 2>&1 && ((ATTEMPTS < 30)); do
         sleep 1
-        ((ATTEMPTS++))
+        ATTEMPTS=$((ATTEMPTS + 1))
     done
 }
 
@@ -103,6 +101,6 @@ wait_for_ssh() {
     local ATTEMPTS=0
     while ! sshpass -p "cliacademy" ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ConnectTimeout=2 -p "$PORT" "player@127.0.0.1" "echo ready" &>/dev/null 2>&1 && ((ATTEMPTS < 30)); do
         sleep 1
-        ((ATTEMPTS++))
+        ATTEMPTS=$((ATTEMPTS + 1))
     done
 }

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -euo pipefail
+set -uo pipefail
 
 # sysops-game: Learn Linux process management and system monitoring
 # Part of CLI Academy — https://github.com/Stormbringer-v1/cli-academy
@@ -17,7 +17,7 @@ check_core_dependencies() {
         if ! command -v "$cmd" &>/dev/null; then
             echo "❌ Error: '$cmd' is not installed."
             echo "   Install procps and try again."
-            exit 1
+            exit 2
         fi
     done
 }
@@ -39,14 +39,15 @@ check_core_dependencies
 warn_optional_dependencies
 check_linux
 
+# shellcheck disable=SC2034  # LEVEL_ORDER is read by engine/engine.sh
 LEVEL_ORDER=(
     0 1 2 3 4 5 6 7 8 9
     checkpoint1
-    10 11 12 13 14 15 16 17 18 19
+    10 11 12 13 14 15 16 17 18
     checkpoint2
-    20 21 22 23 24 25 26 27 28 29
+    20 21 22 23 24 25 26 27 28
     checkpoint3
-    30 31 32 33 34
+    30 31 32 33
     boss_final
 )
 
@@ -55,9 +56,10 @@ ENGINE_PATH="$SCRIPT_DIR/../../engine/engine.sh"
 
 if [[ ! -f "$ENGINE_PATH" ]]; then
     echo "❌ Error: Game engine not found at $ENGINE_PATH"
-    exit 1
+    exit 2
 fi
 
+# shellcheck source=../../engine/engine.sh
 source "$ENGINE_PATH"
 
 start_game "$@"

@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+SYS_GAME_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+source "${SYS_GAME_ROOT}/sysops_common.sh"
+
+setup_sandbox() {
+    bash -c 'while true; do :; done' &
+    SYS_GAME_PIDS+=($!)
+
+    grab_lock lock_holder critical.lock
+    spawn_listener rogue_9999 9999
+    spawn_rogue zombie_parent zombie
+    bash -c "for i in \$(seq 1 510); do exec {fd}>/dev/null; done; sleep 99999" &
+    SYS_GAME_PIDS+=($!)
+
+    touch answer.txt
+}
+
+cleanup_sandbox() {
+    cleanup_sysops
+}

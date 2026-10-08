@@ -1,9 +1,12 @@
 Level 19: Remote and Fetch
 
-A local repository exists with an initial commit.
+A local repository exists with an initial commit. Next to it, upstream.git plays
+the role of the server you would normally reach over the network.
 
 Your task:
-  Add a remote: git remote add origin https://github.com/example/repo.git
+  Add a remote: git remote add origin ./upstream.git
   Fetch from remote: git fetch origin
+
+Check with: git branch -r
 
 Type 'exit' when done.
