@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -euo pipefail
+set -uo pipefail
 
 # virsh-game: Learn KVM/libvirt management through interactive challenges
 # Part of CLI Academy — https://github.com/Stormbringer-v1/cli-academy
@@ -11,7 +11,7 @@ check_virsh_prereqs() {
         echo "   • Ubuntu/Debian: sudo apt install libvirt-daemon-system"
         echo "   • Fedora: sudo dnf install libvirt-daemon-system"
         echo "   • Arch: sudo pacman -S libvirt"
-        exit 1
+        exit 2
     fi
 
     if ! virsh list --all &>/dev/null; then
@@ -25,12 +25,13 @@ check_virsh_prereqs() {
         echo "   Add your user to the libvirt group:"
         echo "   • sudo usermod -aG libvirt $USER"
         echo "   • Then log out and back in."
-        exit 1
+        exit 2
     fi
 }
 
 check_virsh_prereqs
 
+# shellcheck disable=SC2034  # LEVEL_ORDER is read by engine/engine.sh
 LEVEL_ORDER=(
     0 1 2 3 4 5 6 7 8 9
     boss01
@@ -45,9 +46,10 @@ ENGINE_PATH="$SCRIPT_DIR/../../engine/engine.sh"
 
 if [[ ! -f "$ENGINE_PATH" ]]; then
     echo "❌ Error: Game engine not found at $ENGINE_PATH"
-    exit 1
+    exit 2
 fi
 
+# shellcheck source=../../engine/engine.sh
 source "$ENGINE_PATH"
 
 start_game "$@"

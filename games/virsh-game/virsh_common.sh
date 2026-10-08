@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-set -euo pipefail
 
 virsh_cmd() {
     virsh "$@"
@@ -12,7 +11,7 @@ virsh_connect() {
 
 virsh_game_cleanup() {
     local prefix="${VIRSH_GAME_PREFIX:-game_}"
-    local dom net pool vol
+    local dom net pool
 
     for dom in $(virsh list --all --name 2>/dev/null | grep "^${prefix}" || true); do
         virsh destroy "$dom" 2>/dev/null || true
@@ -28,10 +27,6 @@ virsh_game_cleanup() {
         virsh net-destroy "$net" 2>/dev/null || true
         virsh net-undefine "$net" 2>/dev/null || true
     done
-
-    if [[ -n "${SANDBOX_DIR:-}" && -d "${SANDBOX_DIR}" ]]; then
-        rm -rf "${SANDBOX_DIR}" 2>/dev/null || true
-    fi
 }
 
 virsh_cleanup_prefix() {
