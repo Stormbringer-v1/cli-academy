@@ -1,1 +1,0 @@
-validator-impossible: tmux_window_option_equals runs show-window-options -q, which tmux rejects, so the check can never pass - see tests/known-issues/tmux-game.md
