@@ -1,0 +1,1 @@
+Directory with a bad name (G-DIR-NAME).
