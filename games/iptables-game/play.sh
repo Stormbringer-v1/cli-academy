@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -euo pipefail
+set -uo pipefail
 
 # iptables-game: Learn Linux firewall rules through interactive challenges
 # Part of CLI Academy — https://github.com/Stormbringer-v1/cli-academy
@@ -9,7 +9,7 @@ check_linux() {
         echo "❌ Error: iptables-game requires Linux."
         echo "   Network namespaces (ip netns) are only available on Linux."
         echo "   This game cannot run on macOS or WSL without a Linux VM."
-        exit 1
+        exit 2
     fi
 }
 
@@ -19,14 +19,14 @@ check_netns_prereqs() {
         echo "   Install iproute2 and try again."
         echo "   • Ubuntu/Debian: sudo apt install iproute2"
         echo "   • Fedora: sudo dnf install iproute"
-        exit 1
+        exit 2
     fi
 
     if ! ip netns list &>/dev/null; then
         echo "❌ Error: Cannot access network namespaces."
         echo "   You may need root privileges or CAP_NET_ADMIN."
         echo "   Try running with sudo."
-        exit 1
+        exit 2
     fi
 }
 
@@ -35,7 +35,7 @@ check_iptables() {
         echo "❌ Error: iptables is not installed."
         echo "   • Ubuntu/Debian: sudo apt install iptables"
         echo "   • Fedora: sudo dnf install iptables"
-        exit 1
+        exit 2
     fi
 }
 
@@ -43,6 +43,7 @@ check_linux
 check_iptables
 check_netns_prereqs
 
+# shellcheck disable=SC2034  # LEVEL_ORDER is read by engine/engine.sh
 LEVEL_ORDER=(
     0 1 2 3 4 5 6 7 8 9
     boss01
@@ -58,9 +59,10 @@ ENGINE_PATH="$SCRIPT_DIR/../../engine/engine.sh"
 
 if [[ ! -f "$ENGINE_PATH" ]]; then
     echo "❌ Error: Game engine not found at $ENGINE_PATH"
-    exit 1
+    exit 2
 fi
 
+# shellcheck source=../../engine/engine.sh
 source "$ENGINE_PATH"
 
 start_game "$@"
