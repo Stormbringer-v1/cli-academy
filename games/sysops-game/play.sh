@@ -42,11 +42,11 @@ check_linux
 LEVEL_ORDER=(
     0 1 2 3 4 5 6 7 8 9
     checkpoint1
-    10 11 12 13 14 15 16 17 18 19
+    10 11 12 13 14 15 16 17 18
     checkpoint2
-    20 21 22 23 24 25 26 27 28 29
+    20 21 22 23 24 25 26 27 28
     checkpoint3
-    30 31 32 33 34
+    30 31 32 33
     boss_final
 )
 
