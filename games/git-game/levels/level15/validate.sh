@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 set -euo pipefail
-if git stash 2>/dev/null; then
-  if git stash list | grep -q "stash"; then
-    exit 0
-  fi
+# Observe the stash; never create it.
+if [[ -z "$(git stash list)" ]]; then
+  echo "No stash entry found. Run: git stash"
+  exit 1
 fi
-echo "Stash failed."
-exit 1
+if ! git diff --quiet || ! git diff --cached --quiet; then
+  echo "The working tree still has uncommitted changes."
+  exit 1
+fi
+exit 0

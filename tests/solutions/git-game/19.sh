@@ -2,8 +2,8 @@
 # git-game level 19: Remote and Fetch
 set -euo pipefail
 
-# Task: add the remote 'origin' and fetch from it.
-git remote add origin https://github.com/example/repo.git
-# The example repository does not exist and tests run without network, so the fetch is
-# expected to fail here; the script still ends successfully (see tests/known-issues/git-game.md).
-git fetch origin || echo "fetch failed (no network / no such repository)"
+# Task: add the remote 'origin' (the local bare repository ./upstream.git that the sandbox
+# provides in place of a server) and fetch from it. Fully offline.
+git remote add origin ./upstream.git
+git fetch -q origin
+git branch -r

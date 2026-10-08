@@ -41,6 +41,7 @@ $ /tmp/t-sol-git/verify-legacy.sh git-game 3 /tmp/t-sol-git/exp/p.sh | tail -n 3
 VERDICT: PASS (engine rc=0, timeout=30s)
 ```
 - Suggested fix (dev team, not applied): `git rev-list -n 1 --all` exits 0 in a repository without commits. Check `git rev-parse --verify -q HEAD >/dev/null` instead.
+- Status: fixed by D-FIX-git (fix(git): make validators observe the player's work instead of performing it)
 
 ## level8: validator depends on the English `git status` text; a committed rename is rejected
 - Kind: env-dependent
@@ -94,6 +95,7 @@ Branch 'feature' not found.
 VERDICT: FAIL (engine rc=1, timeout=30s)
 ```
 - Suggested fix (dev team, not applied): only the alternative way of creating the branch is rejected (the template's `git branch feature` passes, see 10.sh). Use `git show-ref --verify --quiet refs/heads/feature` instead of grepping `git branch --list`.
+- Status: fixed by D-FIX-git (fix(git): accept every correct way to finish levels 10 and 32)
 
 ## level11: template says the player is on 'main' but a default git creates 'master'
 - Kind: template-wrong
@@ -107,6 +109,7 @@ Currently on 'master', not 'develop'.
 VERDICT: FAIL (engine rc=1, timeout=30s)
 ```
 - Suggested fix (dev team, not applied): the shared default-branch fix (`git symbolic-ref HEAD refs/heads/main` after `git init -q`) makes the text true.
+- Status: fixed by D-FIX-git (fix(git): start every sandbox repository on main and keep the final boss setup valid)
 
 ## level12: setup fails on a default git (branch master)
 - Kind: setup-broken
@@ -123,6 +126,7 @@ $ CLI_ACADEMY_TEST_GITCONFIG=/tmp/t-sol-git/gitconfig-main /tmp/t-sol-git/verify
 VERDICT: PASS (engine rc=0, timeout=30s)
 ```
 - Suggested fix (dev team, not applied): `git symbolic-ref HEAD refs/heads/main` right after `git init -q`.
+- Status: fixed by D-FIX-git (fix(git): start every sandbox repository on main and keep the final boss setup valid)
 
 ## level13: setup fails on a default git; validator performs the merge itself
 - Kind: setup-broken
@@ -145,6 +149,7 @@ Merge failed.
 VERDICT: FAIL (engine rc=1, timeout=30s)
 ```
 - Suggested fix (dev team, not applied): branch fix. The suspicion that a no-op passes is NOT confirmed here (the two branches conflict, so the validator's own `git merge feature --no-edit` fails: "Merge failed."), but the validator still mutates the repository and breaks contract section 9. Observe instead: HEAD has two parents (`git rev-list --parents -n 1 HEAD | wc -w` is 3), no `MERGE_HEAD`, no conflict markers in file.txt.
+- Status: fixed by D-FIX-git (fix(git): start every sandbox repository on main and keep the final boss setup valid; fix(git): make validators observe the player's work instead of performing it)
 
 ## level14: setup fails on a default git; template promises a conflict that does not exist; validator passes without a merge
 - Kind: setup-broken
@@ -167,6 +172,7 @@ $ CLI_ACADEMY_TEST_GITCONFIG=/tmp/t-sol-git/gitconfig-main /tmp/t-sol-git/verify
 VERDICT: PASS (engine rc=0, timeout=30s)
 ```
 - Suggested fix (dev team, not applied): branch fix. Either start the merge in `setup_sandbox` (`git merge feature || true`) so the conflict the template describes is really there, or add `git merge feature` to the steps. Require a merge commit in the validator (`git rev-list --merges -n 1 HEAD` not empty); today any third commit that contains "Hello Universe" passes (last probe above).
+- Status: fixed by D-FIX-git (fix(git): start every sandbox repository on main and keep the final boss setup valid)
 
 ## level15: validator performs the task; no-op passes
 - Kind: validator-weak
@@ -181,6 +187,7 @@ $ /tmp/t-sol-git/verify-legacy.sh git-game 15 /tmp/t-sol-git/exp/p.sh | tail -n 
 VERDICT: PASS (engine rc=0, timeout=30s)
 ```
 - Suggested fix (dev team, not applied): do not run `git stash` in the validator. Observe: `git stash list | grep -q .` and a clean tree (`git diff --quiet HEAD && git diff --cached --quiet`).
+- Status: fixed by D-FIX-git (fix(git): make validators observe the player's work instead of performing it)
 
 ## level16: validator runs `git stash pop` itself, so the honest solution fails and a no-op passes
 - Kind: validator-impossible
@@ -200,6 +207,7 @@ $ /tmp/t-sol-git/verify-legacy.sh git-game 16 /tmp/t-sol-git/exp/p.sh | tail -n 
 VERDICT: PASS (engine rc=0, timeout=30s)
 ```
 - Suggested fix (dev team, not applied): do not run `git stash pop` in the validator. Observe: `git stash list` is empty and file.txt contains "changes" (`grep -q changes file.txt`).
+- Status: fixed by D-FIX-git (fix(git): make validators observe the player's work instead of performing it)
 
 ## level17: setup fails on a default git; validator can never see branching; branch_commits.txt is ignored
 - Kind: setup-broken
@@ -223,6 +231,7 @@ $ CLI_ACADEMY_TEST_GITCONFIG=/tmp/t-sol-git/gitconfig-main /tmp/t-sol-git/verify
 VERDICT: PASS (engine rc=0, timeout=30s)
 ```
 - Suggested fix (dev team, not applied): branch fix. `git log --graph --oneline` (no `--all`) only shows HEAD's history, which is linear, so it never prints `|`; the last probe merges the branches and passes without writing branch_commits.txt. Validate the file content instead of the graph. Decide the expected number: template.txt ("how many commits are on the 'feature' branch") suggests 2, hint.txt ("specific to the feature branch") suggests 1; 17.sh writes 1.
+- Status: fixed by D-FIX-git (fix(git): start every sandbox repository on main and keep the final boss setup valid; fix(git): let level 17 observe the branching and the feature commit count)
 
 ## level18: setup fails on a default git; validator runs `git branch -d feature` itself
 - Kind: setup-broken
@@ -246,6 +255,7 @@ $ CLI_ACADEMY_TEST_GITCONFIG=/tmp/t-sol-git/gitconfig-main /tmp/t-sol-git/verify
 VERDICT: PASS (engine rc=0, timeout=30s)
 ```
 - Suggested fix (dev team, not applied): branch fix. Observe instead of acting: `! git show-ref --verify --quiet refs/heads/feature`.
+- Status: fixed by D-FIX-git (fix(git): start every sandbox repository on main and keep the final boss setup valid; fix(git): make validators observe the player's work instead of performing it)
 
 ## level19: validator fetches from the network
 - Kind: validator-impossible
@@ -260,6 +270,7 @@ Remote fetch failed.
 VERDICT: FAIL (engine rc=1, timeout=30s)
 ```
 - Suggested fix (dev team, not applied): `https://github.com/example/repo.git` does not exist, so `git fetch origin` can never succeed (the validator even adds the remote itself). Create a local bare repository in `setup_sandbox` (a sibling path derived from `SANDBOX_DIR`, removed in `cleanup_sandbox`), use its path in the template, and validate `git remote get-url origin` plus a ref under `refs/remotes/origin/`.
+- Status: fixed by D-FIX-git (fix(git): start every sandbox repository on main and keep the final boss setup valid; fix(git): run levels 19, 29 and 30 offline inside the sandbox)
 
 ## levelboss02: sandbox never creates 'main'; validator does not check the "main work" line
 - Kind: setup-broken
@@ -282,6 +293,7 @@ $ CLI_ACADEMY_TEST_GITCONFIG=/tmp/t-sol-git/gitconfig-main /tmp/t-sol-git/verify
 VERDICT: PASS (engine rc=0, timeout=30s)
 ```
 - Suggested fix (dev team, not applied): branch fix (the sandbox commit is made on `master`, template step 4 `git checkout main` fails and validate.sh insists on `main`). The last run resolves the conflict by dropping "main work" and still passes, because `grep -q "main" file.txt` matches the first line "main". Use `grep -qx 'main work' file.txt && grep -qx 'feature work' file.txt`.
+- Status: fixed by D-FIX-git (fix(git): start every sandbox repository on main and keep the final boss setup valid)
 
 ## level20: setup fails on a default git; validator passes without a rebase
 - Kind: setup-broken
@@ -304,6 +316,7 @@ $ CLI_ACADEMY_TEST_GITCONFIG=/tmp/t-sol-git/gitconfig-main /tmp/t-sol-git/verify
 VERDICT: PASS (engine rc=0, timeout=30s)
 ```
 - Suggested fix (dev team, not applied): branch fix. `git checkout feature` alone satisfies "on feature with at least 3 commits" (it already has 3). Require `git merge-base --is-ancestor main feature` and no merge commits.
+- Status: fixed by D-FIX-git (fix(git): start every sandbox repository on main and keep the final boss setup valid)
 
 ## level21: setup fails on a default git; template command names a branch that does not exist; validator passes without a rebase
 - Kind: setup-broken
@@ -333,6 +346,7 @@ $ CLI_ACADEMY_TEST_GITCONFIG=/tmp/t-sol-git/gitconfig-main /tmp/t-sol-git/verify
 VERDICT: PASS (engine rc=0, timeout=30s)
 ```
 - Suggested fix (dev team, not applied): branch fix, then name the sandbox branch `feature` (or change template, hint and validator to `old-feature`). Even with the branch present, the template command stops on a content conflict (third run above: "Old feature 2" appends after a line that main does not have; 21.sh creates `feature` from `old-feature` and resolves it), so make the moved commits independent. Validate `git merge-base --is-ancestor main feature` and that "Old feature 1" is not in feature's history.
+- Status: fixed by D-FIX-git (fix(git): start every sandbox repository on main and keep the final boss setup valid)
 
 ## level22: setup fails on a default git; validator passes without a cherry-pick
 - Kind: setup-broken
@@ -355,6 +369,7 @@ $ CLI_ACADEMY_TEST_GITCONFIG=/tmp/t-sol-git/gitconfig-main /tmp/t-sol-git/verify
 VERDICT: PASS (engine rc=0, timeout=30s)
 ```
 - Suggested fix (dev team, not applied): branch fix. Checking out `feature` also puts "cherry-pick me" into file.txt. Require the current branch to be main and `git cherry main feature | grep -q '^-'` (or `git log main --format=%s` containing the commit subject).
+- Status: fixed by D-FIX-git (fix(git): start every sandbox repository on main and keep the final boss setup valid)
 
 ## level24: template steps 3 and 4 cannot run after step 1
 - Kind: template-wrong
@@ -375,6 +390,7 @@ Use '--' to separate paths from revisions, like this:
 VERDICT: PASS (engine rc=0, timeout=30s)
 ```
 - Suggested fix (dev team, not applied): after `git reset --soft HEAD~1` only one commit is left, so `git reset HEAD~1` and `git reset --hard HEAD~1` fail with `fatal: ambiguous argument 'HEAD~1'`, and the level is already satisfied after step 1 (validator wants exactly one commit). Create three commits in `setup_sandbox`, or reorder the steps. 24.sh re-creates "Commit 2" before steps 3 and 4 so that all three reset modes really run.
+- Status: fixed by D-FIX-git (fix(git): make levels 24, 26 and boss03 match what their templates describe)
 
 ## level25: nothing to recover; any `reset` passes; the fallback check is flaky
 - Kind: setup-broken
@@ -396,6 +412,7 @@ $ bash -c 'd=$(mktemp -d); export HOME=$d GIT_CONFIG_NOSYSTEM=1; cd $d; git init
 pipeline true=290 false=10
 ```
 - Suggested fix (dev team, not applied): the template says a commit was already lost to a hard reset, but the sandbox holds only "First commit": make the second commit and run `git reset --hard HEAD~1` in `setup_sandbox` (25.sh stages that accident itself). The validator's reflog fallback (`git reflog | grep -q "reset"`) passes without any recovery (probes 1 and 2) and, under `set -o pipefail`, `grep -q` can close the pipe early so `git` dies of SIGPIPE: the last command shows the fallback's pipeline turning false in 10 of 300 repetitions, so even that wrong attempt is occasionally rejected. Drop the fallback and require the commit count and file content; avoid `cmd | grep -q` under pipefail.
+- Status: fixed by D-FIX-git (fix(git): make level 25 really lose a commit that the reflog can recover)
 
 ## level26: no commit contains "BAD"; validator accepts any 7-character string
 - Kind: setup-broken
@@ -411,6 +428,7 @@ $ /tmp/t-sol-git/verify-legacy.sh git-game 26 /tmp/t-sol-git/exp/p.sh | tail -n 
 VERDICT: PASS (engine rc=0, timeout=30s)
 ```
 - Suggested fix (dev team, not applied): the template asks to bisect for "BAD" but no commit adds it (the probe prints `0` occurrences), so bisect can only blame HEAD, which 26.sh reports. Add "BAD" in one commit (for example commit 3) in `setup_sandbox` and compare bad_commit.txt with that commit's hash (prefix match, 7+ characters).
+- Status: fixed by D-FIX-git (fix(git): make levels 24, 26 and boss03 match what their templates describe)
 
 ## level27: validator accepts a lightweight tag
 - Kind: validator-weak
@@ -467,6 +485,7 @@ $ CLI_ACADEMY_TEST_GITCONFIG=/tmp/t-sol-git/gitconfig-ident-file /tmp/t-sol-git/
 VERDICT: PASS (engine rc=0, timeout=30s)
 ```
 - Suggested fix (dev team, not applied): contract section 4 forbids fixed paths like /tmp/submod, and the evidence shows the cost: a failed run leaves /tmp/submod behind with the legacy engine, so the next setup dies at `git commit` ("nothing to commit"); parallel runs would share it too. Create the source repository under a path derived from `SANDBOX_DIR` (removed in `cleanup_sandbox`), commit there with `git -c user.name=... -c user.email=...`, and do not `cd` in setup. For git 2.38.1 and newer, export `GIT_CONFIG_COUNT=1 GIT_CONFIG_KEY_0=protocol.file.allow GIT_CONFIG_VALUE_0=always` from `setup_sandbox`, or put `git -c protocol.file.allow=always submodule add ...` into the template; both were verified with git 2.43.0 in a scratch repository, a repository-local `git config protocol.file.allow always` does not help.
+- Status: fixed by D-FIX-git (fix(git): start every sandbox repository on main and keep the final boss setup valid; fix(git): run levels 19, 29 and 30 offline inside the sandbox)
 
 ## levelboss03: no commit contains "BAD" and there is no other branch; validator accepts junk
 - Kind: template-wrong
@@ -483,6 +502,7 @@ $ /tmp/t-sol-git/verify-legacy.sh git-game boss03 /tmp/t-sol-git/exp/p.sh | tail
 VERDICT: PASS (engine rc=0, timeout=30s)
 ```
 - Suggested fix (dev team, not applied): the template says "Commit 7 has BAD" and talks about cherry-picking from another branch, but the sandbox only has ten commits that append "line N" on one branch. boss03.sh uses the first appearance of "line 7" as the stand-in for BAD and builds a side branch with a clean commit itself. Put "BAD" into commit 7, add a branch with a clean fix commit, and validate: bad_commit.txt is a prefix of commit 7's hash, `git cat-file -t v1.0` is `tag`, and the clean commit was cherry-picked (`git cherry`). The current checks (bad_commit.txt exists with any content, a tag matching `v1.0`, at least 10 commits) are all satisfied by the junk probe above, which does no bisect and no cherry-pick.
+- Status: fixed by D-FIX-git (fix(git): make levels 24, 26 and boss03 match what their templates describe)
 
 ## level30: setup fails on a default git; setup cds into repo/; validator ignores the commit
 - Kind: setup-broken
@@ -511,6 +531,7 @@ $ CLI_ACADEMY_TEST_GITCONFIG=/tmp/t-sol-git/gitconfig-main /tmp/t-sol-git/verify
 VERDICT: PASS (engine rc=0, timeout=30s)
 ```
 - Suggested fix (dev team, not applied): the legacy engine hides the cwd problem (the shell stays inside repo/ after setup), the contract engine does not: it `cd`s back to `SANDBOX_DIR` (contract section 10), so the honest solution creates `<SANDBOX_DIR>/feature-work` while validate.sh looks for `../feature-work` (third run above). 30.sh therefore stays red after the branch fix until the level is fixed. Do not `cd` in setup, tell the player to `cd repo` in the template, and have the validator use `feature-work` next to `repo` (for example `git -C repo worktree list`). It should also require the commit (`git show feature:file.txt | grep -q worktree`); the last run above passes with an uncommitted edit.
+- Status: fixed by D-FIX-git (fix(git): start every sandbox repository on main and keep the final boss setup valid; fix(git): run levels 19, 29 and 30 offline inside the sandbox)
 
 ## level31: the template's hook cannot block a WIP commit; validator passes an `exit 0` hook
 - Kind: template-wrong
@@ -550,6 +571,7 @@ $ bash -c 'd=$(mktemp -d); export HOME=$d GIT_CONFIG_NOSYSTEM=1; cd $d; git init
 pipeline true=281 false=19
 ```
 - Suggested fix (dev team, not applied): `git filter-branch` keeps the old history under `refs/original/`, which `git log --all` still lists, so validate.sh fails after the command the template prescribes (probe above). 32.sh also deletes the backup refs. Mention it in the template (`git update-ref -d refs/original/refs/heads/master`) or make the validator use `--branches --tags`. The template's check `git log --all --name-status | grep secret` always matches the commit message "Add secret"; use `secret.txt`. The validator's own `git log --all --name-status | grep -q "secret.txt"` is racy under `pipefail` (last command above, a repository where secret.txt was only deleted by a new commit: the pipeline reported false in 19 of 300 repetitions, so the validator accepted that attempt in roughly 5 to 8% of runs: 15 of 300 and 16 of 200 against the real validate.sh). Capture the output first (`out="$(git log --all --name-status)"; grep -q 'secret\.txt' <<<"$out"`) or use `[[ -z "$(git rev-list --all -- secret.txt)" ]]`. 32.wrong.sh therefore uses a typo in the filter instead of a plain `git rm`.
+- Status: fixed by D-FIX-git (fix(git): accept every correct way to finish levels 10 and 32; fix(git): point the level 32 verify command at branches and tags)
 
 ## level33: setup fails on a default git; the three branches conflict, so an octopus merge cannot succeed
 - Kind: setup-broken
@@ -571,6 +593,7 @@ Merge with strategy octopus failed.
 VERDICT: FAIL (engine rc=2, timeout=30s)
 ```
 - Suggested fix (dev team, not applied): branch fix. All three branches append a line to the same place in file.txt; `merge-octopus` refuses content conflicts ("Should not be doing an octopus"). Let each branch add its own file (feature1.txt, feature2.txt, feature3.txt).
+- Status: fixed by D-FIX-git (fix(git): start every sandbox repository on main and keep the final boss setup valid; fix(git): make the octopus merge and final boss levels winnable)
 
 ## level34: setup fails on a default git; validator accepts `git config rerere.enabled true` alone, and checks a directory git never creates
 - Kind: setup-broken
@@ -595,6 +618,7 @@ $ bash /tmp/t-sol-git/exp/check-fixes.sh 2>/dev/null | grep '^rrcache exists'
 rrcache exists: no; rr-cache exists: yes
 ```
 - Suggested fix (dev team, not applied): branch fix. Enabling the option is enough for the validator and its fallback checks `.git/rrcache` while git creates `.git/rr-cache` (last line above). Require a recorded resolution: `[[ -n $(ls -A .git/rr-cache 2>/dev/null) ]]`.
+- Status: fixed by D-FIX-git (fix(git): start every sandbox repository on main and keep the final boss setup valid)
 
 ## level35: setup fails twice on a default git; the honest solution cannot satisfy the commit count
 - Kind: setup-broken
@@ -621,3 +645,4 @@ Final boss validation failed.
 VERDICT: FAIL (engine rc=1, timeout=30s)
 ```
 - Suggested fix (dev team, not applied): (1) branch fix; (2) `git branch -d feature` refuses an unmerged branch ("not fully merged"), so setup needs `git branch -D feature` (second run above); (3) the validator wants `git rev-list --count --all` of at least 4, but only 3 commits ever exist (Initial, Feature, Main) and a rebase keeps 3 (third run above, run on a copy with fixes 1 and 2 applied). Check the observable result instead: `git merge-base --is-ancestor feature main`, no merge commits, `git cat-file -t v2.0` is `tag`, branch `feature` exists. Note that validate.sh's `grep -q "  feature"` fails when `feature` is the current branch, so the template should say to finish on main.
+- Status: fixed by D-FIX-git (fix(git): start every sandbox repository on main and keep the final boss setup valid; fix(git): make the octopus merge and final boss levels winnable)
