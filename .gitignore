@@ -46,3 +46,6 @@ my_folder/
 
 # Test output
 test_*_output.log
+
+# Claude Code worker worktrees
+.claude/worktrees/
