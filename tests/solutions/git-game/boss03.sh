@@ -10,16 +10,14 @@ first="$(git rev-list --max-parents=0 HEAD)"
 git bisect start
 git bisect bad HEAD
 git bisect good "$first"
-found=""
-for _ in 1 2 3 4 5 6 7 8; do
-  if grep -q '^BAD$' file.txt; then
-    out="$(git bisect bad)"
-  else
-    out="$(git bisect good)"
-  fi
-  found="$(sed -n 's/^\([0-9a-f]\{40\}\) is the first bad commit$/\1/p' <<<"$out")"
-  [[ -n $found ]] && break
-done
+
+# Let git run the test at every step: exit 0 marks the checked out commit good (no BAD line),
+# exit 1 marks it bad. Git stops by itself once the culprit is isolated.
+git bisect run sh -c '! grep -q "^BAD$" file.txt'
+
+# Read the result from the ref git maintains, not from its (version-dependent) messages.
+found="$(git rev-parse refs/bisect/bad)"
+
 echo "$found" > bad_commit.txt
 git bisect reset
 
