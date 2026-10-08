@@ -1,1 +1,1 @@
-Use git log --graph --oneline --all to see the branching structure. Count commits specific to the feature branch and write the number to branch_commits.txt.
+Use git log --graph --oneline --all to see the branching structure. Count the commits on the feature branch, including the commit it shares with main, and write the number to branch_commits.txt.
