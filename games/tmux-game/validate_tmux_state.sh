@@ -11,7 +11,7 @@
         }
 
         tmux_session_exists() {
-          tmuxa has-session -t "$1" 2>/dev/null
+          tmuxa has-session -t "=$1" 2>/dev/null
         }
 
         tmux_window_count() {
@@ -43,7 +43,7 @@
         }
 
         tmux_window_option_equals() {
-          [[ "$(tmuxa show-window-options -t "$1" -qv "$2" 2>/dev/null || true)" == "$3" ]]
+          [[ "$(tmuxa show-options -wqv -t "$1" "$2" 2>/dev/null || true)" == "$3" ]]
         }
 
         tmux_buffer_equals() {
