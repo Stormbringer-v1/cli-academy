@@ -3,15 +3,24 @@
 set -euo pipefail
 
 # Task: recover a commit that was lost by a hard reset, using the reflog.
-# The sandbox only holds "First commit" (nothing is lost yet), so first stage the
-# accident the template describes: make a second commit and hard-reset it away.
-echo "second" >> file.txt
-git add file.txt
-git commit -q -m "Second commit"
-git reset -q --hard HEAD~1
+# The sandbox already made "Second commit" and hard-reset it away, so nothing is staged
+# here: this script only reads the reflog and resets back.
 
-# 1-3. Find the lost commit in the reflog and reset back to it.
+# 1. View the reflog.
 git reflog
-lost="$(git reflog --format='%H %gs' | grep 'commit: Second commit' | head -n 1 | cut -d' ' -f1)"
+
+# 2. Find the commit before the most recent "reset:" entry. The reflog is listed newest
+#    first, so that commit is the entry right after the reset entry.
+mapfile -t entries < <(git reflog --format='%H %gs')
+lost=""
+for i in "${!entries[@]}"; do
+  if [[ "${entries[$i]#* }" == reset:* ]]; then
+    lost="${entries[$((i + 1))]%% *}"
+    break
+  fi
+done
+: "${lost:?no reset entry found in the reflog}"
+
+# 3. Recover it.
 git reset -q --hard "$lost"
 git log --oneline
