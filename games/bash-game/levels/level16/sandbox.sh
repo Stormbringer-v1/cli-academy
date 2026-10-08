@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-set -euo pipefail
 
 setup_sandbox() {
   printf 'alice:1001:/bin/bash

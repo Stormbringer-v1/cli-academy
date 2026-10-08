@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-      set -euo pipefail
 
       DOCKER_GAME_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
       source "${DOCKER_GAME_ROOT}/docker_common.sh"

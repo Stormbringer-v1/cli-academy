@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-set -euo pipefail
 
 TMUX_GAME_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 source "${TMUX_GAME_ROOT}/tmux_common.sh"
