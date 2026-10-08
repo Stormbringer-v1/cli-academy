@@ -1,13 +1,10 @@
 #!/usr/bin/env bash
-set -euo pipefail
 
 VIRSH_GAME_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 source "${VIRSH_GAME_ROOT}/virsh_common.sh"
 
 setup_sandbox() {
     export VIRSH_GAME_PREFIX="vsh18_"
-    SANDBOX_DIR="$(mktemp -d -t "virshgame_level18.XXXXXX")"
-    cd "$SANDBOX_DIR"
 
     cat > vsh18_vm.xml <<'XMLEOF'
 <domain type='kvm'>
