@@ -82,9 +82,11 @@ directories themselves.
 3. In-scope bug fixes ride the conversions: the `grep -E '\d'` validators in sysops (1, 2, 3, 15, 18, 20, 21) and systemd (2, 5, 6, 12); ssh container names (`cliacademy_ssh_l<ID>`, network `cliacademy_ssh_net`, prefix `cliacademy_ssh_`, boss ports 22291/22292, no touching the player's real `~/.ssh` keys, no `local PATH`); virsh cleanup prefixes for boss01/boss02/level24; sysops cleanup kills process groups, not only direct children; iptables level 29 `--ctstate`.
 4. Engine behaviours are pinned in contract §10. Two dev-lead proposals were **not** adopted: the engine does re-`cd` to `SANDBOX_DIR` after setup, and setup failures are detected with an ERR trap (both from the testing lead's review).
 5. `play.sh` dependency failures exit 2.
-6. `NEEDS_DIR` is removed from ssh-game `level.conf` files only; lint warns elsewhere.
+6. `NEEDS_DIR` is removed from ssh-game `level.conf` files only; the lint ignores it this sprint (no rule, no warning line); legacy games drop it in sprint 2.
 7. Merge order: D-ENGINE first (conversions against the old engine would write into the player's cwd), then D-CONVERT-* in any order, D-LEGACY any time, then T-* branches, T-CI last.
-8. Worker commits carry the `Co-Authored-By: Claude Fable 5.1` trailer; confirmed.
+8. Worker commits carry a `Co-Authored-By: Claude <model> <noreply@anthropic.com>` trailer naming either the architect's or the worker's model; both are accepted, and no branch is re-authored for trailer wording.
+9. New ticket **D-FIX-tmux** (from T-SOL-tmux): `tmux_window_option_equals` in `validate_tmux_state.sh` calls `show-window-options -qv`, which tmux 3.4 rejects, so level 17 can never pass (fix: `tmuxa show-options -wqv -t "$1" "$2"`); session checks use `has-session -t name`, which prefix-matches (fix: `-t "=name"`). Input: `tests/known-issues/tmux-game.md`.
+10. Lint hardening accepted: the level.conf / sandbox.sh evaluator uses a quote-aware statement scanner so prefix-assignment commands (`FOO=1 touch f`) are reported, never executed. `tests/fixtures/**` holds deliberately broken scripts; CI excludes it from shellcheck and lint.
 
 ## Acceptance for the sprint
 

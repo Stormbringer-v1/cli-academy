@@ -176,4 +176,6 @@ state, not only `answer.txt`.
 - **Test mode.** The solution runs with stdin from `/dev/null`; no header or template is printed.
 - **Signals.** The player's interactive shell owns the terminal, so Ctrl-C inside it never
   reaches the engine. The engine's INT/TERM handling covers setup, validation and the prompt.
-- **`NEEDS_DIR`.** Lint warns (does not fail) on it this sprint; legacy games keep it.
+- **`NEEDS_DIR`.** Ignored by the engine and by the lint this sprint; legacy games keep it until sprint 2.
+- **Sandbox removed by the player.** If the engine cannot `cd` back into `SANDBOX_DIR` before
+  validation, the level fails (warning + `FAIL_MSG`); it is not a setup error.
