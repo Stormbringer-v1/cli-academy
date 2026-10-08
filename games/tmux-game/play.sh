@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -euo pipefail
+set -uo pipefail
 
 # tmux-game: Learn tmux through isolated socket challenges
 
@@ -9,7 +9,7 @@ if ! command -v tmux >/dev/null 2>&1; then
   echo "  macOS: brew install tmux"
   echo "  Ubuntu/Debian: sudo apt install tmux"
   echo "  Fedora: sudo dnf install tmux"
-  exit 1
+  exit 2
 fi
 
 tmux_version="$(tmux -V | awk '{print $2}')"
@@ -17,9 +17,10 @@ tmux_major="${tmux_version%%.*}"
 if (( tmux_major < 3 )); then
   echo "Error: tmux-game requires tmux >= 3.0"
   echo "Detected version: ${tmux_version}"
-  exit 1
+  exit 2
 fi
 
+# shellcheck disable=SC2034  # LEVEL_ORDER is read by engine/engine.sh
 LEVEL_ORDER=(
   0 1 2 3 4 5 6 7 8 9
   boss01
@@ -33,8 +34,9 @@ ENGINE_PATH="$SCRIPT_DIR/../../engine/engine.sh"
 
 if [[ ! -f "$ENGINE_PATH" ]]; then
   echo "Error: Game engine not found at $ENGINE_PATH"
-  exit 1
+  exit 2
 fi
 
+# shellcheck source=../../engine/engine.sh
 source "$ENGINE_PATH"
 start_game "$@"
