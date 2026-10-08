@@ -3,6 +3,7 @@
 
 setup_sandbox() {
   git init -q
+  git symbolic-ref HEAD refs/heads/main
   echo "This is a test file." > readme.txt
 }
 
