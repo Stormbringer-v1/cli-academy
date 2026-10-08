@@ -1,30 +1,28 @@
 #!/usr/bin/env bash
-set -euo pipefail
 
 SYS_GAME_PIDS=()
 SYS_GAME_PORTS=()
 SYS_GAME_LOCKS=()
 
 cleanup_sysops() {
-    for pid in ${SYS_GAME_PIDS[@]:-}; do
+    local pid lockfile port
+    for pid in ${SYS_GAME_PIDS[@]+"${SYS_GAME_PIDS[@]}"}; do
+        pkill -TERM -P "$pid" 2>/dev/null || true
         kill "$pid" 2>/dev/null || true
     done
     sleep 0.5
-    for pid in ${SYS_GAME_PIDS[@]:-}; do
+    for pid in ${SYS_GAME_PIDS[@]+"${SYS_GAME_PIDS[@]}"}; do
+        pkill -KILL -P "$pid" 2>/dev/null || true
         kill -9 "$pid" 2>/dev/null || true
     done
 
-    for lockfile in ${SYS_GAME_LOCKS[@]:-}; do
+    for lockfile in ${SYS_GAME_LOCKS[@]+"${SYS_GAME_LOCKS[@]}"}; do
         rm -f "$lockfile" 2>/dev/null || true
     done
 
-    for port in ${SYS_GAME_PORTS[@]:-}; do
+    for port in ${SYS_GAME_PORTS[@]+"${SYS_GAME_PORTS[@]}"}; do
         fuser -k "${port}/tcp" 2>/dev/null || true
     done
-
-    if [[ -n "${SANDBOX_DIR:-}" && -d "$SANDBOX_DIR" ]]; then
-        rm -rf "$SANDBOX_DIR" 2>/dev/null || true
-    fi
 }
 
 spawn_rogue() {
@@ -53,12 +51,12 @@ spawn_rogue() {
             sleep 99999 &
             local PID=$!
             kill -STOP "$PID"
-            SYS_GAME_PIDS+=($PID)
+            SYS_GAME_PIDS+=("$PID")
             echo "$PID" > "${SANDBOX}/.${NAME}.pid"
             return
             ;;
     esac
-    SYS_GAME_PIDS+=($!)
+    SYS_GAME_PIDS+=("$!")
     echo "$!" > "${SANDBOX}/.${NAME}.pid"
 }
 
@@ -75,7 +73,7 @@ s.bind(('127.0.0.1', $PORT))
 s.listen(1)
 while True: time.sleep(1)
 " &
-    SYS_GAME_PIDS+=($!)
+    SYS_GAME_PIDS+=("$!")
     SYS_GAME_PORTS+=("$PORT")
     echo "$!" > "${SANDBOX}/.${NAME}.pid"
 }
@@ -85,7 +83,7 @@ grab_lock() {
     local LOCKFILE="${SANDBOX_DIR:-.}/${2:-critical.lock}"
     touch "$LOCKFILE"
     flock "$LOCKFILE" sleep 99999 &
-    SYS_GAME_PIDS+=($!)
+    SYS_GAME_PIDS+=("$!")
     SYS_GAME_LOCKS+=("$LOCKFILE")
     echo "$!" > "${SANDBOX_DIR:-.}/.${NAME}.pid"
 }
