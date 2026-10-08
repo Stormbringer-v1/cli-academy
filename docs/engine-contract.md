@@ -153,3 +153,27 @@ state, not only `answer.txt`.
 - Prefer POSIX forms over GNU-only flags (macOS support).
 - Conventional commits: `type(scope): subject`, e.g. `fix(engine): survive non-zero shell exit`.
 - Never modify files in the player's home directory from `engine/` code.
+
+## 10. v2.1 clarifications (2026-10-08, after both leads' reviews)
+
+- **Shell options.** After sourcing `sandbox.sh` and after each call into level code the
+  engine restores `set +e; set -u; set -o pipefail`. `cleanup_sandbox` runs in a subshell
+  with `set -u` still on, and only if `setup_sandbox` was actually called.
+- **Setup failures.** A non-zero return from `setup_sandbox`, any failing command inside it
+  (detected with `set -E` and an `ERR` trap that records the failure), a missing `TOOL_CMD`,
+  an unknown or missing `VALIDATION_TYPE`, a missing validator, a failed `mktemp` or `cd`,
+  and any exit during setup are all setup errors: message, cleanup, exit 2.
+- **Working directory.** The engine `cd`s to `SANDBOX_DIR` again after `setup_sandbox`
+  and again before validation. Levels must not rely on any other cwd (git level 30 is
+  fixed in D-FIX-git).
+- **Temp names.** `SANDBOX_DIR` is `mktemp -d "${TMPDIR:-/tmp}/cliacademy.XXXXXX"`;
+  `TMP_FILE` is `mktemp "${TMPDIR:-/tmp}/cliacademy-task.XXXXXX"` (outside the sandbox).
+- **Exit codes.** `play`/`replay`: 0 pass, 1 fail; `hint`: 0, or 1 without `hint.txt`;
+  usage error or missing level: 2; `play.sh` dependency failure: 2; INT: 130; TERM: 143.
+  `replay`, `hint` and `test` need only the level directory to exist.
+- **Prompt.** `Continue? (Y/n)`. Enter, `y` or anything else continues; `n` or EOF stops.
+  After a failure, continuing replays the same level.
+- **Test mode.** The solution runs with stdin from `/dev/null`; no header or template is printed.
+- **Signals.** The player's interactive shell owns the terminal, so Ctrl-C inside it never
+  reaches the engine. The engine's INT/TERM handling covers setup, validation and the prompt.
+- **`NEEDS_DIR`.** Lint warns (does not fail) on it this sprint; legacy games keep it.

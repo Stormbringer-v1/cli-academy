@@ -75,12 +75,23 @@ directories themselves.
 9. Solutions are honest: no reading level files at runtime, no gaming validators; tmux attach levels may use `script(1)`.
 10. Worker commits use the repository's configured git identity (not the owner's email).
 
+## Architect decisions (2026-10-08, from the development lead's review)
+
+1. sysops levels 19, 29, 34 are dropped from `LEVEL_ORDER`; the game has 36 levels.
+2. D-STRIP-SET is implemented as the dev lead's **D-LEGACY** ticket: strip top-level `set` from bash/tmux/docker sandboxes and `tmux_common.sh`/`docker_common.sh`, docker cleanup stops deleting `SANDBOX_DIR`, empty-prefix guards for docker and virsh cleanup helpers, `chmod +x` the 38 git validators, fix git `TOTAL_LEVELS`.
+3. In-scope bug fixes ride the conversions: the `grep -E '\d'` validators in sysops (1, 2, 3, 15, 18, 20, 21) and systemd (2, 5, 6, 12); ssh container names (`cliacademy_ssh_l<ID>`, network `cliacademy_ssh_net`, prefix `cliacademy_ssh_`, boss ports 22291/22292, no touching the player's real `~/.ssh` keys, no `local PATH`); virsh cleanup prefixes for boss01/boss02/level24; sysops cleanup kills process groups, not only direct children; iptables level 29 `--ctstate`.
+4. Engine behaviours are pinned in contract §10. Two dev-lead proposals were **not** adopted: the engine does re-`cd` to `SANDBOX_DIR` after setup, and setup failures are detected with an ERR trap (both from the testing lead's review).
+5. `play.sh` dependency failures exit 2.
+6. `NEEDS_DIR` is removed from ssh-game `level.conf` files only; lint warns elsewhere.
+7. Merge order: D-ENGINE first (conversions against the old engine would write into the player's cwd), then D-CONVERT-* in any order, D-LEGACY any time, then T-* branches, T-CI last.
+8. Worker commits carry the `Co-Authored-By: Claude Fable 5.1` trailer; confirmed.
+
 ## Acceptance for the sprint
 
 1. `shellcheck -S warning engine/*.sh games/*/*.sh` is clean.
 2. `tests/lint-levels.sh` is clean for all games.
 3. `tests/run-game.sh bash-game|git-game|tmux-game` all pass in this container and in CI.
-4. Manual: in bash-game, fail level 0 → FAIL_MSG + hint tip + continue prompt; `false; exit` → same; Ctrl-C mid-level leaves no temp dirs.
+4. Manual: in bash-game, fail level 0 → FAIL_MSG + hint tip + continue prompt; `false; exit` → same; Ctrl-C during setup or at the prompt, and SIGTERM, leave no temp dirs or processes.
 5. Synthetic two-level game with a sandbox that only populates cwd plays both levels.
 
 ## Operating rules
