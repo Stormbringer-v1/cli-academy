@@ -20,7 +20,7 @@ validate_content() {
     # Handle MUST_CONTAIN
     if [[ ${#MUST_CONTAIN[@]} -gt 0 ]]; then
         for string in "${MUST_CONTAIN[@]}"; do
-            if ! echo "$TASK_CONTENT" | grep -q "$string"; then
+            if ! grep -q -- "$string" <<< "$TASK_CONTENT"; then
                 # echo "DEBUG: Missing $string"
                 return 1
             fi
@@ -30,7 +30,7 @@ validate_content() {
     # Handle MUST_NOT_CONTAIN
     if [[ ${#MUST_NOT_CONTAIN[@]} -gt 0 ]]; then
         for string in "${MUST_NOT_CONTAIN[@]}"; do
-            if echo "$TASK_CONTENT" | grep -q "$string"; then
+            if grep -q -- "$string" <<< "$TASK_CONTENT"; then
                 # echo "DEBUG: Found forbidden $string"
                 return 1
             fi
@@ -52,7 +52,7 @@ validate_file_exists() {
     fi
 
     if [[ -n "$CONTENT" ]]; then
-        if ! grep -q "$CONTENT" "$FILE_PATH"; then
+        if ! grep -q -- "$CONTENT" "$FILE_PATH"; then
             return 1
         fi
     fi
@@ -91,7 +91,7 @@ validate_script() {
     local SCRIPT=$1
     local FILE=${2:-""}
     if [[ -f "$SCRIPT" ]]; then
-        bash "$SCRIPT" "$FILE"
+        bash "$SCRIPT" "$FILE" </dev/null
         return $?
     else
         return 1
