@@ -19,7 +19,7 @@ setup_sandbox() {
     run_in_netns iptables -A INPUT -p tcp --dport 22 -j ACCEPT
     run_in_netns iptables -A INPUT -p tcp --dport 808 -j ACCEPT
     run_in_netns iptables -A INPUT -p tcp --dport 80 -j ACCEPT
-    run_in_netns iptables -A INPUT -m conntrack --cstate ESTABLISHED,RELATED -j ACCEPT
+    run_in_netns iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
 
     export IPT_GAME_NS
     touch answer.txt

@@ -16,7 +16,7 @@ setup_sandbox() {
     ip netns exec "$IPT_GAME_NS" ip link set lo up
 
     ip netns exec "$IPT_GAME_NS" nft add table ip filter 2>/dev/null || true
-    ip netns exec "$IPT_GAME_NS" nft add chain ip filter input { type filter hook input priority 0\; } 2>/dev/null || true
+    ip netns exec "$IPT_GAME_NS" nft add chain ip filter input '{ type filter hook input priority 0; }' 2>/dev/null || true
 
     export IPT_GAME_NS
     touch answer.txt
