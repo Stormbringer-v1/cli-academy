@@ -115,9 +115,31 @@ T-SOL-bash and T-SOL-tmux are merged on the sprint branch. Verified on the merge
 `tests/harness-selftest.sh` 15/15 in contract mode; `tests/run-game.sh bash-game` 61/61 and
 `tmux-game` 57/57 (level 17 expected xfail); the six interactive pseudo-terminal scenarios
 from acceptance #4 pass with zero leaked temp entries or processes. Remaining lint findings
-are exactly D-LEGACY's scope (bash/tmux/docker top-level `set`, git validator exec bits) plus
-the two git `cd` lines owned by D-FIX-git. Pending: D-LEGACY review, T-SOL-git, T-CI, D-FIX-git,
-D-FIX-tmux. Pushing is blocked until the Claude GitHub App has access to the repository.
+were D-LEGACY's scope plus the git `cd` lines owned by D-FIX-git.
+
+**2026-10-08, sprint complete.** D-LEGACY, D-FIX-tmux, T-SOL-git, D-FIX-git and T-CI merged.
+Final acceptance on the sprint head: shellcheck clean at every contract §9 tier (engine and game
+roots at warning, level scripts at error, `tests/` at warning with fixtures excluded);
+`tests/lint-levels.sh` 0 findings in all 9 games; lint self-test 36/36; harness self-test
+15/15 (contract mode); `tests/run-game.sh` bash-game 61/61, git-game 58/58, tmux-game 57/57,
+with **no `.xfail` markers left**; a no-op solution fails every level; the six interactive
+pseudo-terminal scenarios pass with zero leaked temp entries or processes; `.github/workflows/ci.yml`
+validated with actionlint and every step executed locally. All five sprint acceptance items are
+met. Pushing remains blocked until the Claude GitHub App has access to the repository.
+
+## Sprint 2 candidates (from this sprint's findings)
+
+- git-game content: level 21 (template rebases a branch the sandbox never creates and the
+  command conflicts; any fix changes the player's task), level 14 (template promises a conflict
+  the setup never creates), level 31 (any executable hook passes), and the validator-weak levels
+  8, 9, 20, 22, 27, 28, 34, boss02 documented in `tests/known-issues/git-game.md`.
+- bash-game validator-weak levels 4, 9, boss01, 14, 17, 20, 27 and hint mismatches 6, 12, 35
+  (`tests/known-issues/bash-game.md`); tmux-game validator-weak levels 3, 8, 15, 19, 20, 23,
+  25, 26, 27 (`tests/known-issues/tmux-game.md`).
+- Delete the harness `--legacy` mode and its self-test expectations.
+- docker-game solutions as a fourth CI matrix entry (GitHub runners have docker).
+- Progress file under XDG; root `play.sh` launcher; in-shell `hint`/`task` helpers and a custom
+  prompt; `NEEDS_DIR` removed from the legacy games' `level.conf`.
 
 ## Backlog (not this sprint)
 
