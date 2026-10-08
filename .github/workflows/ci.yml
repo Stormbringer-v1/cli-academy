@@ -1,0 +1,128 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  SHELLCHECK_VERSION: v0.11.0
+  SHELLCHECK_SHA256: 8c3be12b05d5c177a04c29e3c78ce89ac86f1595681cab149b65b97c4e227198
+
+jobs:
+  shellcheck:
+    name: shellcheck
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install pinned shellcheck
+        run: |
+          set -euo pipefail
+          url="https://github.com/koalaman/shellcheck/releases/download/${SHELLCHECK_VERSION}/shellcheck-${SHELLCHECK_VERSION}.linux.x86_64.tar.xz"
+          curl -fsSL --retry 3 -o "$RUNNER_TEMP/shellcheck.tar.xz" "$url"
+          echo "${SHELLCHECK_SHA256}  $RUNNER_TEMP/shellcheck.tar.xz" | sha256sum -c -
+          tar -xJf "$RUNNER_TEMP/shellcheck.tar.xz" -C "$RUNNER_TEMP"
+          mkdir -p "$RUNNER_TEMP/bin"
+          mv "$RUNNER_TEMP/shellcheck-${SHELLCHECK_VERSION}/shellcheck" "$RUNNER_TEMP/bin/shellcheck"
+          echo "$RUNNER_TEMP/bin" >> "$GITHUB_PATH"
+
+      - name: shellcheck version
+        run: shellcheck --version
+
+      - name: engine/ and games/*/*.sh at -S warning (contract §9)
+        if: ${{ !cancelled() }}
+        run: |
+          set -euo pipefail
+          mapfile -t files < <( { find engine -maxdepth 1 -type f -name '*.sh'; find games -mindepth 2 -maxdepth 2 -type f -name '*.sh'; } | LC_ALL=C sort)
+          shellcheck -S warning "${files[@]}"
+
+      - name: level scripts at -S error (contract §9)
+        if: ${{ !cancelled() }}
+        run: |
+          set -euo pipefail
+          mapfile -t files < <(find games -path '*/levels/*' -type f -name '*.sh' | LC_ALL=C sort)
+          shellcheck -S error "${files[@]}"
+
+      - name: tests/ at -S warning (fixtures excluded)
+        if: ${{ !cancelled() }}
+        run: |
+          set -euo pipefail
+          mapfile -t files < <(find tests -type f -name '*.sh' -not -path 'tests/fixtures/*' | LC_ALL=C sort)
+          shellcheck -S warning "${files[@]}"
+
+  lint:
+    name: level lint
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: lint all games
+        run: tests/lint-levels.sh
+
+      - name: lint self-test
+        if: ${{ !cancelled() }}
+        run: tests/lint-selftest.sh
+
+  harness-selftest:
+    name: harness self-test
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: harness self-test (contract mode)
+        run: tests/harness-selftest.sh
+
+  harness:
+    name: solutions (${{ matrix.game }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        game: [bash-game, git-game, tmux-game]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install tmux
+        if: matrix.game == 'tmux-game'
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y -q --no-install-recommends tmux
+
+      - name: Tool versions
+        run: |
+          bash --version | head -n 1
+          git --version
+          tmux -V || echo "tmux not installed"
+          command -v script timeout
+
+      - name: Run ${{ matrix.game }} solutions
+        run: tests/run-game.sh --log-dir "$RUNNER_TEMP/test-logs/${{ matrix.game }}" "${{ matrix.game }}"
+
+      - name: Upload logs
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-logs-${{ matrix.game }}
+          path: ${{ runner.temp }}/test-logs/${{ matrix.game }}
+          if-no-files-found: ignore
+          retention-days: 7
+
+  # Future job (backlog, out of scope for sprint 1): docker-game solutions.
+  # ubuntu-latest ships a running Docker daemon, so add `docker-game` to the
+  # harness matrix above once tests/solutions/docker-game/ exists.
