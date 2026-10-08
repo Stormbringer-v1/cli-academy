@@ -121,7 +121,9 @@ ui_level_header() {
         master)       TIER_COLOR="$MAGENTA" ;;
         boss)         TIER_COLOR="${RED}${BOLD}" ;;
       esac
-      echo -e "  ${TIER_COLOR}[${TIER^^}]${NC}"
+      local TIER_UPPER
+      TIER_UPPER="$(printf '%s' "$TIER" | tr '[:lower:]' '[:upper:]')"
+      echo -e "  ${TIER_COLOR}[${TIER_UPPER}]${NC}"
     fi
     echo ""
   else
@@ -137,7 +139,7 @@ ui_level_header() {
 
 show_hint_tip() {
   local LEVEL=$1
-  local HINT_FILE="levels/level${LEVEL}/hint.txt"
+  local HINT_FILE="${LEVELS_DIR}/level${LEVEL}/hint.txt"
   if [[ -f "$HINT_FILE" ]]; then
     if $UI_HAS_COLOR; then
       echo -e "${YELLOW}💡 Need help? Run: ./play.sh hint $LEVEL${NC}"
@@ -149,13 +151,21 @@ show_hint_tip() {
 
 # --- Continue Prompt ---
 
+# Returns 0 to continue (Enter, y, yes, anything else), 1 to stop (n, no, or EOF/Ctrl-D).
 ui_continue_prompt() {
+  local PROMPT="Continue? (Y/n): "
+  local REPLY_TEXT=""
   if $UI_HAS_COLOR; then
-    read -p "$(echo -e "${CYAN}👉 Continue to next level? (y/N): ${NC}")" CONTINUE
-  else
-    read -p "Continue to next level? (y/N): " CONTINUE
+    PROMPT="${CYAN}👉 ${PROMPT}${NC}"
   fi
-  echo "$CONTINUE"
+  if ! read -r -p "$PROMPT" REPLY_TEXT; then
+    echo ""
+    return 1
+  fi
+  case "$REPLY_TEXT" in
+    [nN]|[nN][oO]) return 1 ;;
+    *) return 0 ;;
+  esac
 }
 
 # --- Progress Bar ---
@@ -169,7 +179,7 @@ ui_progress() {
     PCT=$(( DONE * 100 / TOTAL ))
   fi
 
-  if $UI_HAS_COLOR; then
+  if $UI_HAS_COLOR && [[ $TOTAL -gt 0 ]]; then
     local BAR_WIDTH=30
     local FILLED=$(( DONE * BAR_WIDTH / TOTAL ))
     local EMPTY=$(( BAR_WIDTH - FILLED ))
@@ -180,4 +190,20 @@ ui_progress() {
   else
     echo "Progress: ${DONE}/${TOTAL} (${PCT}%)"
   fi
+}
+
+# --- Usage ---
+
+ui_usage() {
+  cat <<'USAGE'
+Usage: ./play.sh [command]
+
+  (no command)            Play from the first incomplete level
+  status                  List levels and show your progress
+  hint <ID>               Show the hint for a level
+  replay <ID>             Play one level again, then exit
+  reset                   Delete your progress
+  test <ID> <solution.sh> Run a solution script against a level (non-interactive)
+  help                    Show this help
+USAGE
 }
