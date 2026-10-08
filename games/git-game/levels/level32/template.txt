@@ -6,6 +6,7 @@ Your task:
   Use git filter-branch to remove secret.txt from all commits:
   git filter-branch --tree-filter 'rm -f secret.txt' -- --all
 
-Verify secret.txt is not in history: git log --all --name-status | grep secret
+Verify secret.txt is not in history (no output means it is gone):
+  git log --branches --tags --name-status | grep secret.txt
 
 Type 'exit' when done.
