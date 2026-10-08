@@ -125,7 +125,14 @@ roots at warning, level scripts at error, `tests/` at warning with fixtures excl
 with **no `.xfail` markers left**; a no-op solution fails every level; the six interactive
 pseudo-terminal scenarios pass with zero leaked temp entries or processes; `.github/workflows/ci.yml`
 validated with actionlint and every step executed locally. All five sprint acceptance items are
-met. Pushing remains blocked until the Claude GitHub App has access to the repository.
+met.
+
+**2026-10-08, pushed; CI green.** First GitHub Actions run (git 2.55 on `ubuntu-latest`) failed
+git-game levels 26 and boss03: their test solutions parsed the human-readable
+`is the first bad commit` line, which git 2.55 prints as `is the first 'bad' commit`.
+T-FIX-sol-bisect replaced the parsing with `git bisect run` plus `git rev-parse refs/bisect/bad`
+(verified with a git shim that rewrites the message). CI run 2 on the merged head: shellcheck,
+level lint, harness self-test, and the bash, git and tmux solution matrix all green.
 
 ## Sprint 2 candidates (from this sprint's findings)
 
@@ -137,6 +144,10 @@ met. Pushing remains blocked until the Claude GitHub App has access to the repos
   (`tests/known-issues/bash-game.md`); tmux-game validator-weak levels 3, 8, 15, 19, 20, 23,
   25, 26, 27 (`tests/known-issues/tmux-game.md`).
 - Delete the harness `--legacy` mode and its self-test expectations.
+- Solution rule: never parse human-readable git or tmux output; use refs, plumbing, `--porcelain`
+  or `--format`, and exit codes (also applies to `25.sh`/`35.sh` reflog subject matching and to
+  the validators of git level 8 and boss02). Add an `ubuntu-22.04` CI matrix entry so older git
+  stays covered.
 - docker-game solutions as a fourth CI matrix entry (GitHub runners have docker).
 - Progress file under XDG; root `play.sh` launcher; in-shell `hint`/`task` helpers and a custom
   prompt; `NEEDS_DIR` removed from the legacy games' `level.conf`.
