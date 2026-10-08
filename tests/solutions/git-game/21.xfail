@@ -1,0 +1,1 @@
+setup-broken: setup fails at 'git checkout -q main' (default branch master) and the template rebases a branch named 'feature' that the sandbox never creates - see tests/known-issues/git-game.md
