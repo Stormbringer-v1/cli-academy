@@ -1,24 +1,24 @@
 #!/usr/bin/env bash
-set -euo pipefail
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-source "$SCRIPT_DIR/../../ssh_common.sh"
+
+SSH_GAME_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+source "${SSH_GAME_ROOT}/ssh_common.sh"
+
 setup_sandbox() {
-    SANDBOX_DIR="$(mktemp -d -t "sshgame_levelboss01.XXXXXX")"
-    cd "$SANDBOX_DIR"
     create_network
-    start_ssh_container "boss01" 222boss01
-    wait_for_ssh "127.0.0.1" 222boss01
-    touch "${SANDBOX_DIR}/answer.txt"
-    export SANDBOX_DIR
-}
-cleanup_sandbox() {
-    stop_ssh_container "boss01"
-    rm -rf "${SANDBOX_DIR}"
+    start_ssh_container "cliacademy_ssh_lboss01" 22291
+    wait_for_ssh "127.0.0.1" 22291
+    mkdir -p ~/.ssh
+    chmod 700 ~/.ssh
+    start_ssh_container "cliacademy_ssh_boss1a" 2228
+    start_ssh_container "cliacademy_ssh_boss1b" 2229
+    wait_for_ssh "127.0.0.1" 2228
+    wait_for_ssh "127.0.0.1" 2229
+    touch answer.txt
 }
 
-mkdir -p ~/.ssh
-chmod 700 ~/.ssh
-start_ssh_container "boss1a" 2228
-start_ssh_container "boss1b" 2229
-wait_for_ssh "127.0.0.1" 2228
-wait_for_ssh "127.0.0.1" 2229
+cleanup_sandbox() {
+    stop_ssh_container "cliacademy_ssh_boss1b"
+    stop_ssh_container "cliacademy_ssh_boss1a"
+    stop_ssh_container "cliacademy_ssh_lboss01"
+    remove_network
+}
