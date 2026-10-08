@@ -30,8 +30,13 @@ virsh_game_cleanup() {
 }
 
 virsh_cleanup_prefix() {
-    local prefix=$1
+    local prefix="${1:-}"
     local dom net pool
+
+    if [[ -z "$prefix" ]]; then
+        echo "virsh_cleanup_prefix: refusing an empty prefix" >&2
+        return 1
+    fi
 
     for dom in $(virsh list --all --name 2>/dev/null | grep "^${prefix}" || true); do
         virsh destroy "$dom" 2>/dev/null || true

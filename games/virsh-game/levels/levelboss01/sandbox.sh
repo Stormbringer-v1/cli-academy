@@ -4,7 +4,7 @@ VIRSH_GAME_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 source "${VIRSH_GAME_ROOT}/virsh_common.sh"
 
 setup_sandbox() {
-    export VIRSH_GAME_PREFIX="vshb1_"
+    export VIRSH_GAME_PREFIX="boss1_"
 
     cat > boss1_vm1.xml <<'XMLEOF'
 <domain type='kvm'>

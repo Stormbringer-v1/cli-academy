@@ -65,4 +65,5 @@ XMLEOF
 
 cleanup_sandbox() {
     virsh_cleanup_prefix "$VIRSH_GAME_PREFIX"
+    virsh_cleanup_prefix "final_vm"
 }

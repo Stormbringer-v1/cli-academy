@@ -4,7 +4,7 @@ VIRSH_GAME_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 source "${VIRSH_GAME_ROOT}/virsh_common.sh"
 
 setup_sandbox() {
-    export VIRSH_GAME_PREFIX="vshb2_"
+    export VIRSH_GAME_PREFIX="boss2_"
 
     mkdir -p "${SANDBOX_DIR}/pool_dir"
 
