@@ -37,8 +37,19 @@ bash-game, git-game and tmux-game non-interactively in CI.
 | D-CONVERT-virsh | Rename `boss01-02`; strip sandbox dir handling from 27 `sandbox.sh`. | B3 B4 | contract only |
 | D-CONVERT-ssh | Strip sandbox dir handling from 27 `sandbox.sh`; move all top-level statements into `setup_sandbox`; every container started must be stopped in `cleanup_sandbox`; prefix container names with `cliacademy_`. | B3 B9 | contract only |
 
-bash-game, git-game, tmux-game and docker-game already set `NEEDS_DIR="true"` and do
-not manage directories themselves; they need no conversion.
+Added after the testing lead's review (2026-10-08):
+
+| Ticket | Scope | Fixes | Depends on |
+|---|---|---|---|
+| D-STRIP-SET | Remove top-level `set -euo pipefail` (and any other top-level statement) from every `sandbox.sh` and `*_common.sh` / `validate_*_state.sh` that is sourced by sandboxes in bash-game, tmux-game and docker-game; `docker_common.sh` cleanup must stop deleting `SANDBOX_DIR`. | re-entry of B1/B2 via sourced files | contract only |
+| D-FIX-git | `chmod +x` all 38 `validate.sh`; after every `git init -q` run `git symbolic-ref HEAD refs/heads/main` and set a local identity (12 levels fail with `pathspec 'main'` on a default git); level29: no fixed `/tmp/submod`, no `file://` submodule refusal; level30: no `cd` in setup; level19: no network fetch; validators of 13, 15, 16, 18 must observe, not perform, the task. Input: `tests/known-issues/git-game.md` from T-SOL-git. | git-game playability | T-SOL-git findings |
+
+Every D-CONVERT-* ticket additionally: `chmod +x levels/*/validate.sh`; remove top-level
+`set` lines from `sandbox.sh`; `*_common.sh` cleanup helpers must not delete `SANDBOX_DIR`,
+`cd`, or `exit` (ssh_common.sh currently calls `exit 1` in helpers).
+
+bash-game and tmux-game otherwise already set `NEEDS_DIR="true"` and do not manage
+directories themselves.
 
 ## Testing tickets (wave 1)
 
@@ -50,6 +61,19 @@ not manage directories themselves; they need no conversion.
 | T-SOL-bash | `tests/solutions/bash-game/<ID>.sh` for all 41 levels + a `.wrong.sh` for at least 10. | T-HARNESS spec |
 | T-SOL-git | Same for git-game (39). | T-HARNESS spec |
 | T-SOL-tmux | Same for tmux-game (30). | T-HARNESS spec |
+
+## Architect decisions (2026-10-08, from the testing lead's review)
+
+1. Top-level `set` in sourced level files is a contract violation: lint flags it (T-LINT), D-STRIP-SET and the D-CONVERT tickets remove it, and D-ENGINE saves/restores shell options as a second safeguard.
+2. The harness runs the engine in a pinned environment: empty `HOME`, `GIT_CONFIG_NOSYSTEM=1`, `LC_ALL=C`, `TERM=xterm-256color`, per-run `TMPDIR`/`TMUX_TMPDIR`, override hook `CLI_ACADEMY_TEST_GITCONFIG`. The resulting git `main`-branch failures are real player bugs and go to D-FIX-git, not into the harness.
+3. xfail markers (`tests/solutions/<game>/<ID>.xfail`) are allowed; XPASS fails the run. Acceptance #3 reads: `run-game.sh` exits 0 and every xfail points to a dev ticket.
+4. Known issues live in `tests/known-issues/<game>.md` with `tests/KNOWN_ISSUES.md` as index.
+5. `--legacy` stdin mode is accepted for this sprint only and is deleted in sprint 2.
+6. LEAK and CRASH verdicts are in.
+7. T-CI is dispatched after T-HARNESS and T-LINT merge, and merged once it is green for bash and tmux (after D-ENGINE, D-STRIP-SET, D-FIX-git exec bits).
+8. CI pins shellcheck v0.11.0.
+9. Solutions are honest: no reading level files at runtime, no gaming validators; tmux attach levels may use `script(1)`.
+10. Worker commits use the repository's configured git identity (not the owner's email).
 
 ## Acceptance for the sprint
 

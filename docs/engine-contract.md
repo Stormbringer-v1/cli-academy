@@ -44,6 +44,11 @@ Rules for `sandbox.sh`:
 - MUST NOT create its own temp directory, `cd`, `rm -rf`, call `trap`, or `exit`.
 - MUST NOT execute statements at top level other than `source` of the game's common
   files and plain variable assignments. All work goes in `setup_sandbox` / `cleanup_sandbox`.
+  In particular **no top-level `set -e` / `set -euo pipefail`**: these files are sourced
+  by the engine and would switch errexit back on inside it (verified 2026-10-08). The
+  same rule applies to `games/<game>/*_common.sh` and `validate_<game>_state.sh` when
+  they are sourced by `sandbox.sh`.
+- `*_common.sh` helpers MUST NOT `exit`, delete `SANDBOX_DIR`, or `cd`.
 - `setup_sandbox` populates the current directory (which is `SANDBOX_DIR`) and may
   export additional variables for `validate.sh`.
 - `cleanup_sandbox` releases external resources only (containers, namespaces, tmux
@@ -54,6 +59,17 @@ Rules for `sandbox.sh`:
 The engine installs a `trap` on `EXIT`, `INT` and `TERM` that runs the current
 level's `cleanup_sandbox` (if defined), returns to the original directory and deletes
 `SANDBOX_DIR` and `TMP_FILE`. Cleanup is idempotent and runs at most once per level.
+
+Defensive measures the engine takes around level code:
+
+- It saves shell options before sourcing `sandbox.sh` and before calling `setup_sandbox`
+  / `cleanup_sandbox`, and restores them afterwards (`opts="$(set +o)"; …; eval "$opts"`).
+- It detects a failing command inside `setup_sandbox` (`set -E` plus an `ERR` trap that
+  records the failure without aborting) and treats it as a setup error (§3, exit 2).
+- It `cd`s back to `SANDBOX_DIR` explicitly after `setup_sandbox` and again before
+  validation, so a stray `cd` in level code cannot change what the tool or validator sees.
+- `SANDBOX_DIR` and `TMP_FILE` are created with plain `mktemp -d` / `mktemp` so they
+  honour `TMPDIR` (the test harness pins it per run).
 
 ## 3. Error handling
 
@@ -75,6 +91,8 @@ level's `cleanup_sandbox` (if defined), returns to the original directory and de
 - `LEVELS_DIR="$GAME_DIR/levels"`, `PROGRESS_FILE="$GAME_DIR/progress.log"`
   (the progress location may move to XDG in a later sprint).
 - Every path the engine and `ui.sh` use is absolute. `play.sh` works from any cwd.
+- Game `sandbox.sh` files MUST NOT use fixed paths such as `/tmp/submod`; derive paths
+  from `SANDBOX_DIR`.
 
 ## 5. Progress
 
@@ -127,7 +145,11 @@ state, not only `answer.txt`.
 
 - shellcheck: `engine/` and `games/*/*.sh` clean at `-S warning`; level scripts clean
   at `-S error` (warning is the goal).
-- Every script has a shebang; every `play.sh` and `validate.sh` is executable.
+- Every script has a shebang; every `play.sh` and `validate.sh` is executable (mode 755).
+- git-based sandboxes set the initial branch explicitly (`git symbolic-ref HEAD refs/heads/main`
+  right after `git init -q`) and configure a local identity; they never rely on the player's
+  global git config.
+- Validators observe state; they never perform the task themselves.
 - Prefer POSIX forms over GNU-only flags (macOS support).
 - Conventional commits: `type(scope): subject`, e.g. `fix(engine): survive non-zero shell exit`.
 - Never modify files in the player's home directory from `engine/` code.
