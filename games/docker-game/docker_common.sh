@@ -12,8 +12,13 @@
         }
 
         docker_cleanup_prefix() {
-          local prefix=$1
+          local prefix="${1:-}"
           local name ref
+
+          if [[ -z "$prefix" ]]; then
+            echo "docker_cleanup_prefix: refusing an empty prefix" >&2
+            return 1
+          fi
 
           while IFS= read -r name; do
             [[ -n "$name" && "$name" == ${prefix}* ]] || continue
@@ -50,8 +55,5 @@ EOF
           fi
           if [[ -n "${DOCKER_GAME_PREFIX:-}" ]]; then
             docker_cleanup_prefix "$DOCKER_GAME_PREFIX"
-          fi
-          if [[ -n "${SANDBOX_DIR:-}" && -d "${SANDBOX_DIR}" ]]; then
-            rm -rf "${SANDBOX_DIR}" >/dev/null 2>&1 || true
           fi
         }
