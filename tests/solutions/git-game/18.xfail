@@ -1,1 +1,0 @@
-setup-broken: setup fails at 'git checkout -q main' (default branch master) and validate.sh runs 'git branch -d feature' itself, failing after the player's own delete - see tests/known-issues/git-game.md

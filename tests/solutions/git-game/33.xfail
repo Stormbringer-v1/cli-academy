@@ -1,1 +1,0 @@
-setup-broken: setup fails at 'git checkout -q main' (default branch master) and the three branches edit the same line so an octopus merge always fails - see tests/known-issues/git-game.md

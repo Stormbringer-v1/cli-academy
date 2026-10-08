@@ -1,1 +1,0 @@
-validator-impossible: validate.sh runs 'git stash pop' itself, so it fails after the player's own pop - see tests/known-issues/git-game.md

@@ -1,1 +1,0 @@
-setup-broken: setup fails at 'git checkout -q main' and then at 'git branch -d feature' (unmerged), and validate.sh needs 4 commits that a rebase never leaves - see tests/known-issues/git-game.md

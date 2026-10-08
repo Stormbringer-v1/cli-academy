@@ -1,1 +1,0 @@
-validator-impossible: validate.sh runs 'git fetch' from https://github.com/example/repo.git (network, repository does not exist) - see tests/known-issues/git-game.md
