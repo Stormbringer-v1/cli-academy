@@ -17,6 +17,7 @@ tmuxa new-session -d -s intro2
 VERDICT: PASS (engine rc=0, timeout=30s)
 ```
 - Suggested fix (dev team, not applied): tmux_session_exists in validate_tmux_state.sh should use an exact-match target: tmuxa has-session -t "=$1". Same helper is used by levels 1, 9, boss01, 25 and 27 (and by the negative checks such as "! tmux_session_exists prod").
+- Status: fixed by D-FIX-tmux (fix(tmux): match session names exactly and read window options with show-options)
 
 ## level3: Attach and detach: a no-op passes
 - Kind: validator-weak
@@ -86,6 +87,7 @@ Expected synchronize-panes to be on.
 VERDICT: FAIL (engine rc=1, timeout=30s)
 ```
 - Suggested fix (dev team, not applied): In validate_tmux_state.sh, tmux_window_option_equals should call show-options (which does accept -q), for example: tmuxa show-options -wqv -t "$1" "$2". The last command in the evidence shows it prints on.
+- Status: fixed by D-FIX-tmux (fix(tmux): match session names exactly and read window options with show-options)
 
 ## level19: Send keys: typing the word without running the command passes
 - Kind: validator-weak
