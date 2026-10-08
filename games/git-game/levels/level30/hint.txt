@@ -1,1 +1,1 @@
-Use git worktree add ../path branch to create a new worktree. Each worktree is a separate working directory linked to the same repo.
+From repo/, use git worktree add ../feature-work feature to create a new worktree. Each worktree is a separate working directory linked to the same repo; commit there as usual.

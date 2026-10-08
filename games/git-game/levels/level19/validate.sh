@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 set -euo pipefail
-# Add a remote and fetch from it
-git remote add origin https://github.com/example/repo.git 2>/dev/null || true
-if git fetch origin 2>/dev/null; then
-  exit 0
+# Observe the remote and the fetched ref; never add or fetch (no network).
+if ! git remote get-url origin >/dev/null 2>&1; then
+  echo "No remote named origin. Run: git remote add origin ./upstream.git"
+  exit 1
 fi
-echo "Remote fetch failed."
-exit 1
+if ! git rev-parse --verify -q refs/remotes/origin/main >/dev/null; then
+  echo "origin/main not found. Run: git fetch origin"
+  exit 1
+fi
+exit 0

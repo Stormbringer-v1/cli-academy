@@ -1,1 +1,1 @@
-Use git remote add origin URL to add a remote. Use git fetch origin to download objects and refs from another repository.
+Use git remote add origin ./upstream.git to add a remote. Use git fetch origin to download objects and refs from it; git branch -r then shows origin/main.

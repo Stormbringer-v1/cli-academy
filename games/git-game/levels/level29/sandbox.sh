@@ -5,9 +5,13 @@ setup_sandbox() {
   git config user.name "Player"
   git config user.email "player@cli-academy.local"
   echo "main" > file.txt && git add file.txt && git commit -q -m "Initial commit"
-  mkdir -p /tmp/submod || true
-  echo "sub" > /tmp/submod/file.txt
-  cd /tmp/submod && git init -q && git add file.txt && git commit -q -m "Submodule commit"
-  cd - > /dev/null
+  mkdir submod
+  git -C submod init -q
+  git -C submod symbolic-ref HEAD refs/heads/main
+  git -C submod config user.name "Player"
+  git -C submod config user.email "player@cli-academy.local"
+  echo "sub" > submod/file.txt
+  git -C submod add file.txt && git -C submod commit -q -m "Submodule commit"
+  echo "/submod/" >> .git/info/exclude
 }
-cleanup_sandbox() { rm -rf /tmp/submod 2>/dev/null; }
+cleanup_sandbox() { :; }

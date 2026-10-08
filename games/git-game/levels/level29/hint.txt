@@ -1,1 +1,1 @@
-Use git submodule add URL path to add a submodule. Use git submodule --status to check submodule status.
+Use git -c protocol.file.allow=always submodule add ./submod lib to add the submodule. Use git submodule status to check it.

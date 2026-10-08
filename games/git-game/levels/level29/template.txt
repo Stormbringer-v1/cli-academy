@@ -1,10 +1,14 @@
 Level 29: Git Submodule
 
-Add a submodule to your repository.
+Add a submodule to your repository. A second repository is ready in ./submod.
 
 Your task:
-  Add the submodule: git submodule add /tmp/submod lib
+  Add it as a submodule at lib:
+    git -c protocol.file.allow=always submodule add ./submod lib
 
-Verify with: git submodule --status
+  Since Git 2.38, submodules from a local path are refused unless the "file"
+  protocol is allowed; -c protocol.file.allow=always allows it for this command only.
+
+Verify with: git submodule status
 
 Type 'exit' when done.
