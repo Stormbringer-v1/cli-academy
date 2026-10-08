@@ -106,9 +106,28 @@ directories themselves.
   no virsh, no ssh client, no systemd user session. Infra games are converted here and
   verified by the lint + by the architect/owner on a Linux host.
 
+## Progress log
+
+**2026-10-08, wave 1 merged.** D-ENGINE and all five D-CONVERT tickets, T-LINT, T-HARNESS,
+T-SOL-bash and T-SOL-tmux are merged on the sprint branch. Verified on the merged tree:
+`shellcheck -S warning engine/*.sh games/*/*.sh` clean; level scripts clean at `-S error`;
+`tests/lint-levels.sh` reports 0 findings for iptables, ssh, sysops, systemd and virsh;
+`tests/harness-selftest.sh` 15/15 in contract mode; `tests/run-game.sh bash-game` 61/61 and
+`tmux-game` 57/57 (level 17 expected xfail); the six interactive pseudo-terminal scenarios
+from acceptance #4 pass with zero leaked temp entries or processes. Remaining lint findings
+are exactly D-LEGACY's scope (bash/tmux/docker top-level `set`, git validator exec bits) plus
+the two git `cd` lines owned by D-FIX-git. Pending: D-LEGACY review, T-SOL-git, T-CI, D-FIX-git,
+D-FIX-tmux. Pushing is blocked until the Claude GitHub App has access to the repository.
+
 ## Backlog (not this sprint)
 
 Progress file under XDG; root `play.sh` launcher; in-shell `hint`/`task` helpers and
 custom prompt; real-state validators for the 11 answer-only levels; tiered hints;
 README and `docs/plan.md` rewrite; docker-game solutions in CI; vim-game import;
-`known_hosts` isolation for ssh-game; pinned images for ssh-game.
+`known_hosts` isolation for ssh-game; pinned images for ssh-game; sysops level 9 setup
+writes `answer.txt` itself (auto-pass); docker prefixes `cliacademy_l24/l25/l26/l32/boss03`
+lack a trailing underscore; `validate_solution.sh` uses fixed `/tmp` mktemp templates
+(ignores `TMPDIR`); bash-game hints 10/22/32 and tmux level 2 hint rely on GNU `wc` output
+(macOS pads); delete the harness `--legacy` mode; lint: flag `rm -f -r` split flags and
+command substitutions in top-level assignments other than the `$(cd ... && pwd)` idiom;
+per-process isolation for harness self-test check 15.
