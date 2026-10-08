@@ -3,8 +3,9 @@
 set -euo pipefail
 
 # Task: practise --soft, --mixed and --hard resets and end with only the first commit.
+# The sandbox holds four commits, so every step of the template runs as written.
 
-# 1. --soft: go back one commit, the change of "Commit 2" stays staged.
+# 1. --soft: go back one commit, the change of the last commit (file2.txt) stays staged.
 git reset --soft HEAD~1
 git status --short
 
@@ -12,15 +13,10 @@ git status --short
 git reset HEAD file2.txt
 git status --short
 
-# 3. --mixed (the default). After step 1 there is no HEAD~1 any more, so bring "Commit 2"
-#    back first, then reset it: the file stays in the working tree but is unstaged.
-git add file2.txt
-git commit -q -m "Commit 2"
+# 3. --mixed (the default): go back one more commit and unstage everything.
 git reset HEAD~1
 git status --short
 
-# 4. --hard: commit once more, then go back to the first commit and discard everything.
-git add file2.txt
-git commit -q -m "Commit 2"
+# 4. --hard: go back to the first commit and discard the tracked changes.
 git reset --hard HEAD~1
 git log --oneline

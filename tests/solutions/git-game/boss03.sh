@@ -2,19 +2,17 @@
 # git-game level boss03: BOSS 03: History Rewriting Master
 set -euo pipefail
 
-# The template says "Commit 7 has BAD", but the sandbox commits only append "line N"
-# to file.txt (no commit contains the text BAD, and there is no other branch).
-# So the stand-in for "BAD" is the line that first appears in Commit 7: "line 7".
-main_branch="$(git branch --show-current)"
+# The sandbox has ten commits on main; "Commit 7" introduces the line "BAD" into file.txt.
+# A side branch, clean-fix, holds one clean commit that does not depend on it.
 
-# 1-2. Bisect for the first commit that has the marker and record its hash.
+# 1-2. Bisect for the first commit that has "BAD" and record its hash.
 first="$(git rev-list --max-parents=0 HEAD)"
 git bisect start
 git bisect bad HEAD
 git bisect good "$first"
 found=""
 for _ in 1 2 3 4 5 6 7 8; do
-  if grep -q '^line 7$' file.txt; then
+  if grep -q '^BAD$' file.txt; then
     out="$(git bisect bad)"
   else
     out="$(git bisect good)"
@@ -25,15 +23,8 @@ done
 echo "$found" > bad_commit.txt
 git bisect reset
 
-# 3. Cherry-pick a clean commit from another branch: branch off just before the bad
-# commit, make a clean commit there, then cherry-pick it onto the main line.
-git branch clean "${found}~1"
-git checkout -q clean
-echo "clean fix" > fix.txt
-git add fix.txt
-git commit -q -m "Clean fix"
-git checkout -q "$main_branch"
-git cherry-pick clean
+# 3. Cherry-pick the clean commit from the other branch onto main.
+git cherry-pick clean-fix
 
 # 4. Annotated tag.
 git tag -a v1.0 -m "Bugfix release"
