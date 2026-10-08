@@ -1,8 +1,4 @@
 #!/usr/bin/env bash
-set -euo pipefail
-
-SYSTEMD_GAME_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-USER_SLICE="default.slice"
 
 systemctl_user() {
     systemctl --user "$@"
