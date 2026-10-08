@@ -9,7 +9,7 @@ setup_sandbox() {
     sleep 99999 &
     local CHILD=$!
     echo "$PARENT:$CHILD" > "${SANDBOX_DIR}/answer.txt"
-    SYS_GAME_PIDS+=($PARENT $CHILD)
+    SYS_GAME_PIDS+=("$PARENT" "$CHILD")
 }
 
 cleanup_sandbox() {

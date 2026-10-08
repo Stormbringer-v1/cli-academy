@@ -7,10 +7,12 @@ SYS_GAME_LOCKS=()
 cleanup_sysops() {
     local pid lockfile port
     for pid in ${SYS_GAME_PIDS[@]+"${SYS_GAME_PIDS[@]}"}; do
+        pkill -TERM -P "$pid" 2>/dev/null || true
         kill "$pid" 2>/dev/null || true
     done
     sleep 0.5
     for pid in ${SYS_GAME_PIDS[@]+"${SYS_GAME_PIDS[@]}"}; do
+        pkill -KILL -P "$pid" 2>/dev/null || true
         kill -9 "$pid" 2>/dev/null || true
     done
 
