@@ -1,0 +1,1 @@
+setup-broken: setup fails at 'git checkout -q main' (default branch master) and setup cds into repo/ while validate.sh checks ../feature-work from a cwd the engine resets - see tests/known-issues/git-game.md

@@ -1,0 +1,1 @@
+setup-broken: setup_sandbox fails at 'git checkout -q main' because git init defaults to master - see tests/known-issues/git-game.md

@@ -1,0 +1,1 @@
+setup-broken: sandbox leaves the repo on master but the template and validate.sh require a branch named main - see tests/known-issues/git-game.md

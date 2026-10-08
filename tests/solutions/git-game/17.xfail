@@ -1,0 +1,1 @@
+setup-broken: setup fails at 'git checkout -q main' (default branch master) and validate.sh runs 'git log --graph' without --all so it never sees branching - see tests/known-issues/git-game.md
