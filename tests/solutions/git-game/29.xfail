@@ -1,0 +1,1 @@
+setup-broken: setup commits in a fixed /tmp/submod without a git identity and 'git submodule add' of a local path is refused by protocol.file.allow - see tests/known-issues/git-game.md
