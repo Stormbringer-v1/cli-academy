@@ -39,8 +39,9 @@ sudo pacman -S procps-ng iproute2 lsof htop btop sysstat strace
 
 ```bash
 ./play.sh              # Start or resume
-./play.sh hint 5      # Get a hint for level 5
-./play.sh replay 5    # Replay a completed level
+./play.sh status       # List levels and your progress
+./play.sh hint 5       # Get a hint for level 5
+./play.sh replay 5     # Replay a level
 ./play.sh reset        # Reset all progress
 ```
 
@@ -50,11 +51,13 @@ sudo pacman -S procps-ng iproute2 lsof htop btop sysstat strace
 
 **Beginner (Levels 0-9)** — Process discovery and signals. ps aux, pgrep, kill, signals (SIGTERM/SIGKILL/SIGHUP/SIGSTOP/SIGCONT), top basics, htop basics, htop tree view.
 
-**Intermediate (Levels 10-19)** — Priority and resources. nice, renice, /proc/PID/{status,cmdline,environ,fd}, /proc/meminfo, /proc/cpuinfo, load average, nproc/ulimit.
+**Intermediate (Levels 10-18)** — Priority and resources. nice, renice, /proc/PID/{status,cmdline,environ,fd}, /proc/meminfo, /proc/cpuinfo, load average, nproc/ulimit.
 
-**Advanced (Levels 20-29)** — Monitoring and debugging. lsof, lsof +D, lsof -i, ss, ss state filters, fuser, strace, vmstat/iostat/mpstat.
+**Advanced (Levels 20-28)** — Monitoring and debugging. lsof, lsof +D, lsof -i, ss, ss state filters, fuser, strace, vmstat/iostat/mpstat.
 
-**Master (Levels 30-34)** — Complex diagnostics. btop deep dive, process forensics (/proc + lsof + strace), resource leak diagnosis, performance bottleneck analysis.
+**Master (Levels 30-33)** — Complex diagnostics. btop deep dive, process forensics (/proc + lsof + strace), resource leak diagnosis, performance bottleneck analysis.
+
+A checkpoint level follows each tier and combines its skills.
 
 **Final Boss** — "Midnight Incident": 4 CPU hogs, 2 processes fighting over a file lock, 1 process with 500+ leaked FDs, 1 rogue listener, 1 zombie chain, load 15+ on 4-core machine. Fix everything in the right order.
 
