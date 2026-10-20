@@ -42,11 +42,11 @@ jobs:
       - name: shellcheck version
         run: shellcheck --version
 
-      - name: engine/ and games/*/*.sh at -S warning (contract §9)
+      - name: play.sh, engine/ and games/*/*.sh at -S warning (contract §9)
         if: ${{ !cancelled() }}
         run: |
           set -euo pipefail
-          mapfile -t files < <( { find engine -maxdepth 1 -type f -name '*.sh'; find games -mindepth 2 -maxdepth 2 -type f -name '*.sh'; } | LC_ALL=C sort)
+          mapfile -t files < <( { printf '%s\n' play.sh; find engine -maxdepth 1 -type f -name '*.sh'; find games -mindepth 2 -maxdepth 2 -type f -name '*.sh'; } | LC_ALL=C sort)
           shellcheck -S warning "${files[@]}"
 
       - name: level scripts at -S error (contract §9)

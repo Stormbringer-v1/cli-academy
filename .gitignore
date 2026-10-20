@@ -2,50 +2,16 @@
 .DS_Store
 Thumbs.db
 
-# Editor
+# Editors
 *.swp
 *.swo
 *~
 .idea/
 .vscode/
 
-# Game runtime files
+# Game runtime files (progress is saved next to each game's play.sh)
 progress.log
-debug.log
 *.log
-
-# Vim temp files
-.vimrc_level*
-
-# Game-created working files
-mysecondfile.txt
-otherside.txt
-secondfile.txt
-tabfile.txt
-win.txt
-source.txt
-dest.txt
-fileA.txt
-fileB.txt
-fileC.txt
-alpha.txt
-beta.txt
-gamma.txt
-main.py
-utils.py
-readme.txt
-header.txt
-log.txt
-mysession.vim
-workfile.txt
-file1.txt
-file2.txt
-
-# Bash game temporary directories
-my_folder/
-
-# Test output
-test_*_output.log
 
 # Claude Code worker worktrees
 .claude/worktrees/
